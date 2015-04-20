@@ -1,4 +1,4 @@
-package com.latbc.sivale.utilities;
+package com.latbc.sivale.persistance;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -15,9 +15,9 @@ import org.slf4j.LoggerFactory;
 import com.latbc.sivale.beans.BillParametersBean;
 import com.latbc.utils.HiveUtils;
 
-public class HelperMethods {
+public class HivePersistanceControllerImpl implements PersistanceController {
 	
-	private static Logger LOGGER = LoggerFactory.getLogger(HelperMethods.class.getName());
+	private static Logger LOGGER = LoggerFactory.getLogger(HivePersistanceControllerImpl.class.getName());
 
 	public void saveFile(InputStream uploadedInputStream, String serverLocation) {
 

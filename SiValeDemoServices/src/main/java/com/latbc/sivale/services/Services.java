@@ -17,7 +17,7 @@ import org.xml.sax.SAXException;
 import com.latbc.sivale.beans.BillParametersBean;
 import com.latbc.sivale.beans.BillServiceBean;
 import com.latbc.sivale.parser.ParseXml;
-import com.latbc.sivale.utilities.HelperMethods;
+import com.latbc.sivale.persistance.HivePersistanceControllerImpl;
 import com.sun.jersey.core.header.ContentDisposition;
 import com.sun.jersey.multipart.FormDataBodyPart;
 import com.sun.jersey.multipart.FormDataMultiPart;
@@ -52,7 +52,7 @@ public class Services {
 		if (extension.equalsIgnoreCase("XML")) {
 			ParseXml parseXml = new ParseXml();
 			BillParametersBean billParameters = parseXml.parseXml(fileInputStream);
-			HelperMethods helperMethods = new HelperMethods();
+			HivePersistanceControllerImpl helperMethods = new HivePersistanceControllerImpl();
 			helperMethods.saveAttributesHive(billParameters);
 		} else {
 
@@ -72,7 +72,7 @@ public class Services {
 		
 		LOGGER.info("Se ha recibido QR");
 
-		HelperMethods helperMethods = new HelperMethods();
+		HivePersistanceControllerImpl helperMethods = new HivePersistanceControllerImpl();
 		BillParametersBean billParameters = helperMethods.parseUrl(billService
 				.getUrl());
 		helperMethods.saveAttributesHive(billParameters);

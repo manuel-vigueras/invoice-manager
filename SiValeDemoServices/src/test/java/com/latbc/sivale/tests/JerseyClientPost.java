@@ -1,4 +1,4 @@
-package com.latbc.sivale.utilities;
+package com.latbc.sivale.tests;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
@@ -13,7 +13,7 @@ public class JerseyClientPost {
 			Client client = Client.create();
 
 			WebResource webResource = client
-					.resource("http://localhost:8080/SiValeDemoServices/services/sendParameters");
+					.resource("http://localhost:8080/SiValeDemoServices/services/billParameters");
 
 			String input = "{\"url\":\"re=?ATEERFDFDFDE12212&rr=SAPL8501122&tt=009092182y1.212121&id=ERERE-FGGFG-SASA\",\"userId\":\"ERERT221\",\"authorizationId\":\"12756542312\"}";
 
