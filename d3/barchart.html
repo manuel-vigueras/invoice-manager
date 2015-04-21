@@ -94,6 +94,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+
 svg.call(tip);
 
 d3.tsv("data.tsv", type, function(error, data) {
