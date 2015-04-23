@@ -114,7 +114,7 @@
             <div class="navbar">
               <ul class="nav navbar-nav navbar-default navbar-right">
                 <li class="active"><a href="#">Mis Movimientos <span class="sr-only">(current)</span></a></li>
-                <li><a href="#" class="btn-sm">Mis Justificantes</a></li>
+                <li><a href="6_justificantes_0.html" class="btn-sm">Mis Justificantes</a></li>
               </ul>
             </div>
         </div>
@@ -139,7 +139,7 @@
                 </td>
                 <td>
                   <ul class="nav nav-pills">
-                    <li><a href="#">Ver Facturas</a></li>
+                    <li><a href="3_facturas_0.html">Ver Facturas</a></li>
                   </ul>
                 </td>
               </tr>
@@ -216,7 +216,7 @@
                                       <td>$756.00</td>
                                       <td>$756.00</td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" href="#">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal2">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
                                         <a href="file/file_xml.xml">
@@ -235,7 +235,7 @@
                                       <td>$1,345.00</td>
                                       <td>$1,345.00</td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" href="#">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal2">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
                                         <a href="file_xml.xml">
@@ -254,7 +254,7 @@
                                       <td>$58.00</td>
                                       <td>$58.00</td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" href="#">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal2">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
                                         <a href="file_xml.xml">
@@ -273,7 +273,7 @@
                                       <td>$533.00</td>
                                       <td>$533.00</td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" href="#">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal2">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
                                       </td>
@@ -286,7 +286,7 @@
                                       <td>$189.00</td>
                                       <td>$189.00</td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" href="#">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal2">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
                                         <a href="file_xml.xml">
@@ -305,7 +305,7 @@
                                       <td>$2,560.00</td>
                                       <td>$2,560.00</td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" href="#">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal2">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
                                       </td>
@@ -324,6 +324,108 @@
           <img src="img/sivale-banner.gif" class="img-responsive" alt="Responsive image" aligne="right">
         </div><!-- End of Col for Banner -->
       </div><!-- End of Grid for Panel and Banner -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- MODAL VINCULAR FACTURA-->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Facturas Pendientes</h4>
+      </div>
+      <div class="modal-body">
+      <!--Formulario Alta Justificante-->        
+        <div class="bs-example">
+
+          <!--<h3>Transacciones Conciliadas</h3>-->
+                <table class="table table-striped">
+
+                  <thead>
+                      <tr>
+                          <th>Folio</th>
+                          <th>Fecha</th>
+                          <th>RFC Emisor</th>
+                          <th>Monto</th>
+                          <th>Asociar</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td><a href="#">4468104</a></td>
+                          <td>02/01/2015</td>
+                          <td>CAPITAL JEANS SA CV</td>
+                          <td>$756.00</td>
+                          <td>
+                            <div class="checkbox"><input type="checkbox" value=""></div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><a href="#">4367124</a></td>
+                          <td>04/01/2015</td>
+                          <td>POLMAL SA CV</td>
+                          <td>$1,345.00</td>
+                          <td>
+                            <div class="checkbox"><input type="checkbox" value=""></div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><a href="#">7647903</a></td>
+                          <td>05/04/2015</td>
+                          <td>7 ELEVEN MÉXICO SA CV</td>
+                          <td>$58.00</td>
+                          <td>
+                            <div class="checkbox"><input type="checkbox" value=""></div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><a href="#">5846902</a></td>
+                          <td>11/01/2015</td>
+                          <td>CORPORATIVO NUHAIR SC</td>
+                          <td>$533.00</td>
+                          <td>
+                            <div class="checkbox"><input type="checkbox" value=""></div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><a href="#">8649501</a></td>
+                          <td>13/01/2015</td>
+                          <td>GENDRY FRANK MICHEL</td>
+                          <td>$189.00</td>
+                          <td>
+                            <div class="checkbox"><input type="checkbox" value=""></div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><a href="#">7549445</a></td>
+                          <td>19/01/2015</td>
+                          <td>ARANZAZU SA CV</td>
+                          <td>$2,560.00</td>
+                          <td>
+                            <div class="checkbox"><input type="checkbox" value=""></div>
+                          </td>
+                      </tr>
+                  </tbody>
+                </table>
+                <a type="button" class="btn btn-warning" href="r_tres_monterrey.html">Vincular</a>
+        </div>        
+      </div>
+    </div>
+  </div>
+</div><!--TERMINA MODAL VINCULAR FACTURA-->
+
+
+
 
   </div><!-- End of MAIN CONTAINER -->
 
