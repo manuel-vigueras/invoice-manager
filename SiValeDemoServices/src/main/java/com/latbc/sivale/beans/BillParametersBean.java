@@ -38,4 +38,33 @@ public class BillParametersBean {
 	public void setTrxId(String trxId) {
 		this.trxId = trxId;
 	}
+	
+	public static BillParametersBean parseUrl(String url) {
+		
+		String[] wordsArray = url.split("&");
+		String[] results;
+		
+		BillParametersBean billParametersBean = new BillParametersBean();
+		
+		for (String word : wordsArray) {
+			
+			results = word.split("=");
+			
+			if (word.matches(".*\\bre=\\b.*")) {
+				billParametersBean.setRfcIssuer(results[1]);
+			} else if (word.matches(".*\\brr=\\b.*")) {
+				billParametersBean.setRfcReceiver(results[1]);
+			} else if (word.matches(".*\\btt=\\b.*")) {
+				
+				String amount = results[1];
+				amount = amount.replaceFirst("^0+(?!$)", "");
+				amount = amount.replaceFirst("(?!$)0+$", "");
+				billParametersBean.setAmount(amount);
+			} else if (word.matches(".*\\bid=\\b.*")) {
+				billParametersBean.setTrxId(results[1]);
+			}
+		}
+		
+		return billParametersBean;
+	}
 }
