@@ -216,13 +216,13 @@
                                       <td>$756.00</td>
                                       <td>$756.00</td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal2">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalVinc_Facturas">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
-                                        <a href="file/file_xml.xml">
+                                        <a data-toggle="modal" data-target="#modalDetalleFactura">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
                                         </a>
-                                        <a href="file/file_pdf.pdf">
+                                        <a href="#">
                                           <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
                                         </a>
                                       </td>
@@ -235,13 +235,13 @@
                                       <td>$1,345.00</td>
                                       <td>$1,345.00</td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal2">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalVinc_Facturas">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
-                                        <a href="file_xml.xml">
+                                        <a data-toggle="modal" data-target="#modalDetalleFactura">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
                                         </a>
-                                        <a href="file_pdf.pdf">
+                                        <a href="#">
                                           <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
                                         </a>
                                       </td>
@@ -254,13 +254,13 @@
                                       <td>$58.00</td>
                                       <td>$58.00</td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal2">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalVinc_Facturas">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
-                                        <a href="file_xml.xml">
+                                        <a data-toggle="modal" data-target="#modalDetalleFactura">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
                                         </a>
-                                        <a href="file_pdf.pdf">
+                                        <a href="#">
                                           <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
                                         </a>
                                       </td>
@@ -273,7 +273,7 @@
                                       <td>$533.00</td>
                                       <td>$533.00</td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal2">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalVinc_Facturas">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
                                       </td>
@@ -286,13 +286,13 @@
                                       <td>$189.00</td>
                                       <td>$189.00</td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal2">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalVinc_Facturas">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
-                                        <a href="file_xml.xml">
+                                        <a data-toggle="modal" data-target="#modalDetalleFactura">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
                                         </a>
-                                        <a href="file_pdf.pdf">
+                                        <a href="#">
                                           <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
                                         </a>
                                       </td>
@@ -305,7 +305,7 @@
                                       <td>$2,560.00</td>
                                       <td>$2,560.00</td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal2">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalVinc_Facturas">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
                                       </td>
@@ -332,97 +332,139 @@
 
 
 
+    <!-- MODAL VINCULAR FACTURAS -->
+    <div class="modal fade" id="modalVinc_Facturas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Facturas Pendientes</h4>
+          </div>
+          <div class="modal-body">
+          <!--Formulario Alta Justificante-->        
+            <div class="bs-example">
 
-
-
-
-<!-- MODAL VINCULAR FACTURA-->
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Facturas Pendientes</h4>
+              <!--<h3>Transacciones Conciliadas</h3>-->
+              <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Folio</th>
+                        <th>Fecha</th>
+                        <th>RFC Emisor</th>
+                        <th>Monto</th>
+                        <th>Asociar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#">4468104</a></td>
+                        <td>02/01/2015</td>
+                        <td>CAPITAL JEANS SA CV</td>
+                        <td>$756.00</td>
+                        <td>
+                          <div class="checkbox"><input type="checkbox" value=""></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">4367124</a></td>
+                        <td>04/01/2015</td>
+                        <td>POLMAL SA CV</td>
+                        <td>$1,345.00</td>
+                        <td>
+                          <div class="checkbox"><input type="checkbox" value=""></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">7647903</a></td>
+                        <td>05/04/2015</td>
+                        <td>7 ELEVEN MÉXICO SA CV</td>
+                        <td>$58.00</td>
+                        <td>
+                          <div class="checkbox"><input type="checkbox" value=""></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">5846902</a></td>
+                        <td>11/01/2015</td>
+                        <td>CORPORATIVO NUHAIR SC</td>
+                        <td>$533.00</td>
+                        <td>
+                          <div class="checkbox"><input type="checkbox" value=""></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">8649501</a></td>
+                        <td>13/01/2015</td>
+                        <td>GENDRY FRANK MICHEL</td>
+                        <td>$189.00</td>
+                        <td>
+                          <div class="checkbox"><input type="checkbox" value=""></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">7549445</a></td>
+                        <td>19/01/2015</td>
+                        <td>ARANZAZU SA CV</td>
+                        <td>$2,560.00</td>
+                        <td>
+                          <div class="checkbox"><input type="checkbox" value=""></div>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+              <a type="button" class="btn btn-warning" href="r_tres_monterrey.html">Vincular</a>
+            </div>        
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-      <!--Formulario Alta Justificante-->        
-        <div class="bs-example">
+    </div><!--TERMINA MODAL VINCULAR FACTURAS -->
 
-          <!--<h3>Transacciones Conciliadas</h3>-->
-                <table class="table table-striped">
 
-                  <thead>
-                      <tr>
-                          <th>Folio</th>
-                          <th>Fecha</th>
-                          <th>RFC Emisor</th>
-                          <th>Monto</th>
-                          <th>Asociar</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td><a href="#">4468104</a></td>
-                          <td>02/01/2015</td>
-                          <td>CAPITAL JEANS SA CV</td>
-                          <td>$756.00</td>
-                          <td>
-                            <div class="checkbox"><input type="checkbox" value=""></div>
-                          </td>
-                      </tr>
-                      <tr>
-                          <td><a href="#">4367124</a></td>
-                          <td>04/01/2015</td>
-                          <td>POLMAL SA CV</td>
-                          <td>$1,345.00</td>
-                          <td>
-                            <div class="checkbox"><input type="checkbox" value=""></div>
-                          </td>
-                      </tr>
-                      <tr>
-                          <td><a href="#">7647903</a></td>
-                          <td>05/04/2015</td>
-                          <td>7 ELEVEN MÉXICO SA CV</td>
-                          <td>$58.00</td>
-                          <td>
-                            <div class="checkbox"><input type="checkbox" value=""></div>
-                          </td>
-                      </tr>
-                      <tr>
-                          <td><a href="#">5846902</a></td>
-                          <td>11/01/2015</td>
-                          <td>CORPORATIVO NUHAIR SC</td>
-                          <td>$533.00</td>
-                          <td>
-                            <div class="checkbox"><input type="checkbox" value=""></div>
-                          </td>
-                      </tr>
-                      <tr>
-                          <td><a href="#">8649501</a></td>
-                          <td>13/01/2015</td>
-                          <td>GENDRY FRANK MICHEL</td>
-                          <td>$189.00</td>
-                          <td>
-                            <div class="checkbox"><input type="checkbox" value=""></div>
-                          </td>
-                      </tr>
-                      <tr>
-                          <td><a href="#">7549445</a></td>
-                          <td>19/01/2015</td>
-                          <td>ARANZAZU SA CV</td>
-                          <td>$2,560.00</td>
-                          <td>
-                            <div class="checkbox"><input type="checkbox" value=""></div>
-                          </td>
-                      </tr>
-                  </tbody>
-                </table>
-                <a type="button" class="btn btn-warning" href="r_tres_monterrey.html">Vincular</a>
-        </div>        
+
+
+
+
+    <!-- MODAL DETALLE FACTURA -->
+    <div class="modal fade" id="modalDetalleFactura" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Detalle de Factura</h4>
+          </div>
+          <div class="modal-body">
+          <!--Formulario Alta Justificante-->        
+            <div class="bs-example">
+              <table class="table table-striped">
+                <tbody>
+                    <tr>
+                      <td>Vinculada a: </td>
+                      <td>'7-Eleven'</td>
+                    </tr>
+                    <tr>
+                      <td>Folio:</td>
+                      <td>123456</td>
+                    </tr>
+                    <tr>
+                      <td>RFC:</td>
+                      <td>SEV56789HDF</td>
+                    </tr>
+                    <tr>
+                        <td>Fecha:</td>
+                        <td>12/03/2015 10:32:54</td>
+                    </tr>
+                    <tr>
+                        <td>Monto:</td>
+                      <td>$ 1,235.45</td>
+                    </tr>
+                </tbody>
+              </table>
+              <a type="button" class="btn btn-warning" href="r_tres_monterrey.html">Desvincular</a>
+            </div>  
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div><!--TERMINA MODAL VINCULAR FACTURA-->
+    </div><!--TERMINA MODAL DETALLE FACTURA -->
 
 
 

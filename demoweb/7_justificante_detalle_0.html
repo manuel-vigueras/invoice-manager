@@ -203,7 +203,7 @@
                                       <td>$756.00</td>
                                       <td>$756.00</td>
                                       <td >
-                                        <a type="button" class="btn btn-default btn-xs" href="#">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalComprobante">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
                                         <p>elemento 1</p>
@@ -218,7 +218,7 @@
                                       <td>$756.00</td>
                                       <td>$756.00</td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" href="#">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalComprobante">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
                                         <p>elemento 1</p>
@@ -233,7 +233,7 @@
                                       <td>$756.00</td>
                                       <td>$756.00</td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" href="#">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalComprobante">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
                                         <p>elemento 1_ cadena larga para visualizacion</p>
@@ -248,7 +248,7 @@
                                       <td>$756.00</td>
                                       <td>$756.00</td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" href="#">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalComprobante">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
                                         <p>elemento 1_ cadena larga para visualizacion</p>
@@ -263,7 +263,7 @@
                                       <td>$756.00</td>
                                       <td>$756.00</td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" href="#">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalComprobante">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
                                         <p>elemento 1_ cadena larga para visualizacion</p>
@@ -285,8 +285,160 @@
         </div><!-- End of Col for Banner -->
       </div><!-- End of Grid for Panel and Banner -->
 
-  </div><!-- End of MAIN CONTAINER -->
 
+
+
+    <!-- MODAL AGREGA COMPROBANTE -->
+    <div class="modal fade" id="modalComprobante" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Detalle de Factura</h4>
+          </div>
+          <div class="modal-body">
+
+
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="active"><a href="#tabFacturas" role="tab" data-toggle="tab">Facturas</a></li>
+              <li><a href="#tabTickets" role="tab" data-toggle="tab">Ticket</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <!-- TAB Facturas -->
+              <div role="tabpanel" class="tab-pane active" id="tabFacturas">
+
+                <!--<h3>Transacciones Conciliadas</h3>-->
+                <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th>Folio</th>
+                          <th>Fecha</th>
+                          <th>RFC Emisor</th>
+                          <th>Monto</th>
+                          <th>Asociar</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td><a href="#">4468104</a></td>
+                          <td>02/01/2015</td>
+                          <td>CAPITAL JEANS SA CV</td>
+                          <td>$756.00</td>
+                          <td>
+                            <div class="checkbox"><input type="checkbox" value=""></div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><a href="#">4367124</a></td>
+                          <td>04/01/2015</td>
+                          <td>POLMAL SA CV</td>
+                          <td>$1,345.00</td>
+                          <td>
+                            <div class="checkbox"><input type="checkbox" value=""></div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><a href="#">7647903</a></td>
+                          <td>05/04/2015</td>
+                          <td>7 ELEVEN MÉXICO SA CV</td>
+                          <td>$58.00</td>
+                          <td>
+                            <div class="checkbox"><input type="checkbox" value=""></div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><a href="#">5846902</a></td>
+                          <td>11/01/2015</td>
+                          <td>CORPORATIVO NUHAIR SC</td>
+                          <td>$533.00</td>
+                          <td>
+                            <div class="checkbox"><input type="checkbox" value=""></div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><a href="#">8649501</a></td>
+                          <td>13/01/2015</td>
+                          <td>GENDRY FRANK MICHEL</td>
+                          <td>$189.00</td>
+                          <td>
+                            <div class="checkbox"><input type="checkbox" value=""></div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><a href="#">7549445</a></td>
+                          <td>19/01/2015</td>
+                          <td>ARANZAZU SA CV</td>
+                          <td>$2,560.00</td>
+                          <td>
+                            <div class="checkbox"><input type="checkbox" value=""></div>
+                          </td>
+                      </tr>
+                      <tr>
+                        <td>Comentarios: </td>
+                        <td colspan="4">
+                          <div class="form-group">
+                            <label class="sr-only" for="comment">Comentario:</label>
+                            <input type="text" class="form-control" id="date" placeholder="Ingresa Comentarios">
+                          </div>
+                        </td>
+                      </tr>
+                  </tbody>
+                </table>
+                <a type="button" class="btn btn-warning" href="#">Vincular</a>
+              </div><!-- Termina TAB Facturas -->
+              
+
+              <!-- TAB Tickets -->
+              <div role="tabpanel" class="tab-pane" id="tabTickets">
+                <table class="table">
+                  <tbody>
+                      <tr>
+                        <td>Fecha:</td>
+                        <td>
+                          <div class="form-group">
+                            <label class="sr-only" for="date">labelFecha:</label>
+                            <input type="text" class="form-control" id="date" placeholder="Ingresa Fecha">
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Monto:</td>
+                        <td>
+                          <div class="form-group">
+                            <label class="sr-only" for="date">labelMonto:</label>
+                            <input type="text" class="form-control" id="date" placeholder="Ingresa Monto">
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ticket:</td>
+                        <td>
+                          <a type="button" class="btn btn-default btn-md" href="#">
+                            <span class="glyphicon glyphicon-folder-open" aria-hidden="true"> Explorar</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Comentarios: </td>
+                        <td>
+                          <div class="form-group">
+                            <label class="sr-only" for="comment">Comentario:</label>
+                            <input type="text" class="form-control" id="date" placeholder="Ingresa Comentarios">
+                          </div>
+                        </td>
+                      </tr>
+                  </tbody>
+                </table>
+                <a type="button" class="btn btn-warning" href="#">Vincular</a>
+              </div><!-- Termina TAB Tickets -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--TERMINA AGREGA COMPROBANTE -->
+
+  </div><!-- End of MAIN CONTAINER -->
    
     <!-- Footer
     ================================================== -->
