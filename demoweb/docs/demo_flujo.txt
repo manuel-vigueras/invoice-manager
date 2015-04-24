@@ -13,6 +13,15 @@ Flujo de Prueba
 	* Facturas:
 		Fact pendientes Iniciales.
 
+	* Ver justificantes.
+
+	
+
+
+
+
+
+
 	* Asociar Factura a una transaccion.
 		(una vez asociada la factura nos llevara)
 
