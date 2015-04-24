@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Movimientos | Si Vale</title>
+    <title>Detalle de Justificante | Si Vale</title>
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -35,6 +35,27 @@
         margin: 0 auto -60px;
         /* Pad bottom by footer height */
         padding: 0 0 60px;
+      }
+
+      .btn-file {
+          position: relative;
+          overflow: hidden;
+      }
+      .btn-file input[type=file] {
+          position: absolute;
+          top: 0;
+          right: 0;
+          min-width: 100%;
+          min-height: 100%;
+          font-size: 100px;
+          text-align: right;
+          filter: alpha(opacity=0);
+          opacity: 0;
+          outline: none;
+          background: #f5f5f5;
+          background-color: #f5f5f5;
+          cursor: inherit;
+          display: block;
       }
 
       /* Set the fixed height of the footer here */
@@ -67,16 +88,6 @@
       code {
         font-size: 80%;
       }
-
-
-      body .modal-sm {
-          /* new custom width */
-          width: 30%;
-          /* must be half of the width, minus scrollbar on the left (30px) */
-          /* margin-left:-375px; */
-          margin-left: 35%;
-      }
-
     </style>
   </head>
   
@@ -116,8 +127,8 @@
           </div>
         </div>
       </div> <!-- End of Top Fixed navbar --> 
-      
-      
+    
+
     <!-- MAIN CONTAINER 
     =========================================== -->
     <div class="container container-xs">    
@@ -138,7 +149,7 @@
                 <div class="navbar">
                   <ul class="nav navbar-nav navbar-default">
                     <li><a href="1_resumen_0.html" class="btn-sm">Resumen</a></li>
-                    <li class="active"><a href="#">Mis Movimientos <span class="sr-only">(current)</span></a></li>
+                    <li><a href="2_transacciones_0.html" class="btn-sm">Mis Movimientos</a></li>
                     <li><a href="6_justificantes_0.html" class="btn-sm">Mis Justificantes</a></li>
                   </ul>
                 </div>
@@ -148,17 +159,24 @@
 
           <div class="row">
             <div class="col-md-8">
-              <h4>Movimientos de mi tarjeta</h4>
+              <h3>VIAJE MONTERREY</h3>
+              <h4>Estatus:  <span class="label label-warning">Edicion</span></h4> 
             </div>
             <div class="col-md-4">
               <span class="pull-right">
-                <ul class="nav nav-pills">
-                  <li><a href="3_facturas_2.html">Ver Facturas</a></li>
-                </ul>
+                <a type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#modalEnviado">
+                    <span class="glyphicon glyphicon-send" aria-hidden="true"> Enviar</span>
+                  </a>
               </span>
             </div>
           </div>
           
+          <div class="row">
+            <div class="col-md-8">
+              <h4>Monto total: $2,876.50</h4>
+            </div>
+          </div>
+        
           <br/>
 
           <!-- Grid for Table content -->
@@ -170,38 +188,15 @@
                   <div class="panel-heading">
 
                       <div class="row">  
-                        <div class="col-md-6">
-                          <h3 class="panel-title">Detalle transacciones</h3>
+                        <div class="col-md-7">
+                          <h3 class="panel-title">Detalle</h3>
                         </div><!-- End of Table Header Left -->
 
-                        <!-- Table Header Left *** ESTATUS FILTRO ***
-                        <div class="col-md-2">
-                          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                            Estatus
-                            <span class="caret"></span>
-                          </button>
-                          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="movimientos.html">Todas</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="conciliadas.html">Conciliadas</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="no_conciliadas.html">No Conciliadas</a></li>    
-                          </ul>
-
-                        </div>End of Table Header Left -->
+                        <!-- Table Header Left -->
+                        <div class="col-md-5">
                         
-                        <!-- Table Header right -->
-                        <div class="col-md-6" aligne="right">
-                          <span class="pull-right">
-                            Periodo:
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuPeriodo" data-toggle="dropdown" aria-expanded="true">
-                              Actual<span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mes anterior</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dos meses atrás</a></li>
-                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tres meses atrás</a></li>    
-                            </ul>
-                          </span>
-                        </div><!-- End of Table Header right -->
+                        </div><!-- End of Table Header Left -->
+                      
                       </div>
 
                   </div>
@@ -212,13 +207,15 @@
                           <table class="table table-striped">
                               <thead>
                                   <tr>
-                                      <th class="text-center">Id</th>
-                                      <th class="text-center">Fecha</th>
-                                      <th class="text-center">Concepto</th>
+                                      <th>Id</th>
+                                      <th>Fecha</th>
+                                      <th>Concepto</th>
                                       <th class="text-center">Monto</th>
-                                      <th class="text-center">Saldo</th>
-                                      <th class="text-center">Factura</th>
-                                      <th class="text-center">Estatus</th>
+                                      <th class="text-center">Monto comprobado</th>
+                                      <th></th>
+                                      <th></th>
+                                      <th>Detalle</th>
+                                      <th></th>
                                   </tr>
                               </thead>
                               <tbody>
@@ -228,12 +225,14 @@
                                       <td>CAPITAL JEANS SA CV</td>
                                       <td><p class="text-right">$ 756.00</p></td>
                                       <td><p class="text-right">$ 756.00</p></td>
-                                      <td>
+                                      <td></td>
+                                      <td>02/04/2015</td>
+                                      <td>Jeans</td>
+                                      <td><p>
                                         <a data-toggle="modal" data-target="#modalDetalleFactura1">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                        </a>
+                                        </a></p>
                                       </td>
-                                      <td><span class="label label-success" href="pdf/file1.pdf">Conciliada</span></td>
                                   </tr>
                                   <tr>
                                       <td>4367124</td>
@@ -241,12 +240,14 @@
                                       <td>POLMAL SA CV</td>
                                       <td><p class="text-right">$1,345.00</p></td>
                                       <td><p class="text-right">$1,345.00</p></td>
-                                      <td>
+                                      <td></td>
+                                      <td>04/04/2015</td>
+                                      <td>Art. Oficina</td>
+                                      <td><p>
                                         <a data-toggle="modal" data-target="#modalDetalleFactura2">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                        </a>
+                                        </a></p>
                                       </td>
-                                      <td><span class="label label-success">Conciliada</span></td>
                                   </tr>
                                   <tr>
                                       <td>7647903</td>
@@ -254,12 +255,14 @@
                                       <td>7 ELEVEN MÉXICO SA CV</td>
                                       <td><p class="text-right">$58.00</p></td>
                                       <td><p class="text-right">$58.00</p></td>
-                                      <td>
+                                      <td></td>
+                                      <td>05/04/2015</td>
+                                      <td>Alimentos</td>
+                                      <td><p>
                                         <a data-toggle="modal" data-target="#modalDetalleFactura3">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                        </a>
+                                        </a></p>
                                       </td>
-                                      <td><span class="label label-success">Conciliada</span></td>
                                   </tr>
                                   <tr>
                                       <td>5846902</td>
@@ -268,11 +271,15 @@
                                       <td><p class="text-right">$533.00</p></td>
                                       <td><p class="text-right">$533.00</p></td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalVinc_Facturas1">
-                                          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                        </a>
+                                        <p class="text-right">
+                                          <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalComprobante">
+                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                          </a>
+                                        </p>
                                       </td>
-                                      <td><span class="label label-danger">No conciliada</span></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
                                   </tr>
                                   <tr>
                                       <td>8649501</td>
@@ -280,15 +287,27 @@
                                       <td>RETIRO DE EFECTIVO</td>
                                       <td><p class="text-right">$1,500.00</p></td>
                                       <td><p class="text-right">$1,500.00</p></td>
+                                      <td></td>
                                       <td>
-                                        <a data-toggle="modal" data-target="#modalDetalleFactura5A">
-                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                        </a>
-                                        <a data-toggle="modal" data-target="#modalDetalleFactura5B">
-                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                        </a>
+                                        <p>13/04/2015</p>
+                                        <p>14/04/2015</p>
                                       </td>
-                                      <td><span class="label label-success">Conciliada</span></td>
+                                      <td>
+                                        <p>Papelería</p>
+                                        <p>Alimentos</p>
+                                      </td>
+                                      <td>
+                                        <p>
+                                          <a data-toggle="modal" data-target="#modalDetalleFactura5A">
+                                            <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                          </a>
+                                        </p>
+                                        <p>
+                                          <a data-toggle="modal" data-target="#modalDetalleFactura5B">
+                                            <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                          </a>
+                                        </p>
+                                      </td>
                                   </tr>
                                   <tr>
                                       <td>7549445</td>
@@ -296,15 +315,27 @@
                                       <td>RETIRO DE EFECTIVO</td>
                                       <td><p class="text-right">$2,000.00</p></td>
                                       <td><p class="text-right">$2,000.00</p></td>
+                                      <td></td>
                                       <td>
-                                        <a data-toggle="modal" data-target="#modalDetalleFacturaNuevaA">
-                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                        </a>
-                                        <a data-toggle="modal" data-target="#modalDetalleFacturaNuevaB">
-                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                        </a>
+                                        <p>19/04/2015</p>
+                                        <p>20/04/2015</p>
                                       </td>
-                                      <td><span class="label label-success">Conciliada</span></td>
+                                      <td>
+                                        <p>Hotel 1a noche</p>
+                                        <p>Cena 2a noche</p>
+                                      </td>
+                                      <td>
+                                        <p>
+                                          <a data-toggle="modal" data-target="#modalDetalleFacturaNuevaA">
+                                            <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                          </a>
+                                        </p>
+                                        <p>
+                                          <a data-toggle="modal" data-target="#modalDetalleFacturaNuevaB">
+                                            <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                          </a>
+                                        </p>
+                                      </td>
                                   </tr>
                               </tbody>
                           </table>
@@ -322,181 +353,158 @@
 
 
 
-    <!-- MODAL VINCULAR FACTURAS #3-->
-    <div class="modal fade" id="modalVinc_Facturas3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <!-- MODAL AGREGA COMPROBANTE -->
+    <div class="modal fade" id="modalComprobante" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Facturas Pendientes</h4>
+            <h4 class="modal-title" id="myModalLabel">Detalle de Factura</h4>
           </div>
           <div class="modal-body">
-          <!--Formulario Alta Justificante-->        
-            <div class="bs-example">
 
-              <!--<h3>Transacciones Conciliadas</h3>-->
-              <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Folio</th>
-                        <th>Fecha</th>
-                        <th>RFC Emisor</th>
-                        <th class="text-center">Monto</th>
-                        <th>Asociar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>987534</td>
-                        <td>11/04/2015</td>
-                        <td>SORIANA SA CV</td>
-                        <td><p class="text-right">$ 345.00</p></td>
-                        <td>
-                          <div class="radio">
-                            <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
-                          </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>76534</td>
-                        <td>19/04/2015</td>
-                        <td>RESTAURANTE EL CAPITAN SA CV</td>
-                        <td><p class="text-right">$ 750.00</p></td>
-                        <td>
-                          <div class="radio">
-                            <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
-                          </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>654373</td>
-                        <td>20/04/2015</td>
-                        <td>HOTEL DE MEXICO SA CV</td>
-                        <td><p class="text-right">$ 1,250.00</p></td>
-                        <td>
-                          <div class="radio">
-                            <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
-                          </div>
-                        </td>
-                    </tr>
-                </tbody>
 
-              </table>
-              <p class="text-center">
-                <a type="button" class="btn btn-warning" href="#">Vincular</a>
-              </p>
-            </div>        
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="active"><a href="#tabFacturas" role="tab" data-toggle="tab">Facturas</a></li>
+              <li><a href="#tabTickets" role="tab" data-toggle="tab">Ticket</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <!-- TAB Facturas -->
+              <div role="tabpanel" class="tab-pane active" id="tabFacturas">
+
+                <!--<h3>Transacciones Conciliadas</h3>-->
+                <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th>Folio</th>
+                          <th>Fecha</th>
+                          <th>RFC Emisor</th>
+                          <th class="text-center">Monto</th>
+                          <th>Asociar</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>987534</td>
+                          <td>11/04/2015</td>
+                          <td>SORIANA SA CV</td>
+                          <td><p class="text-right">$ 345.00</p></td>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
+                            </div>
+                          </td>
+                      </tr>
+                      <tr>
+                        <td>Comentarios: </td>
+                        <td colspan="4">
+                          <div class="form-group">
+                            <label class="sr-only" for="comment">Comentario:</label>
+                            <input type="text" class="form-control" id="date" placeholder="Ingresa Comentarios">
+                          </div>
+                        </td>
+                      </tr>
+                  </tbody>
+
+                </table>
+                <br/>
+                <p class="text-center">
+                  <a type="button" class="btn btn-warning" href="#">Vincular</a>
+                  <a type="button" class="btn btn-warning" href="#">Vincular</a>
+                </p>
+              </div><!-- Termina TAB Facturas -->
+              
+
+              <!-- TAB Tickets -->
+              <div role="tabpanel" class="tab-pane" id="tabTickets">
+                <table class="table">
+                  <tbody>
+                      <tr>
+                        <td>Fecha:</td>
+                        <td>
+                          <div class="form-group">
+                            <label class="sr-only" for="date">labelFecha:</label>
+                            <input type="text" class="form-control" id="date" placeholder="Ingresa Fecha">
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Monto:</td>
+                        <td>
+                          <div class="form-group">
+                            <label class="sr-only" for="date">labelMonto:</label>
+                            <input type="text" class="form-control" id="date" placeholder="Ingresa Monto">
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Ticket:</td>
+                        <td>
+                          <span class="btn btn-default btn-file">
+                            <span class="glyphicon glyphicon-folder-open" aria-hidden="true"> 
+                              Explorar
+                              <input type="file">
+                            </span>
+                          </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Comentarios: </td>
+                        <td>
+                          <div class="form-group">
+                            <label class="sr-only" for="comment">Comentario:</label>
+                            <input type="text" class="form-control" id="date" placeholder="Ingresa Comentarios">
+                          </div>
+                        </td>
+                      </tr>
+                  </tbody>
+                </table>
+                <br/>
+                <p class="text-center">
+                  <a type="button" class="btn btn-warning" href="#">Vincular</a>
+                </p>
+              </div><!-- Termina TAB Tickets -->
+
+            </div>
           </div>
         </div>
       </div>
-    </div><!--TERMINA MODAL VINCULAR FACTURAS -->
+    </div><!--TERMINA AGREGA COMPROBANTE -->
 
-    <!-- MODAL VINCULAR FACTURAS #2-->
-    <div class="modal fade" id="modalVinc_Facturas2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+
+
+
+
+
+
+
+
+  <!-- MODAL AGREGA COMPROBANTE -->
+    <div class="modal fade" id="modalEnviado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Facturas Pendientes</h4>
+            <h4 class="modal-title" id="myModalLabel">Justificante enviado</h4>
           </div>
+          
           <div class="modal-body">
           <!--Formulario Alta Justificante-->        
             <div class="bs-example">
-
-              <!--<h3>Transacciones Conciliadas</h3>-->
-              <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Folio</th>
-                        <th>Fecha</th>
-                        <th>RFC Emisor</th>
-                        <th class="text-center">Monto</th>
-                        <th>Asociar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>987534</td>
-                        <td>11/04/2015</td>
-                        <td>SORIANA SA CV</td>
-                        <td><p class="text-right">$ 345.00</p></td>
-                        <td>
-                          <div class="radio">
-                            <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
-                          </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>76534</td>
-                        <td>19/04/2015</td>
-                        <td>RESTAURANTE EL CAPITAN SA CV</td>
-                        <td><p class="text-right">$ 750.00</p></td>
-                        <td>
-                          <div class="radio">
-                            <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
-                          </div>
-                        </td>
-                    </tr>
-                </tbody>
-
-              </table>
+              <br/>
+              <div class="alert alert-success" role="alert">El justificante ha sido enviado exitosamente.</div>
+              <br/>
               <p class="text-center">
-                <a type="button" class="btn btn-warning" href="#">Vincular</a>
+                <a type="button" class="btn btn-warning" href="7_justificante_detalle_disable_2.html">Aceptar</a>
               </p>
-            </div>        
+            </div>
           </div>
         </div>
       </div>
-    </div><!--TERMINA MODAL VINCULAR FACTURAS -->
-
-    <!-- MODAL VINCULAR FACTURAS #1-->
-    <div class="modal fade" id="modalVinc_Facturas1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Facturas Pendientes</h4>
-          </div>
-          <div class="modal-body">
-          <!--Formulario Alta Justificante-->        
-            <div class="bs-example">
-
-              <!--<h3>Transacciones Conciliadas</h3>-->
-              <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Folio</th>
-                        <th>Fecha</th>
-                        <th>RFC Emisor</th>
-                        <th class="text-center">Monto</th>
-                        <th>Asociar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>987534</td>
-                        <td>11/04/2015</td>
-                        <td>SORIANA SA CV</td>
-                        <td><p class="text-right">$ 345.00</p></td>
-                        <td>
-                          <div class="radio">
-                            <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
-                          </div>
-                        </td>
-                    </tr>
-                </tbody>
-
-              </table>
-              <p class="text-center">
-                <a type="button" class="btn btn-warning" href="2_transacciones_3.html">Vincular</a>
-              </p>
-            </div>        
-          </div>
-        </div>
-      </div>
-    </div><!--TERMINA MODAL VINCULAR FACTURAS -->
-
-
+    </div><!--TERMINA AGREGA COMPROBANTE -->
 
 
 
@@ -922,6 +930,7 @@
         </div>
       </div>
     </div><!--TERMINA MODAL DETALLE FACTURA #Nueva -->
+
 
   </div><!-- End of MAIN CONTAINER -->
 
