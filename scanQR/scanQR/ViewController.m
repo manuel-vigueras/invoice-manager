@@ -159,14 +159,15 @@
     if (metadataObjects != nil && [metadataObjects count] > 0) {
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
-            [_lblStatus performSelectorOnMainThread:@selector(setText:) withObject:[metadataObj stringValue] waitUntilDone:NO];
+            //[_lblStatus performSelectorOnMainThread:@selector(setText:) withObject:[metadataObj stringValue] waitUntilDone:NO];
+            [_lblStatus performSelectorOnMainThread:@selector(setText:) withObject:@"Código capturado" waitUntilDone:NO];
             
             [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
             [_bbitemCamera performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start!" waitUntilDone:NO];
             _isReading = NO;
             
             
-            [self performSelectorOnMainThread:@selector(requestService:) withObject:[metadataObj stringValue] waitUntilDone:NO];
+            [self performSelector:@selector(requestService:) withObject:[metadataObj stringValue]];
             
             if (_audioPlayer) {
                 [_audioPlayer play];
@@ -186,7 +187,10 @@
         
         /*Consulta de servicio Historia Académica*/
         NSString *resultD = [[NSString alloc] initWithString:[notesService sendQRCode:metadataString]];
-        [_lblStatus setText:resultD];
+        if ([resultD isEqualToString:@"success"]) {
+            [_lblStatus performSelectorOnMainThread:@selector(setText:) withObject:@"Código enviado" waitUntilDone:NO];
+        }
+        
         
         //    [loadingView removeFromSuperview];
     }

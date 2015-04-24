@@ -7,6 +7,7 @@
 //
 
 #import "InvoiceVC.h"
+#import "InvoiceCell.h"
 
 @interface InvoiceVC ()
 
@@ -38,6 +39,45 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return _invoices.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *CellIdentifier = @"invoiceCell";
+    
+    InvoiceCell *invoiceCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (invoiceCell == nil) {
+        invoiceCell = [[InvoiceCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    [invoiceCell.lblCompany setText:_invoiceCpy];
+    
+    double dateD = [[(NSDictionary *)[_invoices objectAtIndex:indexPath.row] objectForKey:@"date"] doubleValue];
+    dateD = dateD/1000;
+    NSDate *dateO = [NSDate dateWithTimeIntervalSince1970:dateD];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [invoiceCell.lblDate setText:[dateFormatter stringFromDate:dateO]];
+    
+//    [trxviewCell.lblDate setText:[[(NSDictionary *)[_trxs objectAtIndex:indexPath.row] objectForKey:@"date"] stringValue]];
+    
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
+    [invoiceCell.lblAmount setText:[numberFormatter stringFromNumber:[(NSDictionary *)[_invoices objectAtIndex:indexPath.row] objectForKey:@"amount"]]];
+    
+//    [trxviewCell.lblAmount setText:[[(NSDictionary *)[_trxs objectAtIndex:indexPath.row] objectForKey:@"amount"] stringValue]];
+    
+    
+    [invoiceCell.lblID setText:[(NSDictionary *)[_invoices objectAtIndex:indexPath.row] objectForKey:@"taxRecord"]];
+    [invoiceCell.lblRFCissuer setText:[(NSDictionary *)[_invoices objectAtIndex:indexPath.row] objectForKey:@"rfcIssuer"]];
+    [invoiceCell.lblCompany setText:_invoiceCpy];
+    
+    return invoiceCell;
+}
 
 
 //-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -72,5 +112,4 @@
     return UIInterfaceOrientationPortrait;
     
 }
-
 @end

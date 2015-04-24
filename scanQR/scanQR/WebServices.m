@@ -10,7 +10,8 @@
 #include <ifaddrs.h>
 #include <arpa/inet.h>
 
-static NSString *URLaccess = @"http://192.168.100.150:8080/SiValeDemoServices/services";
+//static NSString *URLaccess = @"http://192.168.0.7:8080/SiValeDemoServices/services";
+static NSString *URLaccess = @"SiValeDemoServices/services";
 
 @implementation WebServices
 
@@ -18,10 +19,10 @@ static NSString *URLaccess = @"http://192.168.100.150:8080/SiValeDemoServices/se
 -(NSString*) sendQRCode:(NSString*)stringCode{
     @try{
         
-//        NSUserDefaults *usr = [NSUserDefaults standardUserDefaults];
-//        NSString *ip = [usr stringForKey:@"ip_preference"];
-//        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/%@/billParameters",ip,URLaccess]];
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/billParameters",URLaccess]];
+        NSUserDefaults *usr = [NSUserDefaults standardUserDefaults];
+        NSString *ip = [usr stringForKey:@"ip_preference"];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/%@/billParameters",ip,URLaccess]];
+//        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/billParameters",URLaccess]];
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
         
@@ -140,10 +141,10 @@ static NSString *URLaccess = @"http://192.168.100.150:8080/SiValeDemoServices/se
 -(NSString*) reqTransactionsWithNo:(NSString*)cardNo {
     @try{
         
-        //        NSUserDefaults *usr = [NSUserDefaults standardUserDefaults];
-        //        NSString *ip = [usr stringForKey:@"ip_preference"];
-        //        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/%@/billParameters",ip,URLaccess]];
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/transactions/%@",URLaccess,cardNo]];
+        NSUserDefaults *usr = [NSUserDefaults standardUserDefaults];
+        NSString *ip = [usr stringForKey:@"ip_preference"];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/%@/transactions/%@",ip,URLaccess,cardNo]];
+//        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/transactions/%@",URLaccess,cardNo]];
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
         [request setHTTPMethod: @"GET"];

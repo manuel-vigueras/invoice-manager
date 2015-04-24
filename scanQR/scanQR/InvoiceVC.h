@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InvoiceVC : UIViewController
+@interface InvoiceVC : UIViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tblMain;
+@property (strong, nonatomic) NSMutableArray *invoices;
+@property (strong, nonatomic) NSString *invoiceCpy;
 
 - (IBAction)removeVC:(id)sender;
 

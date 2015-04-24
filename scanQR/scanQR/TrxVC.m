@@ -22,15 +22,16 @@
     [self.navigationController.navigationBar setHidden:NO];
     // Do any additional setup after loading the view.
     
-    _trxs = [[NSMutableArray alloc] initWithObjects:
-                            [[NSDictionary alloc] initWithObjectsAndKeys:@"4468104",@"id",@"CAPITAL JEANS SA CV",@"concept",[[NSNumber alloc] initWithDouble:756],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"Conciliada",@"status", nil],
-                            [[NSDictionary alloc] initWithObjectsAndKeys:@"4367124",@"id",@"POLMAL SA CV",@"concept",[[NSNumber alloc] initWithDouble:1345],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"Conciliada",@"status", nil],
-                            [[NSDictionary alloc] initWithObjectsAndKeys:@"7647903",@"id",@"7 ELEVEN MÉXICO SA CD",@"concept",[[NSNumber alloc] initWithDouble:158],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"Conciliada",@"status", nil],
-                            [[NSDictionary alloc] initWithObjectsAndKeys:@"5846902",@"id",@"CORPORATIVO NUHAIR SC",@"concept",[[NSNumber alloc] initWithDouble:533],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"No conciliada",@"status", nil],
-                            [[NSDictionary alloc] initWithObjectsAndKeys:@"8649501",@"id",@"GENDRY FRANK MICHEL",@"concept",[[NSNumber alloc] initWithDouble:189],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"Conciliada",@"status", nil],
-                            [[NSDictionary alloc] initWithObjectsAndKeys:@"7549445",@"id",@"ARANZAZU SA CV",@"concept",[[NSNumber alloc] initWithDouble:2560],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"No conciliada",@"status", nil],
-                            nil];
-    
+//    _trxs = [[NSMutableArray alloc] initWithObjects:
+//                            [[NSDictionary alloc] initWithObjectsAndKeys:@"4468104",@"id",@"CAPITAL JEANS SA CV",@"concept",[[NSNumber alloc] initWithDouble:756],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"Conciliada",@"status", nil],
+//                            [[NSDictionary alloc] initWithObjectsAndKeys:@"4367124",@"id",@"POLMAL SA CV",@"concept",[[NSNumber alloc] initWithDouble:1345],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"Conciliada",@"status", nil],
+//                            [[NSDictionary alloc] initWithObjectsAndKeys:@"7647903",@"id",@"7 ELEVEN MÉXICO SA CD",@"concept",[[NSNumber alloc] initWithDouble:158],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"Conciliada",@"status", nil],
+//                            [[NSDictionary alloc] initWithObjectsAndKeys:@"5846902",@"id",@"CORPORATIVO NUHAIR SC",@"concept",[[NSNumber alloc] initWithDouble:533],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"No conciliada",@"status", nil],
+//                            [[NSDictionary alloc] initWithObjectsAndKeys:@"8649501",@"id",@"GENDRY FRANK MICHEL",@"concept",[[NSNumber alloc] initWithDouble:189],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"Conciliada",@"status", nil],
+//                            [[NSDictionary alloc] initWithObjectsAndKeys:@"7549445",@"id",@"ARANZAZU SA CV",@"concept",[[NSNumber alloc] initWithDouble:2560],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"No conciliada",@"status", nil],
+//                            nil];
+//    
+    [self performSelector:@selector(requestService) withObject:nil];
 //    [self requestService];
 }
 
@@ -62,6 +63,13 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    InvoiceVC *invoiceVC = [segue destinationViewController];
+    
+    NSIndexPath *selectedPath = [self.tblMain indexPathForSelectedRow];
+    invoiceVC.invoiceCpy = [(NSDictionary *)[_trxs objectAtIndex:selectedPath.row] objectForKey:@"concept"];
+    invoiceVC.invoices = [(NSDictionary *)[_trxs objectAtIndex:selectedPath.row] objectForKey:@"invoiceList"];
+    
 }
 
 - (IBAction)removeVC:(id)sender{
@@ -124,7 +132,6 @@
 - (IBAction)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if ([[(NSDictionary *)[_trxs objectAtIndex:indexPath.row] objectForKey:@"status"] isEqualToString:@"Conciliada"]) {
         InvoiceVC *invoiceVC = [[InvoiceVC alloc] init];
-        
         [self performSegueWithIdentifier:@"invoiceVC" sender:invoiceVC];
     }
 }

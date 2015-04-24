@@ -23,6 +23,7 @@
 		3680CBC81AA9211100CA2D1F /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3680CBC71AA9211100CA2D1F /* beep.mp3 */; };
 		3680CBCB1AA9323800CA2D1F /* WebServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 3680CBCA1AA9323800CA2D1F /* WebServices.m */; };
 		3680CBE21AAF6B5300CA2D1F /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3680CBE11AAF6B5300CA2D1F /* CoreImage.framework */; };
+		369FB3C11AE9F0060091C17D /* InvoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 369FB3C01AE9F0060091C17D /* InvoiceCell.m */; };
 		36BB3E671AE80F81003B6ACD /* btn-qr.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 36BB3E651AE80F81003B6ACD /* btn-qr.jpg */; };
 		36BB3E681AE80F81003B6ACD /* btn-transacciones.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 36BB3E661AE80F81003B6ACD /* btn-transacciones.jpg */; };
 		36BB3E6B1AE82D2A003B6ACD /* InvoiceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BB3E6A1AE82D2A003B6ACD /* InvoiceVC.m */; };
@@ -73,6 +74,8 @@
 		3680CBC91AA9323800CA2D1F /* WebServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebServices.h; path = ../WebServices.h; sourceTree = "<group>"; };
 		3680CBCA1AA9323800CA2D1F /* WebServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebServices.m; path = ../WebServices.m; sourceTree = "<group>"; };
 		3680CBE11AAF6B5300CA2D1F /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		369FB3BF1AE9F0060091C17D /* InvoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceCell.h; sourceTree = "<group>"; };
+		369FB3C01AE9F0060091C17D /* InvoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceCell.m; sourceTree = "<group>"; };
 		36BB3E651AE80F81003B6ACD /* btn-qr.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "btn-qr.jpg"; sourceTree = "<group>"; };
 		36BB3E661AE80F81003B6ACD /* btn-transacciones.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "btn-transacciones.jpg"; sourceTree = "<group>"; };
 		36BB3E691AE82D2A003B6ACD /* InvoiceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceVC.h; sourceTree = "<group>"; };
@@ -147,9 +150,11 @@
 				36072D721AD343F400CC944F /* TrxVC.m */,
 				36BE96281AD47AEC0073B2B6 /* TrxViewCell.h */,
 				36BE96291AD47AEC0073B2B6 /* TrxViewCell.m */,
-				3680CBBC1AA8D50800CA2D1F /* Main.storyboard */,
 				36BB3E691AE82D2A003B6ACD /* InvoiceVC.h */,
 				36BB3E6A1AE82D2A003B6ACD /* InvoiceVC.m */,
+				369FB3BF1AE9F0060091C17D /* InvoiceCell.h */,
+				369FB3C01AE9F0060091C17D /* InvoiceCell.m */,
+				3680CBBC1AA8D50800CA2D1F /* Main.storyboard */,
 				3680CBA31AA8D39D00CA2D1F /* Images.xcassets */,
 				3680CBA51AA8D39D00CA2D1F /* LaunchScreen.xib */,
 				3680CB961AA8D39D00CA2D1F /* Supporting Files */,
@@ -341,6 +346,7 @@
 				36BB3E6B1AE82D2A003B6ACD /* InvoiceVC.m in Sources */,
 				36072D731AD343F400CC944F /* TrxVC.m in Sources */,
 				3680CBCB1AA9323800CA2D1F /* WebServices.m in Sources */,
+				369FB3C11AE9F0060091C17D /* InvoiceCell.m in Sources */,
 				3680CB991AA8D39D00CA2D1F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
