@@ -7,7 +7,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.latbc.utils.HiveUtils;
+import com.latbc.utils.HiveConnection;
 
 public class HelperMethods {
 	
@@ -17,7 +17,7 @@ public class HelperMethods {
 		
 		boolean savedSuccessfully = false;
 		
-		HiveUtils hiveUtils = new HiveUtils();
+		HiveConnection hiveUtils = HiveConnection.createHiveConnection();
 		try {
 
 			LOGGER.info("Antes de crear la base de datos");
