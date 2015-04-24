@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Justificantes | Si Vale</title>
+    <title>Resumen | Si Vale</title>
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -67,6 +67,16 @@
       code {
         font-size: 80%;
       }
+
+
+      body .modal-sm {
+          /* new custom width */
+          width: 30%;
+          /* must be half of the width, minus scrollbar on the left (30px) */
+          /* margin-left:-375px; */
+          margin-left: 35%;
+      }
+
     </style>
   </head>
   
@@ -74,6 +84,7 @@
 <!-- Body starts here -->
   <body>
 
+    
     <!-- Wrap all page content here -->
     <div id="wrap">
 
@@ -106,7 +117,7 @@
         </div>
       </div> <!-- End of Top Fixed navbar --> 
       
-
+      
     <!-- MAIN CONTAINER 
     =========================================== -->
     <div class="container container-xs">    
@@ -126,9 +137,9 @@
               <span class="pull-right">
                 <div class="navbar">
                   <ul class="nav navbar-nav navbar-default">
-                    <li><a href="1_resumen_0.html" class="btn-sm">Resumen</a></li>
+                    <li class="active"><a href="1_resumen_0.html">Resumen<span class="sr-only">(current)</span></a></li>
                     <li><a href="2_transacciones_0.html" class="btn-sm">Mis Movimientos</a></li>
-                    <li class="active"><a href="#">Mis Justificantes <span class="sr-only">(current)</span></a></li>
+                    <li><a href="6_justificantes_0.html" class="btn-sm">Mis Justificantes</a></li>
                   </ul>
                 </div>
               </span>
@@ -137,109 +148,53 @@
 
           <div class="row">
             <div class="col-md-8">
-              <h4>Justificantes de Gastos</h4>
+              <h3>Resumen de Cuenta</h3>
+              <h2>Monto: $ 2,500.45</h2>
             </div>
           </div>
+          
           <br/>
 
           <!-- Grid for Table content -->
           <div class="row">
-            <div class="col-md-12">
-                  
-                  <!-- Data Table Panel-->
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-
-                      <div class="row">  
-                        <div class="col-md-9">
-                          <!-- Disable
-                          <h3 class="panel-title">Detalle justificantes</h3>
-                           -->
-                        </div><!-- End of Table Header Left -->
-
-                        <!-- Table Header Left -->
-                        <div class="col-md-3">
-                          <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalComprobante">
-                            <span class="glyphicon glyphicon-plus" aria-hidden="true"> Agregar Justificante</span>
-                          </a>
-
-                        </div><!-- End of Table Header Left -->
-                        
-                      </div>
-
-                  </div>
-
-                  <div class="panel-body">
-
-                      <div class="table-responsive">
-                          <table class="table table-striped">
-                              <thead>
-                                  <tr>
-                                      <th>Fecha</th>
-                                      <th>Nombre</th>
-                                      <th>Descripción</th>
-                                      <th>Estatus</th>
-                                      <th>Detalle</th>
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                  <tr>
-                                      <td>02/01/2015</td>
-                                      <td>CAPITAL JEANS SA CV</td>
-                                      <td>Descripcion</td>
-                                      <td><span class="label label-success" href="#">Aprovado</span></td>
-                                      <td><a href="7_justificante_detalle_0.html">Ver</a></td>
-                                  </tr>
-                                  <tr>
-                                      <td>02/01/2015</td>
-                                      <td>CAPITAL JEANS SA CV</td>
-                                      <td>Descripcion</td>
-                                      <td><span class="label label-danger">Rechazado</span></td>
-                                      <td><a href="7_justificante_detalle_0.html">Ver</a></td>
-                                  </tr>
-                                  <tr>
-                                      <td>02/01/2015</td>
-                                      <td>CAPITAL JEANS SA CV</td>
-                                      <td>Descripcion</td>
-                                      <td><span class="label label-warning" href="#">Edicion</span></td>
-                                      <td><a href="7_justificante_detalle_0.html">Ver</a></td>
-                                  </tr>
-                                  <tr>
-                                      <td>02/01/2015</td>
-                                      <td>CAPITAL JEANS SA CV</td>
-                                      <td>Descripcion</td>
-                                      <td><span class="label label-info" href="#">Pendiente</span></td>
-                                      <td><a href="7_justificante_detalle_0.html">Ver</a></td>
-                                  </tr>
-                              </tbody>
-                          </table>
-                      </div> 
-                  </div>
-              </div><!-- End of Data Table Panel-->
+            <div class="col-md-6">
+              <p class="text-center">
+                <a type="button" class="btn btn-warning" href="#">Vincular</a>
+              </p>
             </div>
+
+            <div class="col-md-6">
+              <p class="text-center">
+                <a type="button" class="btn btn-warning" href="#">Vincular</a>
+              </p>
+            </div>
+
           </div><!-- End of Grid for Table content -->
+
+
+          <!-- Grid for Table content -->
+          <div class="row">
+            <div class="col-md-6">
+              <p class="text-center">
+                <a type="button" class="btn btn-warning" href="#">Vincular</a>
+              </p>
+            </div>
+
+            <div class="col-md-6">
+              <p class="text-center">
+                <a type="button" class="btn btn-warning" href="#">Vincular</a>
+              </p>
+            </div>
+
+          </div><!-- End of Grid for Table content -->
+          
+
         </div><!-- Col for Panel -->
         <!-- Col for Banner -->
         <div class="col-md-2">
           <img src="img/sivale-banner.gif" class="img-responsive" alt="Responsive image" aligne="right">
         </div><!-- End of Col for Banner -->
       </div><!-- End of Grid for Panel and Banner -->
-
-	<!-- MODAL AGREGA COMPROBANTE -->
-    <div class="modal fade" id="modalComprobante" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Nuevo justificante</h4>
-          </div>
-          <div class="modal-body">
-          Texto
-          </div>
-        </div>
-      </div>
-    </div><!--TERMINA AGREGA COMPROBANTE -->
-
 
   </div><!-- End of MAIN CONTAINER -->
 
