@@ -67,6 +67,16 @@
       code {
         font-size: 80%;
       }
+
+
+      body .modal-sm {
+          /* new custom width */
+          width: 30%;
+          /* must be half of the width, minus scrollbar on the left (30px) */
+          /* margin-left:-375px; */
+          margin-left: 35%;
+      }
+
     </style>
   </head>
   
@@ -93,57 +103,61 @@
           </div>
           <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
-            <p class="navbar-text" id="date"></p>
+              <p class="navbar-text" id="date"></p>
+            </ul>
+            <ul class="nav navbar-nav">
+              <li><a>Alfonoso López Alcántara</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+              <li><a href="#">
+                <span class="glyphicon glyphicon-log-out" aria-hidden="true">Salir</span></a>
+              </li>
             </ul>
           </div>
         </div>
       </div> <!-- End of Top Fixed navbar --> 
       
-    
-
+      
     <!-- MAIN CONTAINER 
     =========================================== -->
     <div class="container container-xs">    
 
-      <div class="row">
-        <div class="col-md-8">
-          <h5>Nombre:   Alfonso López Alcántara</h5>
-          <h5>Tarjeta:  2364 0015 3816</h5>
-        </div>
-        <div class="col-md-4">
-            <div class="navbar">
-              <ul class="nav navbar-nav navbar-default navbar-right">
-                <li class="active"><a href="#">Mis Movimientos <span class="sr-only">(current)</span></a></li>
-                <li><a href="6_justificantes_0.html" class="btn-sm">Mis Justificantes</a></li>
-              </ul>
-            </div>
-        </div>
-      </div>
-
-
-    <!-- Option with Container of Table
-    =============================================== -->
-    
-
       <!-- Grid for Panel and Banner -->
       <div class="row">
-        
+
         <!-- Col for Panel -->
         <div class="col-md-10">
           
-
-          <table style="width:60%">
-              <tr>
-                <td>
-                  <h4>Movimientos de mi tarjeta</h4>
-                </td>
-                <td>
-                  <ul class="nav nav-pills">
-                    <li><a href="3_facturas_0.html">Ver Facturas</a></li>
+          <div class="row">
+            <div class="col-md-6">
+              <br/>
+              <h5>Tarjeta:  2364 0015 3816</h5>
+            </div>
+            <div class="col-md-6">
+              <span class="pull-right">
+                <div class="navbar">
+                  <ul class="nav navbar-nav navbar-default">
+                    <li><a href="#" class="btn-sm">Resumen</a></li>
+                    <li class="active"><a href="#">Mis Movimientos <span class="sr-only">(current)</span></a></li>
+                    <li><a href="6_justificantes_0.html" class="btn-sm">Mis Justificantes</a></li>
                   </ul>
-                </td>
-              </tr>
-          </table>
+                </div>
+              </span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-8">
+              <h4>Movimientos de mi tarjeta</h4>
+            </div>
+            <div class="col-md-4">
+              <span class="pull-right">
+                <ul class="nav nav-pills">
+                  <li><a href="3_facturas_0.html">Ver Facturas</a></li>
+                </ul>
+              </span>
+            </div>
+          </div>
           
           <br/>
 
@@ -156,13 +170,12 @@
                   <div class="panel-heading">
 
                       <div class="row">  
-                        <div class="col-md-7">
+                        <div class="col-md-6">
                           <h3 class="panel-title">Detalle transacciones</h3>
                         </div><!-- End of Table Header Left -->
 
-                        <!-- Table Header Left -->
+                        <!-- Table Header Left *** ESTATUS FILTRO ***
                         <div class="col-md-2">
-                          <!-- dropdown-1 -->
                           <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
                             Estatus
                             <span class="caret"></span>
@@ -173,21 +186,21 @@
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="no_conciliadas.html">No Conciliadas</a></li>    
                           </ul>
 
-                        </div><!-- End of Table Header Left -->
+                        </div>End of Table Header Left -->
                         
                         <!-- Table Header right -->
-                        <div class="col-md-3" aligne="right">
-                          <!-- dropdown-2 -->
-                          Periodo:
-                          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuPeriodo" data-toggle="dropdown" aria-expanded="true">
-                            Actual
-                            <span class="caret"></span>
-                          </button>
-                          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="movimientos.html">Todas</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="conciliadas.html">Conciliadas</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="no_conciliadas.html">No Conciliadas</a></li>    
-                          </ul>
+                        <div class="col-md-6" aligne="right">
+                          <span class="pull-right">
+                            Periodo:
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuPeriodo" data-toggle="dropdown" aria-expanded="true">
+                              Actual<span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mes anterior</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dos meses atrás</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tres meses atrás</a></li>    
+                            </ul>
+                          </span>
                         </div><!-- End of Table Header right -->
                       </div>
 
@@ -210,7 +223,7 @@
                               </thead>
                               <tbody>
                                   <tr>
-                                      <td><a href="#">4468104</a></td>
+                                      <td>4468104</td>
                                       <td>02/01/2015</td>
                                       <td>CAPITAL JEANS SA CV</td>
                                       <td>$756.00</td>
@@ -222,14 +235,11 @@
                                         <a data-toggle="modal" data-target="#modalDetalleFactura">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
                                         </a>
-                                        <a href="#">
-                                          <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
-                                        </a>
                                       </td>
                                       <td><span class="label label-success" href="pdf/file1.pdf">Conciliada</span></td>
                                   </tr>
                                   <tr>
-                                      <td><a href="#">4367124</a></td>
+                                      <td>4367124</td>
                                       <td>04/01/2015</td>
                                       <td>POLMAL SA CV</td>
                                       <td>$1,345.00</td>
@@ -241,14 +251,11 @@
                                         <a data-toggle="modal" data-target="#modalDetalleFactura">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
                                         </a>
-                                        <a href="#">
-                                          <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
-                                        </a>
                                       </td>
                                       <td><span class="label label-success">Conciliada</span></td>
                                   </tr>
                                   <tr>
-                                      <td><a href="#">7647903</a></td>
+                                      <td>7647903</td>
                                       <td>05/04/2015</td>
                                       <td>7 ELEVEN MÉXICO SA CV</td>
                                       <td>$58.00</td>
@@ -260,14 +267,11 @@
                                         <a data-toggle="modal" data-target="#modalDetalleFactura">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
                                         </a>
-                                        <a href="#">
-                                          <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
-                                        </a>
                                       </td>
                                       <td><span class="label label-success">Conciliada</span></td>
                                   </tr>
                                   <tr>
-                                      <td><a href="#">5846902</a></td>
+                                      <td>5846902</td>
                                       <td>11/01/2015</td>
                                       <td>CORPORATIVO NUHAIR SC</td>
                                       <td>$533.00</td>
@@ -280,7 +284,7 @@
                                       <td><span class="label label-danger">No conciliada</span></td>
                                   </tr>
                                   <tr>
-                                      <td><a href="#">8649501</a></td>
+                                      <td>8649501</td>
                                       <td>13/01/2015</td>
                                       <td>GENDRY FRANK MICHEL</td>
                                       <td>$189.00</td>
@@ -292,14 +296,11 @@
                                         <a data-toggle="modal" data-target="#modalDetalleFactura">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
                                         </a>
-                                        <a href="#">
-                                          <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
-                                        </a>
                                       </td>
                                       <td><span class="label label-success">Conciliada</span></td>
                                   </tr>
                                   <tr>
-                                      <td><a href="#">7549445</a></td>
+                                      <td>7549445</td>
                                       <td>19/01/2015</td>
                                       <td>ARANZAZU SA CV</td>
                                       <td>$2,560.00</td>
@@ -357,7 +358,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="#">4468104</a></td>
+                        <td>4468104</td>
                         <td>02/01/2015</td>
                         <td>CAPITAL JEANS SA CV</td>
                         <td>$756.00</td>
@@ -366,7 +367,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><a href="#">4367124</a></td>
+                        <td>4367124</td>
                         <td>04/01/2015</td>
                         <td>POLMAL SA CV</td>
                         <td>$1,345.00</td>
@@ -375,7 +376,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><a href="#">7647903</a></td>
+                        <td>7647903</td>
                         <td>05/04/2015</td>
                         <td>7 ELEVEN MÉXICO SA CV</td>
                         <td>$58.00</td>
@@ -384,7 +385,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><a href="#">5846902</a></td>
+                        <td>5846902</td>
                         <td>11/01/2015</td>
                         <td>CORPORATIVO NUHAIR SC</td>
                         <td>$533.00</td>
@@ -393,7 +394,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><a href="#">8649501</a></td>
+                        <td>8649501</td>
                         <td>13/01/2015</td>
                         <td>GENDRY FRANK MICHEL</td>
                         <td>$189.00</td>
@@ -402,7 +403,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><a href="#">7549445</a></td>
+                        <td>7549445</td>
                         <td>19/01/2015</td>
                         <td>ARANZAZU SA CV</td>
                         <td>$2,560.00</td>
@@ -412,7 +413,9 @@
                     </tr>
                 </tbody>
               </table>
-              <a type="button" class="btn btn-warning" href="r_tres_monterrey.html">Vincular</a>
+              <p class="text-center">
+                <a type="button" class="btn btn-warning" href="#">Vincular</a>
+              </p>
             </div>        
           </div>
         </div>
@@ -435,6 +438,7 @@
           <div class="modal-body">
           <!--Formulario Alta Justificante-->        
             <div class="bs-example">
+            
               <table class="table table-striped">
                 <tbody>
                     <tr>
@@ -457,18 +461,30 @@
                         <td>Monto:</td>
                       <td>$ 1,235.45</td>
                     </tr>
+
+                    <tr>
+                      <td>Factura:</td>
+                      <td>
+                        <a href="#">
+                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                        </a>
+                        <a href="#">
+                          <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
+                        </a>
+                      </td>
+                    </tr>
+
                 </tbody>
               </table>
-              <a type="button" class="btn btn-warning" href="r_tres_monterrey.html">Desvincular</a>
+              <br/>
+              <p class="text-center">
+                <a type="button" class="btn btn-warning" href="#">Desvincular</a>
+              </p>
             </div>  
           </div>
         </div>
       </div>
     </div><!--TERMINA MODAL DETALLE FACTURA -->
-
-
-
-
   </div><!-- End of MAIN CONTAINER -->
 
    
