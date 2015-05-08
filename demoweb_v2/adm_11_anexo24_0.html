@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Facturas | Si Vale</title>
+    <title>Justificantes | Si Vale</title>
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -37,6 +37,33 @@
         padding: 0 0 60px;
       }
 
+       .blue {
+        color:  #1874CD;
+        font-size: 15px;
+        font-weight: bold;
+      }
+
+       .green {
+        color:  #00AA00;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      
+       .red {
+        color:  #CD3700;
+        font-size: 15px;
+        font-weight: bold;
+      }
+
+      .head4 {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+       .userName {
+        font-size: 15px;
+      }
+      
       /* Set the fixed height of the footer here */
       #footer {
         height: 60px;
@@ -74,7 +101,6 @@
 <!-- Body starts here -->
   <body>
 
-    
     <!-- Wrap all page content here -->
     <div id="wrap">
 
@@ -108,8 +134,6 @@
       </div> <!-- End of Top Fixed navbar --> 
       
 
-
-
     <!-- MAIN CONTAINER 
     =========================================== -->
     <div class="container container-xs">    
@@ -123,14 +147,15 @@
           <div class="row">
             <div class="col-md-6">
               <br/>
+              <h5>Tarjeta:  2364 0015 3816</h5>
             </div>
             <div class="col-md-6">
               <span class="pull-right">
                 <div class="navbar">
                   <ul class="nav navbar-nav navbar-default">
                     <li><a href="adm_1_resumen_0.html" class="btn-sm">Resumen</a></li>
-                    <li class="active"><a href="#">Movimientos <span class="sr-only">(current)</span></a></li>
-                    <li><a href="adm_6_justificantes_0.html" class="btn-sm">Justificantes</a></li>
+                    <li><a href="adm_2_transacciones_0.html" class="btn-sm">Movimientos</a></li>
+                    <li class="active"><a href="#">Justificantes <span class="sr-only">(current)</span></a></li>
                     <li><a href="reportes_tableau.html" class="btn-sm">Reportes</a></li>
                   </ul>
                 </div>
@@ -138,12 +163,11 @@
             </div>
           </div>
 
+          <!-- ROW de botones -->
           <div class="row">
-            <div class="col-md-8">
-              <h4>Facturas Pendientes</h4>
-
-
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuPeriodo" data-toggle="dropdown" aria-expanded="true">
+            <div class="col-md-9">
+              <h4>Facturas vinculadas.</h4>
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuPeriodo" data-toggle="dropdown" aria-expanded="true">
                   Filtro Usuarios <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
@@ -152,24 +176,30 @@
                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mariana Cantú - 876234580</a></li>
                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mariana Cantú - 876234581</a></li>
                 </ul>
+            </div>
 
+            <div class="col-md-3">
+              <div class="btn-group-vertical pull-right" role="group" aria-label="...">
+
+                <button type="button" class="btn btn-default">
+                  <span class="glyphicon glyphicon-check" aria-hidden="true"></span> Validar
+                </button>
+                <button type="button" class="btn btn-default">
+                  <span class="glyphicon glyphicon-open-file" aria-hidden="true"></span> Generar Anexo
+                </button>
+              </div>
             </div>
-            <div class="col-md-4">
-              <span class="pull-right">
-                <ul class="nav nav-pills">
-                  <li><a href="adm_2_transacciones_0.html">Ver Transacciones</a></li>
-                </ul>
-              </span>
-            </div>
-          </div>
-          
+          </div><!-- TERMINA ROW de botones -->
+
           <br/>
 
           <!-- Grid for Table content -->
           <div class="row">
             <div class="col-md-12">
                   
-                  <!-- Data Table Panel-->
+                  
+
+              <!-- Data Table Panel-->
               <div class="panel panel-default">
                   <div class="panel-heading">
                       <h3 class="panel-title">Detalle facturas</h3>
@@ -187,6 +217,7 @@
                                     <th style="width: 100px;">Fecha</th>
                                     <th>RFC Emisor</th>
                                     <th class="text-right" style="width: 100px;">Monto</th>
+                                    <th style="width: 120px;">Validacion SAT</th>
                                   </tr>
                               </thead>
                               <tbody>
@@ -197,6 +228,7 @@
                                       <td>11/04/2015</td>
                                       <td>SORIANA SA CV</td>
                                       <td><p class="text-right">$ 345.00</p></td>
+                                      <td><span class="label label-success">válido</span></td>
                                   </tr>
                                   <tr>
                                       <td>Mariana Cantú</td>
@@ -205,6 +237,7 @@
                                       <td>19/04/2015</td>
                                       <td>RESTAURANTE EL CAPITAN SA CV</td>
                                       <td><p class="text-right">$ 750.00</p></td>
+                                      <td><span class="label label-success">válido</span></td>
                                   </tr>
                                   <tr>
                                       <td>Mariana Cantú</td>
@@ -213,12 +246,15 @@
                                       <td>20/04/2015</td>
                                       <td>HOTEL DE MEXICO SA CV</td>
                                       <td><p class="text-right">$ 1,250.00</p></td>
+                                      <td><span class="label label-danger">inválido</span></td>
                                   </tr>
                               </tbody>
                           </table>
                       </div> 
                   </div>
               </div><!-- End of Data Table Panel-->
+
+
             </div>
           </div><!-- End of Grid for Table content -->
         </div><!-- Col for Panel -->
@@ -228,9 +264,10 @@
         </div><!-- End of Col for Banner -->
       </div><!-- End of Grid for Panel and Banner -->
 
+
   </div><!-- End of MAIN CONTAINER -->
 
-</div>
+   </div>
     <!-- Footer
     ================================================== -->
     <div id="footer">
@@ -250,6 +287,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-filestyle.min.js"> </script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">$(function () {$('.datepicker').datepicker();});</script>
     <script>var d = new Date();document.getElementById("date").innerHTML = d.toDateString();</script>
   </body>
 </html>

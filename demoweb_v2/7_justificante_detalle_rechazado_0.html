@@ -173,9 +173,9 @@
             </div>
           </div>
           
-          <div class="row">            
+          <div class="row">
             <div class="col-md-3">
-              <h4>Estatus:  <span class="label label-warning">Edicion</span></h4> 
+              <h4>Estatus:  <span class="label label-danger">Rechazado</span></h4> 
             </div>
             <div class="col-md-4">
               <h4 style="color:  #00AA00;">Monto total: $3,659.00</h4>
@@ -188,8 +188,14 @@
               </span>
             </div>
           </div>
+          
+          <!-- Mensaje del contador/Supervisor -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="alert alert-warning" role="alert">Motivos del rechazo del justificante.</div>
+            </div>
+          </div>
         
-          <br/>
 
           <!-- Grid for Table content -->
           <div class="row">
@@ -232,7 +238,7 @@
                                       <th style="width:  80px;"></th>
                                       <th style="width:  80px;">Detalle</th>
                                       <th style="width:  30px;"></th>
-                                      <th style="width:  40px;">Acción</th>
+                                      <th style="width:  120px;">Acción</th>
                                   </tr>
                               </thead>
                               <tbody>
@@ -251,13 +257,16 @@
                                         </a></p>
                                       </td>
                                       <td>
+                                        <span class="label label-danger pull-left">Rechazado</span>
                                         <div class="btn-group pull-right ">
                                             <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
                                               <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
                                             </button>
                                             <ul class="dropdown-menu" role="menu">
-                                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Editar</a></li>
+                                              <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#modalVerInfo" href="#">Ver info</a></li>
                                               <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#modalQuitarTrx" href="#">Quitar de justificante</a></li>
+                                              
+                                              
                                             </ul>
                                         </div>
                                       </td>
@@ -303,6 +312,7 @@
                                         </a></p>
                                       </td>
                                       <td>
+                                        <span class="label label-danger pull-left">Rechazado</span>
                                         <div class="btn-group pull-right ">
                                             <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
                                               <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
@@ -1091,6 +1101,53 @@
       </div>
     </div><!--TERMINA ENVIAR -->
 
+
+    <!-- MODAL PARA REMOVER TRX -->
+    <div class="modal fade" id="modalQuitarTrx" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Rechazar</h4>
+          </div>
+          <div class="modal-body">
+            <div class="bs-example">
+              <br/>
+              <p><span class="label label-danger">Atención</span> La transacción será removida del justificante.</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <p class="text-center">
+              <a type="button" class="btn btn-warning" href="#">Aceptar</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div><!-- TERMINA MODAL PARA REMOVER TRX -->
+
+
+    <!-- MODAL VER INFO DE TRX RECHAZADA -->
+    <div class="modal fade" id="modalVerInfo" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Información</h4>
+          </div>
+          <div class="modal-body">
+            <div class="bs-example">
+              <br/>
+              <p>El motivo del rechazo de esta transacción.</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <p class="text-center">
+              <a type="button" class="btn btn-warning" href="#">Aceptar</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div><!-- TERMINA MODAL VER INFO DE TRX RECHAZADA -->
 
   </div><!-- End of MAIN CONTAINER -->
 
