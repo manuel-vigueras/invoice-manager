@@ -145,18 +145,20 @@
         <div class="col-md-10">
           
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-3">
               <br/>
               <h5>Tarjeta:  2364 0015 3816</h5>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-9">
               <span class="pull-right">
                 <div class="navbar">
                   <ul class="nav navbar-nav navbar-default">
                     <li><a href="adm_1_resumen_0.html" class="btn-sm">Resumen</a></li>
                     <li><a href="adm_2_transacciones_0.html" class="btn-sm">Movimientos</a></li>
-                    <li class="active"><a href="#">Justificantes <span class="sr-only">(current)</span></a></li>
+                    <li><a href="adm_6_justificantes_0.html" class="btn-sm">Justificantes</a></li>
                     <li><a href="reportes_tableau.html" class="btn-sm">Reportes</a></li>
+                    <li class="active"><a href="#">SAT <span class="sr-only">(current)</span></a></li>
+                    <li><a href="adm_12_settings_0.html" class="btn-sm">Configuración</a></li>
                   </ul>
                 </div>
               </span>
@@ -180,11 +182,10 @@
 
             <div class="col-md-3">
               <div class="btn-group-vertical pull-right" role="group" aria-label="...">
-
-                <button type="button" class="btn btn-default">
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalValidar">
                   <span class="glyphicon glyphicon-check" aria-hidden="true"></span> Validar
                 </button>
-                <button type="button" class="btn btn-default">
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalAnexo24">
                   <span class="glyphicon glyphicon-open-file" aria-hidden="true"></span> Generar Anexo
                 </button>
               </div>
@@ -217,7 +218,7 @@
                                     <th style="width: 100px;">Fecha</th>
                                     <th>RFC Emisor</th>
                                     <th class="text-right" style="width: 100px;">Monto</th>
-                                    <th style="width: 120px;">Validacion SAT</th>
+                                    <th style="width: 120px;">Validación SAT</th>
                                   </tr>
                               </thead>
                               <tbody>
@@ -264,6 +265,74 @@
         </div><!-- End of Col for Banner -->
       </div><!-- End of Grid for Panel and Banner -->
 
+
+
+
+
+
+
+
+<!-- ==================================================
+                    MODAL VIEWS
+    ================================================== -->
+
+
+
+
+<!-- MODAL VALIDACION SAT -->
+    <div class="modal fade" id="modalValidar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog ">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Validación SAT</h4>
+          </div>
+          
+          <div class="modal-body">
+          <!--Formulario Alta Justificante-->        
+            <div class="bs-example">
+              <br/>
+              <div class="alert alert-success" role="alert">El proceso de validación de facturas ha sido terminado satisfactoriamente.</div>
+              <br/>
+              <p class="text-center">
+                <a type="button" class="btn btn-warning" href="7_justificante_detalle_disable_0.html">Aceptar</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--TERMINA MODAL VALIDACION SAT -->
+
+
+
+<!-- MODAL ANEXO 24 -->
+    <div class="modal fade" id="modalAnexo24" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">ANEXO 24</h4>
+          </div>
+          
+          <div class="modal-body">
+          <!--Formulario Alta Justificante-->        
+            <div class="bs-example">
+              <br/>
+              <div class="alert alert-success" role="alert">El archivo XML del anexo 24 ha sido creado satisfactoriamente.</div>
+              <br/>
+              <p class="text-center">
+                <a type="button" class="btn btn-warning" href="7_justificante_detalle_disable_0.html">Aceptar</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--TERMINA MODAL ANEXO 24 -->
+
+
+<!-- ==================================================
+                    TEMRINA MODAL VIEWS
+    ================================================== -->
 
   </div><!-- End of MAIN CONTAINER -->
 
