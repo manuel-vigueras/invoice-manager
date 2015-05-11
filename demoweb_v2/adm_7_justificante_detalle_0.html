@@ -126,7 +126,7 @@
               <li><a>Alfonso López Alcántara</a></li>
             </ul>
             <ul class="nav navbar-nav">
-              <li><a href="adm_login.html">
+              <li><a href="login_adm.html">
                 <span class="glyphicon glyphicon-log-out" aria-hidden="true">Salir</span></a>
               </li>
             </ul>
@@ -148,6 +148,7 @@
           <div class="row">
             <div class="col-md-3">
               <br/>
+              <h5>David Gutiérrez Soto</h5>
               <h5>Tarjeta:  2364 0015 3816</h5>
             </div>
             <div class="col-md-9">
@@ -166,39 +167,41 @@
             </div>
           </div>
 
+          <!-- ROW de botones -->
           <div class="row">
-            <div class="col-md-8">
-              <h3>VIAJE MONTERREY</h3>
-              <h4>Del  23/04/2015  al  24/04/2015</h4> 
-            </div>
-            <div class="col-md-4">
-            </div>
-          </div>
-          
-          <div class="row">            
-            <div class="col-md-3">
-              <h4>Estatus:  <span class="label label-warning">Edicion</span></h4> 
-            </div>
-            
-            <div class="col-md-4">
-              <h4 style="color:  #00AA00;">Monto total: $3,659.00</h4>
-            </div>
-            <div class="col-md-5">
-              <span class="pull-right">
-                <a type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#modalAceptaJustificante">
-                    <span class="glyphicon glyphicon-ok" aria-hidden="true"> Aceptar</span>
-                  </a>
-              </span>
+            <div class="col-md-9">
 
-              <span class="pull-right">
-                <a type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#modalRechazaJustificante">
-                    <span class="glyphicon glyphicon-remove" aria-hidden="true"> Rechazar</span>
-                  </a>
-              </span>
+              <div class="row">
+                <div class="col-md-12">
+                  <h3>VIAJE MONTERREY</h3>
+                  <h4>Del  23/04/2015  al  24/04/2015</h4> 
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-3">
+                  <h4>Estatus:  <span class="label label-info">Pendiente</span></h4> 
+                </div>
+                <div class="col-md-4">
+                  <h4 style="color:  #00AA00;">Monto total: $3,659.00</h4>
+                </div>
+              </div>
+
             </div>
-          </div>
-        
-          <br/>
+            <div class="col-md-3">
+              <br/>
+              <div class="btn-group-vertical pull-right" role="group" aria-label="...">
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalAceptaJustificante">
+                  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Aceptar
+                </button>
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalRechazaJustificante">
+                  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Rechazar
+                </button>
+              </div>
+            </div>
+          </div><!-- TERMINA ROW de botones -->
+          
 
           <!-- Grid for Table content -->
           <div class="row">
@@ -209,15 +212,19 @@
                   <div class="panel-heading">
 
                       <div class="row">  
-                        <div class="col-md-7">
+                        <div class="col-md-6">
                           <h3 class="panel-title">Detalle</h3>
                         </div><!-- End of Table Header Left -->
 
-                        <!-- Table Header Left -->
-                        <div class="col-md-5">
-                        
-                        </div><!-- End of Table Header Left -->
-                      
+                        <!-- Table Header Right -->
+                        <div class="col-md-6">
+                          <button type="button" class="btn btn-default btn-sm pull-right" 
+                                  data-toggle="tooltip" data-placement="left" title="Agregar transacciones">
+                              <span data-toggle="modal" data-target="#modalAddTrxs">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>    
+                              </span>
+                          </button>
+                        </div><!-- End of Table Header Right -->
                       </div>
 
                   </div>
@@ -1224,12 +1231,161 @@
                     MODAL VIEWS
     ================================================== -->
 
-
-
-
-
-
-
+<!-- MODAL AGREGAR USUARIO -->
+    <div class="modal fade" id="modalAddTrxs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Agregar transacciones a justificante.</h4>
+          </div>
+          <div class="modal-body">
+              <div class="table-responsive">
+                  <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Id</th>
+                          <th>Fecha</th>
+                          <th>Concepto</th>
+                          <th class="text-center">Monto</th>
+                          <th>Factura</th>
+                          <th>Estatus</th>
+                          <th>Selección</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>4468104</td>
+                              <td>02/04/2015</td>
+                              <td>CAPITAL JEANS SA CV</td>
+                              <td><p class="text-right">$ 756.00</p></td>
+                              <td>
+                                <a>
+                                  <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                </a>
+                              </td>
+                              <td><span class="label label-success" href="pdf/file1.pdf">Conciliada</span></td>
+                              <td>
+                                <span class="pull-left">
+                                  <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox">
+                                    </label>
+                                  </div>
+                                </span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>4367124</td>
+                              <td>04/04/2015</td>
+                              <td>POLMAL SA CV</td>
+                              <td><p class="text-right">$1,345.00</p></td>
+                              <td>
+                                <a>
+                                  <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                </a>
+                              </td>
+                              <td><span class="label label-success">Conciliada</span></td>
+                              <td>
+                                <span class="pull-left">
+                                  <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox">
+                                    </label>
+                                  </div>
+                                </span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>7647903</td>
+                              <td>05/04/2015</td>
+                              <td>7 ELEVEN MÉXICO SA CV</td>
+                              <td><p class="text-right">$58.00</p></td>
+                              <td>
+                                <a>
+                                  <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                </a>
+                              </td>
+                              <td><span class="label label-success">Conciliada</span></td>
+                              <td>
+                                <span class="pull-left">
+                                  <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox">
+                                    </label>
+                                  </div>
+                                </span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>5846902</td>
+                              <td>11/04/2015</td>
+                              <td>CORPORATIVO NUHAIR SC</td>
+                              <td><p class="text-right">$533.00</p></td>
+                              <td></td>
+                              <td><span class="label label-danger">No conciliada</span></td>
+                              <td>
+                                <span class="pull-left">
+                                  <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox">
+                                    </label>
+                                  </div>
+                                </span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>8649501</td>
+                              <td>13/04/2015</td>
+                              <td>RETIRO DE EFECTIVO</td>
+                              <td><p class="text-right">$1,500.00</p></td>
+                              <td>
+                                <a>
+                                  <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                </a>
+                                <a>
+                                  <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                </a>
+                              </td>
+                              <td><span class="label label-success">Conciliada</span></td>
+                              <td>
+                                <span class="pull-left">
+                                  <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox">
+                                    </label>
+                                  </div>
+                                </span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>7549445</td>
+                              <td>19/04/2015</td>
+                              <td>RETIRO DE EFECTIVO</td>
+                              <td><p class="text-right">$2,000.00</p></td>
+                              <td></td>
+                              <td><span class="label label-danger">No conciliada</span></td>
+                              <td>
+                                <span class="pull-left">
+                                  <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox">
+                                    </label>
+                                  </div>
+                                </span>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div> 
+              <br/>
+              <p class="text-center">
+                <a type="button" class="btn btn-warning" href="#">Agregar</a>
+              </p>
+          </div>
+        </div>
+      </div>
+    </div><!--TERMINA MODAL AGREGAR USUARIO -->
 
 
 
