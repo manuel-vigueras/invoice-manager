@@ -123,7 +123,7 @@
               <p class="navbar-text" id="date"></p>
             </ul>
             <ul class="nav navbar-nav">
-              <li><a>Alfonso López Alcántara</a></li>
+              <li><a>Francisco Rodríguez Peña</a></li>
             </ul>
             <ul class="nav navbar-nav">
               <li><a href="login.html">
@@ -148,6 +148,7 @@
           <div class="row">
             <div class="col-md-6">
               <br/>
+              <h5>Alfonso López Alcántara</h5>
               <h5>Tarjeta:  2364 0015 3816 4532</h5>
             </div>
             <div class="col-md-6">
@@ -165,31 +166,36 @@
 
           <div class="row">
             <div class="col-md-8">
-              <h3>MONTERREY</h3>
-              <h4>Visita a planta de Monterrey</h4>
-              <h4>Del  25/04/2015  al  30/04/2015</h4> 
+              <h3>PACHUCA</h3>
+              <h4>Visita a planta de Pachuca.</h4>
+              <h4>Del  02/03/2015  al  04/03/2015</h4> 
             </div>
             <div class=" col-md-4">
             </div>
           </div>
           
-          <div class="row">            
+          <div class="row">
             <div class="col-md-3">
-              <h4>Estatus:  <span class="label label-warning">Edicion</span></h4> 
+              <h4>Estatus:  <span class="label label-success">Aprobado</span></h4> 
             </div>
             <div class="col-md-7">
-              <h4 style="color:  #00AA00;">Monto total comprobado: $3,659.00</h4>
+              <h4 style="color:  #00AA00;">Monto total comprobado: $2,923.00</h4>
             </div>
             <div class="col-md-2">
               <span class="pull-right">
-                <a type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#modalEnviado">
+                <a type="button" class="btn btn-default btn-md" disabled="disabled" data-toggle="modal" data-target="#modalEnviado">
                     <span class="glyphicon glyphicon-send" aria-hidden="true"> Enviar</span>
                   </a>
               </span>
             </div>
           </div>
-        
-          <br/>
+
+          <!-- Mensaje del contador/Supervisor -->
+          <div class="row">
+            <div class="col-md-12">
+              <div class="alert alert-success" role="alert">Todos los movimientos de este justificante han sido revisados.</div>
+            </div>
+          </div>
 
           <!-- Grid for Table content -->
           <div class="row">
@@ -206,12 +212,6 @@
 
                         <!-- Table Header Left -->
                         <div class="col-md-5">
-                          <button type="button" class="btn btn-default btn-sm pull-right" 
-                                  data-toggle="tooltip" data-placement="left" title="Agregar transacciones">
-                              <span data-toggle="modal" data-target="#modalAddTrxs">
-                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>    
-                              </span>
-                          </button>
                         </div><!-- End of Table Header Left -->
                       
                       </div>
@@ -232,70 +232,15 @@
                                       <th style="width:  30px;" ></th>
                                       <th style="width:  60px;" >Factura</th>
                                       <th style="width:  50px;" >Estatus</th>
-                                      <th style="width:  60px;" >Acción</th>
                                   </tr>
                               </thead>
                               <tbody>
                                   <tr>
-                                      <td>7549445</td>
-                                      <td>28/04/2015</td>
-                                      <td>RETIRO DE EFECTIVO</td>
-                                      <td><p class="text-right">$ 2,000.00</p></td>
-                                      <td><p class="text-right">$ 2,000.00</p></td>
-                                      <td></td>
-                                      <td>
-                                        <p>
-                                          <a data-toggle="modal" data-target="#modalDetalleFactura5A">
-                                            <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                          </a>
-                                          <a data-toggle="modal" data-target="#modalDetalleFactura5B">
-                                            <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                          </a>
-                                        </p>
-                                      </td>
-                                      <td><span class="label label-success">Conciliada</span></td>
-                                      <td>
-                                        <button type="button" class="btn btn-default btn-xs pull-right" 
-                                                data-toggle="tooltip" data-placement="left" title="Quitar del justificante">
-                                            <span data-toggle="modal" data-target="#modalQuitarTrx">
-                                              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>    
-                                            </span>
-                                        </button>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>8649501</td>
-                                      <td>27/04/2015</td>
-                                      <td>RETIRO DE EFECTIVO</td>
-                                      <td><p class="text-right">$ 1,500.00</p></td>
-                                      <td><p class="text-right">$ 1,500.00</p></td>
-                                      <td></td>
-                                      <td>
-                                        <p>
-                                          <a data-toggle="modal" data-target="#modalDetalleFactura5A">
-                                            <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                          </a>
-                                          <a data-toggle="modal" data-target="#modalDetalleFactura5B">
-                                            <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                          </a>
-                                        </p>
-                                      </td>
-                                      <td><span class="label label-success">Conciliada</span></td>
-                                      <td>
-                                        <button type="button" class="btn btn-default btn-xs pull-right" 
-                                                data-toggle="tooltip" data-placement="left" title="Quitar del justificante">
-                                            <span data-toggle="modal" data-target="#modalQuitarTrx">
-                                              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>    
-                                            </span>
-                                        </button>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>5846902</td>
-                                      <td>26/04/2015</td>
-                                      <td>RESTAURANTE CHILIS SA DE CV</td>
-                                      <td><p class="text-right">$ 533.00</p></td>
-                                      <td><p class="text-right">$ 533.00</p></td>
+                                      <td>4468104</td>
+                                      <td>02/03/2015</td>
+                                      <td>RESTAURANTE LA MILPA</td>
+                                      <td><p class="text-right">$ 250.00</p></td>
+                                      <td><p class="text-right">$ 250.00</p></td>
                                       <td></td>
                                       <td>
                                         <p>
@@ -305,21 +250,13 @@
                                         </p>
                                       </td>
                                       <td><span class="label label-success">Conciliada</span></td>
-                                      <td>
-                                        <button type="button" class="btn btn-default btn-xs pull-right" 
-                                                data-toggle="tooltip" data-placement="left" title="Quitar del justificante">
-                                            <span data-toggle="modal" data-target="#modalQuitarTrx">
-                                              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>    
-                                            </span>
-                                        </button>
-                                      </td>
                                   </tr>
                                   <tr>
                                       <td>7647903</td>
-                                      <td>25/04/2015</td>
+                                      <td>03/04/2015</td>
                                       <td>7 ELEVEN MÉXICO SA CV</td>
-                                      <td><p class="text-right">$ 58.00</p></td>
-                                      <td><p class="text-right">$ 58.00</p></td>
+                                      <td><p class="text-right">$128.00</p></td>
+                                      <td><p class="text-right">$128.00</p></td>
                                       <td></td>
                                       <td>
                                         <p>
@@ -329,21 +266,13 @@
                                         </p>
                                       </td>
                                       <td><span class="label label-success">Conciliada</span></td>
-                                      <td>
-                                        <button type="button" class="btn btn-default btn-xs pull-right" 
-                                                data-toggle="tooltip" data-placement="left" title="Quitar del justificante">
-                                            <span data-toggle="modal" data-target="#modalQuitarTrx">
-                                              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>    
-                                            </span>
-                                        </button>
-                                      </td>
                                   </tr>
                                   <tr>
                                       <td>4367124</td>
-                                      <td>25/04/2015</td>
-                                      <td>POLMAL SA CV</td>
-                                      <td><p class="text-right">$ 1,345.00</p></td>
-                                      <td><p class="text-right">$ 1,345.00</p></td>
+                                      <td>04/03/2015</td>
+                                      <td>HOTEL HIDALGO</td>
+                                      <td><p class="text-right">$2,545.00</p></td>
+                                      <td><p class="text-right">$2,545.00</p></td>
                                       <td></td>
                                       <td>
                                         <p>
@@ -353,40 +282,7 @@
                                         </p>
                                       </td>
                                       <td><span class="label label-success">Conciliada</span></td>
-                                      <td>
-                                        <button type="button" class="btn btn-default btn-xs pull-right" 
-                                                data-toggle="tooltip" data-placement="left" title="Quitar del justificante">
-                                            <span data-toggle="modal" data-target="#modalQuitarTrx">
-                                              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>    
-                                            </span>
-                                        </button>
-                                      </td>
                                   </tr>
-                                  <tr>
-                                      <td>4468104</td>
-                                      <td>25/04/2015</td>
-                                      <td>CAPITAL JEANS SA CV</td>
-                                      <td><p class="text-right">$ 756.00</p></td>
-                                      <td><p class="text-right">$ 756.00</p></td>
-                                      <td></td>
-                                      <td>
-                                        <p>
-                                          <a data-toggle="modal" data-target="#modalDetalleFactura5A">
-                                            <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                          </a>
-                                        </p>
-                                      </td>
-                                      <td><span class="label label-success">Conciliada</span></td>
-                                      <td>
-                                        <button type="button" class="btn btn-default btn-xs pull-right" 
-                                                data-toggle="tooltip" data-placement="left" title="Quitar del justificante">
-                                            <span data-toggle="modal" data-target="#modalQuitarTrx">
-                                              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>    
-                                            </span>
-                                        </button>
-                                      </td>
-                                  </tr>
-
                               </tbody>
                           </table>
                       </div> 
@@ -1061,7 +957,7 @@
               <div class="alert alert-success" role="alert">El justificante ha sido enviado exitosamente.</div>
               <br/>
               <p class="text-center">
-                <a type="button" class="btn btn-warning" href="">Aceptar</a>
+                <a type="button" class="btn btn-warning" href="7_justificante_detalle_disable_0.html">Aceptar</a>
               </p>
             </div>
           </div>
@@ -1070,67 +966,52 @@
     </div><!--TERMINA ENVIAR -->
 
 
-
-
-<!-- ==================================================
-                    MODAL VIEWS
-    ================================================== -->
-
-<!-- MODAL AGREGAR TRANSACCION -->
-    <div class="modal fade" id="modalAddTrxs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
+    <!-- MODAL PARA REMOVER TRX -->
+    <div class="modal fade" id="modalQuitarTrx" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Agregar transacciones a justificante.</h4>
+            <h4 class="modal-title" id="myModalLabel">Rechazar</h4>
           </div>
           <div class="modal-body">
-              <div class="table-responsive">
-                  <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th>Id</th>
-                          <th>Fecha</th>
-                          <th>Concepto</th>
-                          <th class="text-center">Monto</th>
-                          <th>Factura</th>
-                          <th>Estatus</th>
-                          <th>Selección</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td>5846902</td>
-                              <td>01/05/2015</td>
-                              <td>SUSHI ROLL SA DE CV</td>
-                              <td><p class="text-right">$170.20</p></td>
-                              <td></td>
-                              <td><span class="label label-danger">No Conciliada</span></td>
-                              <td>
-                                <span class="pull-left">
-                                  <div class="checkbox">
-                                    <label>
-                                      <input type="checkbox">
-                                    </label>
-                                  </div>
-                                </span>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </div> 
+            <div class="bs-example">
               <br/>
-              <p class="text-center">
-                <a type="button" class="btn btn-warning" href="7_justificante_detalle_1.html">Agregar</a>
-              </p>
+              <p><span class="label label-danger">Atención</span> La transacción será removida del justificante.</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <p class="text-center">
+              <a type="button" class="btn btn-warning" href="#">Aceptar</a>
+            </p>
           </div>
         </div>
       </div>
-    </div><!--TERMINA MODAL AGREGAR TRANSACCION -->
+    </div><!-- TERMINA MODAL PARA REMOVER TRX -->
 
-<!-- ==================================================
-                    TEMRINA MODAL VIEWS
-    ================================================== -->
+
+    <!-- MODAL VER INFO DE TRX RECHAZADA -->
+    <div class="modal fade" id="modalVerInfo" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Información</h4>
+          </div>
+          <div class="modal-body">
+            <div class="bs-example">
+              <br/>
+              <p>El motivo del rechazo de esta transacción.</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <p class="text-center">
+              <a type="button" class="btn btn-warning" href="#">Aceptar</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div><!-- TERMINA MODAL VER INFO DE TRX RECHAZADA -->
 
   </div><!-- End of MAIN CONTAINER -->
 
@@ -1157,7 +1038,6 @@
     <script src="js/bootstrap-datepicker.js"></script>
     <script type="text/javascript">$(function () {$('.datepicker').datepicker();});</script>
     <script>var d = new Date();document.getElementById("date").innerHTML = d.toDateString();</script>
-    <script>$(function () {$('[data-toggle="tooltip"]').tooltip()})</script>
     <script>
         function propinaFunction(montoId, propinaId, totalId, alertaId) {
             var total = 0;
@@ -1210,3 +1090,6 @@
     </script>
   </body>
 </html>
+
+
+

@@ -169,27 +169,46 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-md-8">
-              <h4>Movimientos de usuarios</h4>
 
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuPeriodo" data-toggle="dropdown" aria-expanded="true">
+
+          <div class="row">
+            <div class="col-md-3">
+              <h4>Movimientos de usuarios</h4>
+            </div>
+            <div class="col-md-3 col-md-offset-6">
+              <span class="pull-right">
+                <ul class="nav nav-pills">
+                  <li><a href="adm_3_facturas_0.html">Ver Facturas no conciliadas</a></li>
+                </ul>
+              </span>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-2">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuPeriodo" data-toggle="dropdown" aria-expanded="true">
                   Filtro Usuarios <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">David Gutiérrez - 876234578</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">David Gutiérrez - 876234579</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mariana Cantú - 876234580</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mariana Cantú - 876234581</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Todos</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2364001538164532 - Alfonso López Alcántara</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2364001538876234 - David Gutiérrez Hernández</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2364001538167285 - Antonio Cortés Zamora</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2364001538145683 - Mariana Ramírez Cantú</a></li>
                 </ul>
-        
             </div>
-            <div class="col-md-4">
-              <span class="pull-right">
-                <ul class="nav nav-pills">
-                  <li><a href="adm_3_facturas_0.html">Ver Facturas</a></li>
+            <div class="col-md-3">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuPeriodo" data-toggle="dropdown" aria-expanded="true">
+                  Filtro Justificantes <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Todos</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Pachuca</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Acapulco</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">California</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Monterrey</a></li>
                 </ul>
-              </span>
             </div>
           </div>
 
@@ -248,28 +267,28 @@
                           <table class="table table-striped">
                               <thead>
                                   <tr>
-                                      <th class="text-center" style="width: 100px;">Usuario</th>
-                                      <th class="text-center" style="width: 100px;">Tarjeta</th>
-                                      <th class="text-center" style="width:  80px;">Id</th>
-                                      <th class="text-center" style="width: 100px;">Fecha</th>
-                                      <th class="text-center">Concepto</th>
+                                      <th style="width: 100px;">Usuario</th>
+                                      <th style="width: 100px;">Tarjeta</th>
+                                      <th style="width:  60px;">Id</th>
+                                      <th style="width:  80px;">Fecha</th>
+                                      <th >Concepto</th>
                                       <th class="text-center" style="width: 100px;">Monto</th>
                                       <th class="text-center" style="width: 100px;">Saldo</th>
-                                      <th class="text-center" style="width: 100px;">Justificante</th>
-                                      <th class="text-center" style="width:  40px;">Factura</th>
-                                      <th class="text-center" style="width:  40px;">Estatus</th>
+                                      <th style="width:  80px;">Justificante</th>
+                                      <th style="width:  40px;">Factura</th>
+                                      <th style="width:  60px;">Estatus</th>
                                   </tr>
                               </thead>
                               <tbody>
                                   <tr>
-                                      <td>David Gutierrez</td>
-                                      <td>876234579</td>
+                                      <td>Alfonso López Alcántara</td>
+                                      <td>23640015 38164532</td>
                                       <td>4367124</td>
                                       <td>02/04/2015</td>
                                       <td>CAPITAL JEANS SA CV</td>
                                       <td><p class="text-right">$ 756.00</p></td>
                                       <td><p class="text-right">$ 20,000.00</p></td>
-                                      <td><p class="text-left">Viaje a MTY</p></td>
+                                      <td><p class="text-left">MONTERREY</p></td>
                                       <td>
                                         <a data-toggle="modal" data-target="#modalDetalleFactura1">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
@@ -278,14 +297,14 @@
                                       <td><span class="label label-success" href="pdf/file1.pdf">Conciliada</span></td>
                                   </tr>
                                   <tr>
-                                      <td>David Gutierrez</td>
-                                      <td>876234579</td>
+                                      <td>Alfonso López Alcántara</td>
+                                      <td>23640015 38164532</td>
                                       <td>4367124</td>
                                       <td>04/04/2015</td>
                                       <td>POLMAL SA CV</td>
                                       <td><p class="text-right">$1,345.00</p></td>
                                       <td><p class="text-right">$18,655.00</p></td>
-                                      <td><p class="text-left">Viaje a MTY</p></td>
+                                      <td><p class="text-left">MONTERREY</p></td>
                                       <td>
                                         <a data-toggle="modal" data-target="#modalDetalleFactura2">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
@@ -294,14 +313,14 @@
                                       <td><span class="label label-success">Conciliada</span></td>
                                   </tr>
                                   <tr>
-                                      <td>David Gutierrez</td>
-                                      <td>876234579</td>
+                                      <td>David Gutiérrez Hernández</td>
+                                      <td>23640015 38876234</td>
                                       <td>7647903</td>
                                       <td>05/04/2015</td>
                                       <td>7 ELEVEN MÉXICO SA CV</td>
                                       <td><p class="text-right">$58.00</p></td>
                                       <td><p class="text-right">$18,597.00</p></td>
-                                      <td><p class="text-left">Viaje a MTY</p></td>
+                                      <td><p class="text-left">MÉRIDA</p></td>
                                       <td>
                                         <a data-toggle="modal" data-target="#modalDetalleFactura3">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
@@ -310,14 +329,14 @@
                                       <td><span class="label label-success">Conciliada</span></td>
                                   </tr>
                                   <tr>
-                                      <td>David Gutierrez</td>
-                                      <td>876234579</td>
+                                      <td>David Gutiérrez Hernández</td>
+                                      <td>23640015 38876234</td>
                                       <td>5846902</td>
                                       <td>11/04/2015</td>
                                       <td>CORPORATIVO NUHAIR SC</td>
                                       <td><p class="text-right">$533.00</p></td>
                                       <td><p class="text-right">$18,064.00</p></td>
-                                      <td><p class="text-left">Viaje a MTY</p></td>
+                                      <td><p class="text-left">MÉRIDA</p></td>
                                       <td>
                                         <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalComprobanteSugerido">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -326,14 +345,14 @@
                                       <td><span class="label label-danger">No conciliada</span></td>
                                   </tr>
                                   <tr>
-                                      <td>David Gutierrez</td>
-                                      <td>876234579</td>
+                                      <td>Antonio Cortés Zamora</td>
+                                      <td>23640015 38167285</td>
                                       <td>8649501</td>
                                       <td>13/04/2015</td>
                                       <td>RETIRO DE EFECTIVO</td>
                                       <td><p class="text-right">$1,500.00</p></td>
                                       <td><p class="text-right">$16,564.00</p></td>
-                                      <td><p class="text-left">Viaje a MTY</p></td>
+                                      <td><p class="text-left">VERACRUZ</p></td>
                                       <td>
                                         <a data-toggle="modal" data-target="#modalDetalleFactura5A">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
@@ -345,14 +364,14 @@
                                       <td><span class="label label-success">Conciliada</span></td>
                                   </tr>
                                   <tr>
-                                      <td>David Gutierrez</td>
-                                      <td>876234579</td>
+                                      <td>Mariana Ramírez Cantú</td>
+                                      <td>23640015 38145683</td>
                                       <td>7549445</td>
                                       <td>19/04/2015</td>
                                       <td>RETIRO DE EFECTIVO</td>
                                       <td><p class="text-right">$2,000.00</p></td>
                                       <td><p class="text-right">$14,564.00</p></td>
-                                      <td><p class="text-left">Viaje a MTY</p></td>
+                                      <td><p class="text-left">VERACRUZ</p></td>
                                       <td>
                                         <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalComprobanteGral">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>

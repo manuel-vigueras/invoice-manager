@@ -189,13 +189,11 @@
             <ul class="nav nav-tabs" role="tablist">
               <li class="active"><a href="#tabConfGral" role="tab" data-toggle="tab">Generales</a></li>
               <li><a href="#tabContables" role="tab" data-toggle="tab">Cuentas Contables</a></li>
-              <li><a href="#tabCategorias" role="tab" data-toggle="tab">Categorias</a></li>
+              <li><a href="#tabCategorias" role="tab" data-toggle="tab">Categorías</a></li>
               <li><a href="#tabCentrosCostos" role="tab" data-toggle="tab">Centros de costos</a></li>
             </ul>
 
             <div class="tab-content">
-              
-
               <!-- TAB Conf Gral -->
               <div role="tabpanel" class="tab-pane active" id="tabConfGral">
                 <br/>
@@ -227,6 +225,18 @@
                         <input type="checkbox">
                       </label>
                     </div>
+                  </span>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <div class="col-md-3 col-md-offset-3">
+                  <p>Dirección de su oficina:</p>
+                </div>
+                <div class="col-md-6">
+                  <span class="pull-left">
+                    <textarea class="form-control" id="message-text" placeholder="Av Insurgentes #4038, México DF"></textarea>
                   </span>
                 </div>
               </div><!-- TERMINA TAB Conf Gral -->
@@ -264,82 +274,154 @@
                                   <thead>
                                       <tr>
                                           <th style="width:  150px;">Clave</th>
-                                          <th style="width:  150px;">Banco</th>
-                                          <th style="width:  150px;">No. de Cuenta</th>
-                                          <th>Nombre</th>
-                                          <th style="width:  150px;">Centro de costo</th>
+                                          <th style="width:  150px;">Descripcion</th>
+                                          <th style="width:  150px;" class="text-right">Acción</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                        <td>501.01</td>
+                                        <td>Costo de venta</td>
+                                        <td>
+                                          <div class="btn-group pull-right ">
+                                              <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
+                                                <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+                                              </button>
+                                              <ul class="dropdown-menu" role="menu">
+                                                <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#editCuentaC">Editar</a></li>
+                                                <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#eliminaCuentaC">Eliminar</a></li>
+                                              </ul>
+                                          </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>601.49</td>
+                                        <td>Viáticos y gastos de viaje</td>
+                                        <td>
+                                          <div class="btn-group pull-right ">
+                                              <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
+                                                <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+                                              </button>
+                                              <ul class="dropdown-menu" role="menu">
+                                                <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#editCuentaC">Editar</a></li>
+                                                <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#eliminaCuentaC">Eliminar</a></li>
+                                              </ul>
+                                          </div>
+                                        </td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                          </div> 
+                      </div>
+                  </div><!-- End of Data Table Panel-->
+              </div><!-- TERMINA TAB Contables -->
+              
+
+
+
+
+
+
+
+              <!-- TAB Categorias -->
+              <div role="tabpanel" class="tab-pane" id="tabCategorias">
+                <!-- Data Table Panel-->
+                  <div class="panel panel-default">
+                      
+                      <div class="panel-heading">
+                          <div class="row">  
+                            <div class="col-md-6">
+                              <h3 class="panel-title">Categorías</h3>
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="btn-group pull-right ">
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modalNuevaSubcat">
+                                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </div><!-- End of Table Header right -->
+
+                          </div>
+                      </div>
+
+                      <div class="panel-body">
+                          <div class="table-responsive">
+                              <table class="table table-striped">
+                                  <thead>
+                                      <tr>
+                                          <th style="width:  150px;">Subcategoría</th>
+                                          <th style="width:  150px;">Categoria</th>
+                                          <th style="width:  150px;">Cuenta contable</th>
                                           <th style="width:  150px;" class="text-right">Acción</th>
                                       </tr>
                                   </thead>
                                   <tbody>
                                       <tr>
-                                          <td>5468</td>
-                                          <td>Banamex</td>
-                                          <td>76534565468</td>
-                                          <td>Cuenta #1</td>
-                                          <td>Proyecto #1</td>
+                                          <td>subcategoría</td>
+                                          <td>Restaurantes</td>
+                                          <td>Viáticos y gastos de viaje</td>
                                           <td>
                                             <div class="btn-group pull-right ">
                                                 <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
                                                   <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
                                                 </button>
                                                 <ul class="dropdown-menu" role="menu">
-                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#editCuentaC">Editar</a></li>
-                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#eliminaCuentaC">Eliminar</a></li>
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#editSubcat">Editar</a></li>
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="">Cambiar de categoría</a></li>
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#eliminaSubcat">Eliminar</a></li>
                                                 </ul>
                                             </div>
                                           </td>
                                       </tr>
                                       <tr>
-                                          <td>5468</td>
-                                          <td>Banamex</td>
-                                          <td>76534565468</td>
-                                          <td>Cuenta #1</td>
-                                          <td>Proyecto #1</td>
+                                          <td>subcategoría</td>
+                                          <td>Hospitales</td>
+                                          <td>Viáticos y gastos de viaje</td>
                                           <td>
                                             <div class="btn-group pull-right ">
                                                 <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
                                                   <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
                                                 </button>
                                                 <ul class="dropdown-menu" role="menu">
-                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#editCuentaC">Editar</a></li>
-                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#eliminaCuentaC">Eliminar</a></li>
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#editSubcat">Editar</a></li>
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="">Cambiar de categoría</a></li>
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#eliminaSubcat">Eliminar</a></li>
                                                 </ul>
                                             </div>
                                           </td>
                                       </tr>
                                       <tr>
-                                          <td>5468</td>
-                                          <td>Banamex</td>
-                                          <td>76534565468</td>
-                                          <td>Cuenta #1</td>
-                                          <td>Proyecto #1</td>
+                                          <td>subcategoría</td>
+                                          <td>Librerías</td>
+                                          <td>Costo de venta</td>
                                           <td>
                                             <div class="btn-group pull-right ">
                                                 <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
                                                   <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
                                                 </button>
                                                 <ul class="dropdown-menu" role="menu">
-                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#editCuentaC">Editar</a></li>
-                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#eliminaCuentaC">Eliminar</a></li>
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#editSubcat">Editar</a></li>
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="">Cambiar de categoría</a></li>
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#eliminaSubcat">Eliminar</a></li>
                                                 </ul>
                                             </div>
                                           </td>
                                       </tr>
                                       <tr>
-                                          <td>5468</td>
-                                          <td>Banamex</td>
-                                          <td>76534565468</td>
-                                          <td>Cuenta #1</td>
-                                          <td>Proyecto #1</td>
+                                          <td>subcategoría</td>
+                                          <td>Zapaterías</td>
+                                          <td>Costo de venta</td>
                                           <td>
                                             <div class="btn-group pull-right ">
                                                 <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
                                                   <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
                                                 </button>
                                                 <ul class="dropdown-menu" role="menu">
-                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#editCuentaC">Editar</a></li>
-                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#eliminaCuentaC">Eliminar</a></li>
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#editSubcat">Editar</a></li>
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="">Cambiar de categoría</a></li>
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#eliminaSubcat">Eliminar</a></li>
                                                 </ul>
                                             </div>
                                           </td>
@@ -349,16 +431,16 @@
                           </div> 
                       </div>
                   </div><!-- End of Data Table Panel-->
-
-
-
-
-              </div><!-- TERMINA TAB Contables -->
-              
-              <!-- TAB Categorias -->
-              <div role="tabpanel" class="tab-pane" id="tabCategorias">
-                TAB Categorias
               </div><!-- TERMINA TAB Categorias -->
+
+
+
+
+
+
+
+
+
               
               <!-- TAB Centros de Costos -->
               <div role="tabpanel" class="tab-pane" id="tabCentrosCostos">
@@ -388,7 +470,7 @@
                               <table class="table table-striped">
                                   <thead>
                                       <tr>
-                                          <th style="width:  150px;">Id</th>
+                                          <th style="width:  150px;">Clave</th>
                                           <th>Centro de costos</th>
                                           <th style="width:  150px;" class="text-right">Acción</th>
                                       </tr>
@@ -396,7 +478,7 @@
                                   <tbody>
                                       <tr>
                                           <td>8765</td>
-                                          <td>Proyecto #1</td>
+                                          <td>Embotelladoras del Norte</td>
                                           <td>
                                             <div class="btn-group pull-right ">
                                                 <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
@@ -411,7 +493,7 @@
                                       </tr>
                                       <tr>
                                           <td>4569</td>
-                                          <td>Proyecto #2</td>
+                                          <td>Mantenimiento de planta automotriz</td>
                                           <td>
                                             <div class="btn-group pull-right ">
                                                 <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
@@ -426,7 +508,7 @@
                                       </tr>
                                       <tr>
                                           <td>8374</td>
-                                          <td>Proyecto #3</td>
+                                          <td>Venta de maquinas empacadoras</td>
                                           <td>
                                             <div class="btn-group pull-right ">
                                                 <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
@@ -475,59 +557,23 @@
           </div>
           
           <div class="modal-body">
+
             <!--Formulario -->
             <form>
+              <br/>
               <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-10 col-md-offset-1">
                     <div class="form-group">
                       <label for="newClave">Clave</label>
                       <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
                     </div>
                   </div>
-                  <div class="col-md-6">
+              </div>
+              <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
                     <div class="form-group">
                       <label for="newCuentaNombre">Nombre</label>
                       <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
-                    </div>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="newCuentaNo">No. de cuenta</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="newBanco">Banco</label>
-                      <select class="form-control">
-                        <option>Banamex</option>
-                        <option>BBVA Bancomer</option>
-                        <option>HSBC</option>
-                        <option>Santander</option>
-                      </select>
-                    </div>
-                  </div>
-              </div>
-
-              <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="newCuentaComent">Comentarios</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="newCentroCostos">Centro de Costos</label>
-                      <select class="form-control">
-                        <option>Proyecto #1</option>
-                        <option>Proyecto #2</option>
-                        <option>Proyecto #3</option>
-                        <option>Proyecto #4</option>
-                        <option>Proyecto #5</option>
-                      </select>
                     </div>
                   </div>
               </div>
@@ -543,7 +589,7 @@
 
 
 
-    <!-- MODAL EDITAR CUENTA CONTABLE -->
+       <!-- MODAL EDITAR CUENTA CONTABLE -->
     <div class="modal fade" id="editCuentaC" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -553,59 +599,23 @@
           </div>
           
           <div class="modal-body">
+
             <!--Formulario -->
             <form>
+              <br/>
               <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-10 col-md-offset-1">
                     <div class="form-group">
                       <label for="newClave">Clave</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" value="9875">
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="501.01">
                     </div>
                   </div>
-                  <div class="col-md-6">
+              </div>
+              <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
                     <div class="form-group">
                       <label for="newCuentaNombre">Nombre</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" value="Cuenta #3">
-                    </div>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="newCuentaNo">No. de cuenta</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" value="3456799122">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="newBanco">Banco</label>
-                      <select class="form-control" value="Serfin">
-                        <option>Banamex</option>
-                        <option>BBVA Bancomer</option>
-                        <option>HSBC</option>
-                        <option>Santander</option>
-                      </select>
-                    </div>
-                  </div>
-              </div>
-
-              <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="newCuentaComent">Comentarios</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" value="Cuenta contable ...">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="newCentroCostos">Centro de Costos</label>
-                      <select class="form-control">
-                        <option>Proyecto #1</option>
-                        <option>Proyecto #2</option>
-                        <option>Proyecto #3</option>
-                        <option>Proyecto #4</option>
-                        <option>Proyecto #5</option>
-                      </select>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Costos de venta">
                     </div>
                   </div>
               </div>
@@ -618,6 +628,7 @@
         </div>
       </div>
     </div><!--TERMINA MODAL EDITAR CUENTA CONTABLE -->
+
 
 
 

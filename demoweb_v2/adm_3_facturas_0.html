@@ -143,18 +143,16 @@
           <div class="row">
             <div class="col-md-8">
               <h4>Facturas Pendientes</h4>
-
-
                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuPeriodo" data-toggle="dropdown" aria-expanded="true">
                   Filtro Usuarios <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">David Gutiérrez - 876234578</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">David Gutiérrez - 876234579</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mariana Cantú - 876234580</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Mariana Cantú - 876234581</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Todos</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2364001538164532 - Alfonso López Alcántara</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2364001538876234 - David Gutiérrez Hernández</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2364001538167285 - Antonio Cortés Zamora</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2364001538145683 - Mariana Ramírez Cantú</a></li>
                 </ul>
-
             </div>
             <div class="col-md-4">
               <span class="pull-right">
@@ -181,40 +179,161 @@
                       <div class="table-responsive">
                           <table class="table table-striped">
                               <thead>
-                                  <tr>
-
-                                    <th style="width: 120px;">Usuario</th>
-                                    <th style="width: 100px;">Tarjeta</th>
-                                    <th style="width:  80px;">Folio</th>
-                                    <th style="width: 100px;">Fecha</th>
-                                    <th>RFC Emisor</th>
-                                    <th class="text-right" style="width: 100px;">Monto</th>
-                                  </tr>
+                                <tr>
+                                  <th style="width: 120px;">Usuario</th>
+                                  <th style="width: 100px;">Tarjeta</th>
+                                  <th style="width: 100px;">Folio</th>
+                                  <th style="width: 150px;">Fecha</th>
+                                  <th>RFC Emisor</th>
+                                  <th style="width: 100px;">Archivo</th>
+                                  <th style="width: 120px;" class="text-right">Monto</th>
+                                </tr>
                               </thead>
                               <tbody>
                                   <tr>
-                                      <td>Mariana Cantú</td>
-                                      <td>876234579</td>
+                                      <td>Mariana Ramírez Cantú</td>
+                                      <td>2364001538145683</td>
+                                      <td>23712</td>
+                                      <td>03/05/2015</td>
+                                      <td>SORIANA BLVD</td>
+                                      <td>
+                                        <a href="#">
+                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        </a>
+                                        <a href="#">
+                                          <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
+                                        </a>
+                                      </td>
+                                      <td><p class="text-right">$ 105.00</p></td>
+                                  </tr>
+                                  <tr>
+                                      <td>Alfonso López Alcántara</td>
+                                      <td>2364001538164532</td>
+                                      <td>56823</td>
+                                      <td>02/05/2015</td>
+                                      <td>SORIANA BLVD</td>
+                                      <td>
+                                        <a href="#">
+                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        </a>
+                                        <a href="#">
+                                          <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
+                                        </a>
+                                      </td>
+                                      <td><p class="text-right">$ 120.00</p></td>
+                                  </tr>
+                                  <tr>
+                                      <td>David Gutiérrez Hernández</td>
+                                      <td>2364001538876234</td>
+                                      <td>23435</td>
+                                      <td>01/05/2015</td>
+                                      <td>OXXO GONZALEZ C.</td>
+                                      <td>
+                                        <a href="#">
+                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        </a>
+                                        <a href="#">
+                                          <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
+                                        </a>
+                                      </td>
+                                      <td><p class="text-right">$ 108.00</p></td>
+                                  </tr>
+                                  
+                                  <tr>
+                                      <td>Alfonso López Alcántara</td>
+                                      <td>2364001538164532</td>
+                                      <td>98752</td>
+                                      <td>29/04/2015</td>
+                                      <td>WINGS AS 32</td>
+                                      <td>
+                                        <a href="#">
+                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        </a>
+                                        <a href="#">
+                                          <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
+                                        </a>
+                                      </td>
+                                      <td><p class="text-right">$ 500.00</p></td>
+                                  </tr>
+                                  <tr>
+                                      <td>David Gutiérrez Hernández</td>
+                                      <td>2364001538876234</td>
+                                      <td>87562</td>
+                                      <td>27/04/2015</td>
+                                      <td>RESTAURANTE CHILIS SA DE CV</td>
+                                      <td>
+                                        <a href="#">
+                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        </a>
+                                        <a href="#">
+                                          <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
+                                        </a>
+                                      </td>
+                                      <td><p class="text-right">$ 490.00</p></td>
+                                  </tr>
+                                  <tr>
+                                      <td>Alfonso López Alcántara</td>
+                                      <td>2364001538164532</td>
                                       <td>987534</td>
-                                      <td>11/04/2015</td>
-                                      <td>SORIANA SA CV</td>
-                                      <td><p class="text-right">$ 345.00</p></td>
+                                      <td>26/04/2015</td>
+                                      <td>RESTAURANTE CHILIS SA DE CV</td>
+                                      <td>
+                                        <a href="#">
+                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        </a>
+                                        <a href="#">
+                                          <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
+                                        </a>
+                                      </td>
+                                      <td><p class="text-right">$ 463.50</p></td>
                                   </tr>
                                   <tr>
-                                      <td>Mariana Cantú</td>
-                                      <td>876234579</td>
-                                      <td>76534</td>
-                                      <td>19/04/2015</td>
-                                      <td>RESTAURANTE EL CAPITAN SA CV</td>
-                                      <td><p class="text-right">$ 750.00</p></td>
+                                      <td>Mariana Ramírez Cantú</td>
+                                      <td>2364001538145683</td>
+                                      <td>87459</td>
+                                      <td>26/04/2015</td>
+                                      <td>RESTAURANTE CHILIS SA DE CV</td>
+                                      <td>
+                                        <a href="#">
+                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        </a>
+                                        <a href="#">
+                                          <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
+                                        </a>
+                                      </td>
+                                      <td><p class="text-right">$ 463.50</p></td>
                                   </tr>
                                   <tr>
-                                      <td>Mariana Cantú</td>
-                                      <td>876234579</td>
+                                      <td>Antonio Cortés Zamora</td>
+                                      <td>2364001538167285</td>
                                       <td>654373</td>
                                       <td>20/04/2015</td>
                                       <td>HOTEL DE MEXICO SA CV</td>
-                                      <td><p class="text-right">$ 1,250.00</p></td>
+                                      <td>
+                                        <a href="#">
+                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        </a>
+                                        <a href="#">
+                                          <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
+                                        </a>
+                                      </td>
+                                      <td><p class="text-right">$ 1250.00</p></td>
+                                  </tr>
+                                  <tr>
+                                      <td>Antonio Cortés Zamora</td>
+                                      <td>2364001538167285</td>
+                                      <td>76534</td>
+                                      <td>19/04/2015</td>
+                                      <td>RESTAURANTE EL CAPITAN SA CV</td>
+                                      <td>
+                                        <a href="#">
+                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        </a>
+                                        <a href="#">
+                                          <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
+                                        </a>
+                                      </td>
+                                      <td><p class="text-right">$ 750.00</p></td>
                                   </tr>
                               </tbody>
                           </table>
