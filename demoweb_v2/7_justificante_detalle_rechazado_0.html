@@ -148,7 +148,7 @@
           <div class="row">
             <div class="col-md-6">
               <br/>
-              <h5>Tarjeta:  2364 0015 3816</h5>
+              <h5>Tarjeta:  2364 0015 3816 4532</h5>
             </div>
             <div class="col-md-6">
               <span class="pull-right">
@@ -165,8 +165,9 @@
 
           <div class="row">
             <div class="col-md-8">
-              <h3>VIAJE MONTERREY</h3>
-              <h4>Del  23/04/2015  al  24/04/2015</h4> 
+              <h3>ACAPULCO</h3>
+              <h4>Congreso en Acapulco 2015</h4>
+              <h4>Del  05/03/2015  al  08/03/2015</h4> 
             </div>
             <div class=" col-md-4">
             </div>
@@ -176,10 +177,10 @@
             <div class="col-md-3">
               <h4>Estatus:  <span class="label label-danger">Rechazado</span></h4> 
             </div>
-            <div class="col-md-4">
-              <h4 style="color:  #00AA00;">Monto total: $3,659.00</h4>
+            <div class="col-md-7">
+              <h4 style="color:  #00AA00;">Monto total comprobado: $3,659.00</h4>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-2">
               <span class="pull-right">
                 <a type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#modalEnviado">
                     <span class="glyphicon glyphicon-send" aria-hidden="true"> Enviar</span>
@@ -191,7 +192,7 @@
           <!-- Mensaje del contador/Supervisor -->
           <div class="row">
             <div class="col-md-12">
-              <div class="alert alert-warning" role="alert">Motivos del rechazo del justificante.</div>
+              <div class="alert alert-warning" role="alert">Motivos: tickets de operaciones #4468104 y #7647903 no coinciden con el monto y descripción.</div>
             </div>
           </div>
         
@@ -241,61 +242,111 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                  <tr>
-                                      <td>4468104</td>
-                                      <td>02/04/2015</td>
-                                      <td>CAPITAL JEANS SA CV</td>
-                                      <td><p class="text-right">$ 756.00</p></td>
-                                      <td><p class="text-right">$ 756.00</p></td>
-                                      <td></td>
-                                      <td>02/04/2015</td>
-                                      <td>Jeans</td>
-                                      <td><p>
-                                        <a data-toggle="modal" data-target="#modalDetalleFactura1">
+                                <tr>
+                                    <td>8649501</td>
+                                    <td>05/03/2015</td>
+                                    <td>RETIRO DE EFECTIVO</td>
+                                    <td><p class="text-right">$1,500.00</p></td>
+                                    <td><p class="text-right">$1,500.00</p></td>
+                                    <td></td>
+                                    <td>
+                                      <p>05/03/2015</p>
+                                      <p>08/03/2015</p>
+                                    </td>
+                                    <td>
+                                      <p>Casetas</p>
+                                      <p>Casetas</p>
+                                    </td>
+                                    <td>
+                                      <p>
+                                        <a data-toggle="modal" data-target="#modalDetalleCasetas1">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                        </a></p>
-                                      </td>
-                                      <td>
-                                        <span class="label label-danger pull-left">Rechazado</span>
-                                        <div class="btn-group pull-right ">
-                                            <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
-                                              <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" role="menu">
-                                              <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#modalVerInfo" href="#">Ver info</a></li>
-                                              <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#modalQuitarTrx" href="#">Quitar de justificante</a></li>
-                                              
-                                              
-                                            </ul>
-                                        </div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>4367124</td>
-                                      <td>04/04/2015</td>
-                                      <td>POLMAL SA CV</td>
-                                      <td><p class="text-right">$1,345.00</p></td>
-                                      <td><p class="text-right">$1,345.00</p></td>
-                                      <td></td>
-                                      <td>04/04/2015</td>
-                                      <td>Art. Oficina</td>
-                                      <td><p>
-                                        <a data-toggle="modal" data-target="#modalDetalleFactura2">
+                                        </a>
+                                      </p>
+                                      <p>
+                                        <a data-toggle="modal" data-target="#modalDetalleCasetas2">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                        </a></p>
-                                      </td>
-                                      <td>
-                                        <div class="btn-group pull-right">
-                                            <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
-                                              <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" role="menu">
-                                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Editar</a></li>
-                                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Quitar de justificante</a></li>
-                                            </ul>
-                                        </div>
-                                      </td>
-                                  </tr>
+                                        </a>
+                                      </p>
+                                    </td>
+                                    <td>
+                                      <div class="btn-group pull-right ">
+                                          <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
+                                            <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" role="menu">
+                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Editar</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Quitar de justificante</a></li>
+                                          </ul>
+                                      </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5846902</td>
+                                    <td>06/03/2015</td>
+                                    <td>HOTEL EMPORIO ACAPULCO</td>
+                                    <td><p class="text-right">$5,233.00</p></td>
+                                    <td><p class="text-right">$5,233.00</p></td>
+                                    <td></td>
+                                    <td>06/03/2015</td>
+                                    <td>Hospedaje</td>
+                                    <td>
+                                      <p>
+                                        <a data-toggle="modal" data-target="#modalDetalleCasetas1">
+                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        </a>
+                                      </p>
+                                    </td>
+                                    <td>
+                                      <div class="btn-group pull-right ">
+                                          <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
+                                            <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" role="menu">
+                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Editar</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Quitar de justificante</a></li>
+                                          </ul>
+                                      </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4468104</td>
+                                    <td>07/03/2015</td>
+                                    <td>RESTAURANTE PACIFICO</td>
+                                    <td><p class="text-right">$ 756.00</p></td>
+                                    <td><p class="text-right">$ 756.00</p></td>
+                                    <td></td>
+                                    <td>02/04/2015</td>
+                                    <td>Alimentos</td>
+                                    <td><p>
+                                      <a data-toggle="modal" data-target="#modalDetalleFactura1">
+                                        <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                      </a></p>
+                                    </td>
+                                    <td>
+                                      <span class="label label-danger pull-left">Rechazado</span>
+                                      <div class="btn-group pull-right ">
+                                          <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
+                                            <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" role="menu">
+                                            <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#modalVerInfo" href="#">Ver info</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#modalQuitarTrx" href="#">Quitar de justificante</a></li>
+                                            
+                                            
+                                          </ul>
+                                      </div>
+                                    </td>
+                                </tr>
+
+
+
+
+
+
+
+
+
                                   <tr>
                                       <td>7647903</td>
                                       <td>05/04/2015</td>
@@ -312,101 +363,6 @@
                                       </td>
                                       <td>
                                         <span class="label label-danger pull-left">Rechazado</span>
-                                        <div class="btn-group pull-right ">
-                                            <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
-                                              <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" role="menu">
-                                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Editar</a></li>
-                                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Quitar de justificante</a></li>
-                                            </ul>
-                                        </div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>5846902</td>
-                                      <td>11/04/2015</td>
-                                      <td>CORPORATIVO NUHAIR SC</td>
-                                      <td><p class="text-right">$533.00</p></td>
-                                      <td><p class="text-right">$0.00</p></td>
-                                      <td>
-                                        <p class="text-right">
-                                          <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalComprobanteGral">
-                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                          </a>
-                                        </p>
-                                      </td>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                      <td>
-                                        <div class="btn-group pull-right ">
-                                            <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
-                                              <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" role="menu">
-                                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Editar</a></li>
-                                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Quitar de justificante</a></li>
-                                            </ul>
-                                        </div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>8649501</td>
-                                      <td>13/04/2015</td>
-                                      <td>RETIRO DE EFECTIVO</td>
-                                      <td><p class="text-right">$1,500.00</p></td>
-                                      <td><p class="text-right">$1,500.00</p></td>
-                                      <td></td>
-                                      <td>
-                                        <p>13/04/2015</p>
-                                        <p>14/04/2015</p>
-                                      </td>
-                                      <td>
-                                        <p>Papelería</p>
-                                        <p>Alimentos</p>
-                                      </td>
-                                      <td>
-                                        <p>
-                                          <a data-toggle="modal" data-target="#modalDetalleFactura5A">
-                                            <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                          </a>
-                                        </p>
-                                        <p>
-                                          <a data-toggle="modal" data-target="#modalDetalleFactura5B">
-                                            <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                          </a>
-                                        </p>
-                                      </td>
-                                      <td>
-                                        <div class="btn-group pull-right ">
-                                            <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
-                                              <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" role="menu">
-                                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Editar</a></li>
-                                              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Quitar de justificante</a></li>
-                                            </ul>
-                                        </div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>7549445</td>
-                                      <td>19/04/2015</td>
-                                      <td>RETIRO DE EFECTIVO</td>
-                                      <td><p class="text-right">$2,000.00</p></td>
-                                      <td><p class="text-right">$0.00</p></td>
-                                      <td>
-                                        <p class="text-right">
-                                          <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalComprobanteGral">
-                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                          </a>
-                                        </p>
-                                      </td>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                      <td>
                                         <div class="btn-group pull-right ">
                                             <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
                                               <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>

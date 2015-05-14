@@ -60,10 +60,15 @@
         font-weight: bold;
       }
 
-       .userName {
+      .userName {
         font-size: 15px;
       }
       
+      .table-responsive {
+        overflow-x: visible !important;
+        overflow-y: visible !important;
+      }
+
       /* Set the fixed height of the footer here */
       #footer {
         height: 60px;
@@ -122,7 +127,7 @@
               <p class="navbar-text" id="date"></p>
             </ul>
             <ul class="nav navbar-nav">
-              <li><a>Alfonso López Alcántara</a></li>
+              <li><a>Antonio Cortés Zamora</a></li>
             </ul>
             <ul class="nav navbar-nav">
               <li><a href="login_gral.html">
@@ -209,8 +214,8 @@
                                   <tbody>
                                       <tr>
                                           <td>8765</td>
-                                          <td>Usuario #1</td>
-                                          <td>Supervisor #1</td>
+                                          <td>Alfonso López Alcántara</td>
+                                          <td>Francisco Rodríguez Peña</td>
                                           <td>
                                             <div class="btn-group pull-right ">
                                                 <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
@@ -225,15 +230,15 @@
                                       </tr>
                                       <tr>
                                           <td>4569</td>
-                                          <td>Usuario #2</td>
-                                          <td>Supervisor #1</td>
+                                          <td>Antonio Cortés Zamora</td>
+                                          <td>Francisco Rodríguez Peña</td>
                                           <td>
                                             <div class="btn-group pull-right ">
                                                 <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
                                                   <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
                                                 </button>
                                                 <ul class="dropdown-menu" role="menu">
-                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#editUsuario">Editar</a></li>
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#editUsuarioX">Editar</a></li>
                                                   <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#eliminaUsuario">Eliminar</a></li>
                                                 </ul>
                                             </div>
@@ -241,8 +246,8 @@
                                       </tr>
                                       <tr>
                                           <td>8374</td>
-                                          <td>Usuario #3</td>
-                                          <td>Supervisor #1</td>
+                                          <td>Francisco Rodríguez Peña</td>
+                                          <td>Francisco Rodríguez Peña</td>
                                           <td>
                                             <div class="btn-group pull-right ">
                                                 <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
@@ -354,16 +359,15 @@
                     <div class="form-group">
                       <label for="newCentroCostos">Supervisor</label>
                       <select class="form-control">
-                        <option>Supervisor #1</option>
-                        <option>Supervisor #2</option>
-                        <option>Supervisor #3</option>
+                        <option>8374 - Francisco Rodríguez Peña</option>
+                        <option>7568 - Manuel Velasco Torres</option>
                       </select>
                     </div>
                   </div>
               </div>
               <br/>
               <p class="text-center">
-                <a type="button" class="btn btn-warning" href="#">Guardar</a>
+                <a type="button" class="btn btn-warning" href="adm_13_general_1_addUser.html">Guardar</a>
               </p>
             </form>
           </div>
@@ -374,7 +378,7 @@
 
 
 
-<!-- MODAL EDITAR CENTRO DE COSTOS -->
+<!-- MODAL EDITAR USUARIO -->
     <div class="modal fade" id="editUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -390,7 +394,7 @@
                   <div class="col-md-10 col-md-offset-1">
                     <div class="form-group">
                       <label for="newClave">Clave</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" value="74512">
+                      <input type="text" class="form-control" id="exampleInputEmail1" value="">
                     </div>
                   </div>
               </div>
@@ -398,7 +402,7 @@
                   <div class="col-md-10 col-md-offset-1">
                     <div class="form-group">
                       <label for="newCuentaNombre">Nombre</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" value="Usuario #34">
+                      <input type="text" class="form-control" id="exampleInputEmail1" value="">
                     </div>
                   </div>
               </div>
@@ -407,9 +411,8 @@
                     <div class="form-group">
                       <label for="newCentroCostos">Supervisor</label>
                       <select class="form-control">
-                        <option>Supervisor #1</option>
-                        <option>Supervisor #2</option>
-                        <option>Supervisor #3</option>
+                        <option>8374 - Francisco Rodríguez Peña</option>
+                        <option>7568 - Manuel Velasco Torres</option>
                       </select>
                     </div>
                   </div>
@@ -422,7 +425,57 @@
           </div>
         </div>
       </div>
-    </div><!--TERMINA MODAL EDITAR CENTRO DE COSTOS -->
+    </div><!--TERMINA MODAL EDITAR USUARIO -->
+
+
+<!-- MODAL EDITAR USUARIO X -->
+    <div class="modal fade" id="editUsuarioX" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Editar Usuario</h4>
+          </div>
+          <div class="modal-body">
+            <!--Formulario -->
+            <form>
+              <br/>
+              <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="form-group">
+                      <label for="newClave">Clave</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" value="4569">
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="form-group">
+                      <label for="newCuentaNombre">Nombre</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" value="Antonio Cortés Zamora">
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="form-group">
+                      <label for="newCentroCostos">Supervisor</label>
+                      <select class="form-control">
+                        <option>8374 - Francisco Rodríguez Peña</option>
+                        <option>7568 - Manuel Velasco Torres</option>
+                      </select>
+                    </div>
+                  </div>
+              </div>
+              <br/>
+              <p class="text-center">
+                <a type="button" class="btn btn-warning" href="adm_13_general_2_editUser.html">Guardar</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div><!--TERMINA MODAL EDITAR USUARIO X -->
 
 
     <!-- MODAL PARA ELIMINAR USUARIO -->
@@ -439,7 +492,7 @@
               <p><span class="label label-danger">Atención</span> El usuario será eliminado.</p>
               <br/>
               <p class="text-center">
-              <a type="button" class="btn btn-warning" href="#">Aceptar</a>
+              <a type="button" class="btn btn-warning" href="">Aceptar</a>
             </p>
             </div>
           </div>

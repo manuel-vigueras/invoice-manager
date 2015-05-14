@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Resumen | Si Vale</title>
+    <title>Justificantes | Si Vale</title>
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -37,6 +37,33 @@
         padding: 0 0 60px;
       }
 
+       .blue {
+        color:  #1874CD;
+        font-size: 15px;
+        font-weight: bold;
+      }
+
+       .green {
+        color:  #00AA00;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      
+       .red {
+        color:  #CD3700;
+        font-size: 15px;
+        font-weight: bold;
+      }
+
+      .head4 {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+       .userName {
+        font-size: 15px;
+      }
+      
       /* Set the fixed height of the footer here */
       #footer {
         height: 60px;
@@ -67,16 +94,6 @@
       code {
         font-size: 80%;
       }
-
-
-      body .modal-sm {
-          /* new custom width */
-          width: 30%;
-          /* must be half of the width, minus scrollbar on the left (30px) */
-          /* margin-left:-375px; */
-          margin-left: 35%;
-      }
-
     </style>
   </head>
   
@@ -84,9 +101,8 @@
 <!-- Body starts here -->
   <body>
 
-    
     <!-- Wrap all page content here -->
-<div id="wrap">
+    <div id="wrap">
 
       <!-- Top Fixed navbar -->
       <div class="navbar navbar-default navbar-fixed-top">
@@ -106,10 +122,10 @@
               <p class="navbar-text" id="date"></p>
             </ul>
             <ul class="nav navbar-nav">
-              <li><a>Alfonso López Alcántara</a></li>
+              <li><a>Francisco Rodríguez Peña</a></li>
             </ul>
             <ul class="nav navbar-nav">
-              <li><a href="adm_login.html">
+              <li><a href="login_adm.html">
                 <span class="glyphicon glyphicon-log-out" aria-hidden="true">Salir</span></a>
               </li>
             </ul>
@@ -117,7 +133,7 @@
         </div>
       </div> <!-- End of Top Fixed navbar --> 
       
-      
+
     <!-- MAIN CONTAINER 
     =========================================== -->
     <div class="container container-xs">    
@@ -127,10 +143,8 @@
 
         <!-- Col for Panel -->
         <div class="col-md-10">
-          
           <div class="row">
             <div class="col-md-3">
-
             </div>
             <div class="col-md-9">
               <span class="pull-right">
@@ -139,8 +153,8 @@
                     <li><a href="adm_1_resumen_0.html" class="btn-sm">Resumen</a></li>
                     <li><a href="adm_2_transacciones_0.html" class="btn-sm">Movimientos</a></li>
                     <li><a href="adm_6_justificantes_0.html" class="btn-sm">Justificantes</a></li>
-                    <li class="active"><a href="reportes_tableau.html">Reportes<span class="sr-only">(current)</span></a></li>
-                    <li><a href="adm_11_anexo24_0.html" class="btn-sm">SAT</a></li>
+                    <li><a href="reportes_tableau.html" class="btn-sm">Reportes</a></li>
+                    <li class="active"><a href="#">SAT <span class="sr-only">(current)</span></a></li>
                     <li><a href="adm_12_settings_0.html" class="btn-sm">Configuración</a></li>
                   </ul>
                 </div>
@@ -148,23 +162,52 @@
             </div>
           </div>
 
+          <!-- ROW de botones -->
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-9">
+              <h4>Reportes.</h4>
+            </div>
+          </div><!-- TERMINA ROW de botones -->
+
+
+          <!-- Grid for Table content -->
+          <div class="row">
+            <div class="col-md-12">
+
+              </br>
+              </br>
+              </br>
+              Aquí van los reportes.
+                  
 
             </div>
-          </div>
-          
-        </div>
-      </div><!-- End of MAIN CONTAINER -->
+          </div><!-- End of Grid for Table content -->
+        </div><!-- Col for Panel -->
+        <!-- Col for Banner -->
+        <div class="col-md-2">
+          <img src="img/sivale-banner.gif" class="img-responsive" alt="Responsive image" aligne="right">
+        </div><!-- End of Col for Banner -->
+      </div><!-- End of Grid for Panel and Banner -->
 
-<div class="container">
 
-<script type='text/javascript' src='http://189.254.33.250/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1290px; height: 885px;'><object class='tableauViz' width='1290' height='885' style='display:none;'><param name='host_url' value='http%3A%2F%2F189.254.33.250%2F' /> <param name='site_root' value='&#47;t&#47;sivale' /><param name='name' value='DemoTableau_SiVale_V2_0&#47;Dashboard_1' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='showVizHome' value='n' /></object></div>
+
+
+
+
+
+
+<!-- ==================================================
+                    MODAL VIEWS
+    ================================================== -->
+
+
+<!-- ==================================================
+                    TEMRINA MODAL VIEWS
+    ================================================== -->
+
+  </div><!-- End of MAIN CONTAINER -->
 
    </div>
-
-</div>
-</div>
     <!-- Footer
     ================================================== -->
     <div id="footer">
@@ -184,6 +227,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-filestyle.min.js"> </script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">$(function () {$('.datepicker').datepicker();});</script>
     <script>var d = new Date();document.getElementById("date").innerHTML = d.toDateString();</script>
   </body>
 </html>

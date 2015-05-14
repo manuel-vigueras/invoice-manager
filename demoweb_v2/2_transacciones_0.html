@@ -152,14 +152,14 @@
           <div class="row">
             <div class="col-md-6">
               <br/>
-              <h5>Tarjeta:  2364 0015 3816</h5>
+              <h5>Tarjeta:  2364 0015 3816 4532</h5>
             </div>
             <div class="col-md-6">
               <span class="pull-right">
                 <div class="navbar">
                   <ul class="nav navbar-nav navbar-default">
                     <li><a href="1_resumen_0.html" class="btn-sm">Resumen</a></li>
-                    <li class="active"><a href="#">Mis Movimientos <span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="2_transacciones_0.html">Mis Movimientos <span class="sr-only">(current)</span></a></li>
                     <li><a href="6_justificantes_0.html" class="btn-sm">Mis Justificantes</a></li>
                   </ul>
                 </div>
@@ -174,7 +174,7 @@
             <div class="col-md-4">
               <span class="pull-right">
                 <ul class="nav nav-pills">
-                  <li><a href="3_facturas_0.html">Ver Facturas</a></li>
+                  <li><a href="3_facturas_0.html">Ver facturas no conciliadas</a></li>
                 </ul>
               </span>
             </div>
@@ -194,20 +194,6 @@
                         <div class="col-md-6">
                           <h3 class="panel-title">Detalle transacciones</h3>
                         </div><!-- End of Table Header Left -->
-
-                        <!-- Table Header Left *** ESTATUS FILTRO ***
-                        <div class="col-md-2">
-                          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                            Estatus
-                            <span class="caret"></span>
-                          </button>
-                          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="movimientos.html">Todas</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="conciliadas.html">Conciliadas</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="no_conciliadas.html">No Conciliadas</a></li>    
-                          </ul>
-
-                        </div>End of Table Header Left -->
                         <!-- Table Header right -->
                         <div class="col-md-6" aligne="right">
                           <span class="pull-right">
@@ -231,67 +217,41 @@
                       <div class="table-responsive">
                           <table class="table table-striped">
                               <thead>
+
                                   <tr>
-                                      <th class="text-center">Id</th>
-                                      <th class="text-center">Fecha</th>
-                                      <th class="text-center">Concepto</th>
-                                      <th class="text-center">Monto</th>
-                                      <th class="text-center">Saldo</th>
-                                      <th class="text-center">Justificante</th>
-                                      <th class="text-center">Factura</th>
-                                      <th class="text-center">Estatus</th>
+                                      <th style="width:  60px;" class="text-center">Id</th>
+                                      <th style="width:  80px;" class="text-center">Fecha</th>
+                                      <th class="text-center">Establecimiento</th>
+                                      <th style="width:  60px;" class="text-center">Monto</th>
+                                      <th style="width:  60px;" class="text-center">Saldo</th>
+                                      <th style="width:  80px;" class="text-center">Justificante</th>
+                                      <th style="width:  40px;" class="text-center">Factura</th>
+                                      <th style="width:  60px;" class="text-center">Estatus</th>
                                   </tr>
+
                               </thead>
                               <tbody>
                                   <tr>
-                                      <td>4468104</td>
-                                      <td>02/04/2015</td>
-                                      <td>CAPITAL JEANS SA CV</td>
-                                      <td><p class="text-right">$ 756.00</p></td>
-                                      <td><p class="text-right">$ 20,000.00</p></td>
-                                      <td><p class="text-left">Viaje a MTY</p></td>
+                                      <td>7549448</td>
+                                      <td>01/05/2015</td>
+                                      <td>SUSHI ROLL SA DE CV</td>
+                                      <td><p class="text-right">$170.20</p></td>
+                                      <td><p class="text-right">$ ?? .00</p></td>
+                                      <td><p class="text-left"></p></td>
                                       <td>
-                                        <a data-toggle="modal" data-target="#modalDetalleFactura1">
-                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalComprobanteSug_2">
+                                          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
                                       </td>
-                                      <td><span class="label label-success" href="pdf/file1.pdf">Conciliada</span></td>
+                                      <td><span class="label label-danger">No conciliada</span></td>
                                   </tr>
                                   <tr>
-                                      <td>4367124</td>
-                                      <td>04/04/2015</td>
-                                      <td>POLMAL SA CV</td>
-                                      <td><p class="text-right">$1,345.00</p></td>
-                                      <td><p class="text-right">$18,655.00</p></td>
-                                      <td><p class="text-left">Viaje a MTY</p></td>
-                                      <td>
-                                        <a data-toggle="modal" data-target="#modalDetalleFactura2">
-                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                        </a>
-                                      </td>
-                                      <td><span class="label label-success">Conciliada</span></td>
-                                  </tr>
-                                  <tr>
-                                      <td>7647903</td>
-                                      <td>05/04/2015</td>
-                                      <td>7 ELEVEN MÉXICO SA CV</td>
-                                      <td><p class="text-right">$58.00</p></td>
-                                      <td><p class="text-right">$18,597.00</p></td>
-                                      <td><p class="text-left">Viaje a MTY</p></td>
-                                      <td>
-                                        <a data-toggle="modal" data-target="#modalDetalleFactura3">
-                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
-                                        </a>
-                                      </td>
-                                      <td><span class="label label-success">Conciliada</span></td>
-                                  </tr>
-                                  <tr>
-                                      <td>5846902</td>
-                                      <td>11/04/2015</td>
-                                      <td>CORPORATIVO NUHAIR SC</td>
-                                      <td><p class="text-right">$533.00</p></td>
-                                      <td><p class="text-right">$18,064.00</p></td>
-                                      <td><p class="text-left">Viaje a MTY</p></td>
+                                      <td>7549445</td>
+                                      <td>28/04/2015</td>
+                                      <td>RETIRO DE EFECTIVO</td>
+                                      <td><p class="text-right">$2,000.00</p></td>
+                                      <td><p class="text-right">$14,564.00</p></td>
+                                      <td><p class="text-left">MONTERREY</p></td>
                                       <td>
                                         <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalComprobanteGral">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -301,11 +261,11 @@
                                   </tr>
                                   <tr>
                                       <td>8649501</td>
-                                      <td>13/04/2015</td>
+                                      <td>27/04/2015</td>
                                       <td>RETIRO DE EFECTIVO</td>
                                       <td><p class="text-right">$1,500.00</p></td>
                                       <td><p class="text-right">$16,564.00</p></td>
-                                      <td><p class="text-left">Viaje a MTY</p></td>
+                                      <td><p class="text-left">MONTERREY</p></td>
                                       <td>
                                         <a data-toggle="modal" data-target="#modalDetalleFactura5A">
                                           <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
@@ -317,18 +277,117 @@
                                       <td><span class="label label-success">Conciliada</span></td>
                                   </tr>
                                   <tr>
-                                      <td>7549445</td>
-                                      <td>19/04/2015</td>
-                                      <td>RETIRO DE EFECTIVO</td>
-                                      <td><p class="text-right">$2,000.00</p></td>
-                                      <td><p class="text-right">$14,564.00</p></td>
-                                      <td><p class="text-left">Viaje a MTY</p></td>
+                                      <td>5846902</td>
+                                      <td>26/04/2015</td>
+                                      <td>RESTAURANTE CHILIS SA DE CV</td>
+                                      <td><p class="text-right">$533.00</p></td>
+                                      <td><p class="text-right">$18,064.00</p></td>
+                                      <td><p class="text-left">MONTERREY</p></td>
                                       <td>
-                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalComprobanteGral">
+                                        <a type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalComprobanteSug_1">
                                           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                         </a>
                                       </td>
                                       <td><span class="label label-danger">No conciliada</span></td>
+                                  </tr>
+                                  <tr>
+                                      <td>7647903</td>
+                                      <td>25/04/2015</td>
+                                      <td>7 ELEVEN MÉXICO SA CV</td>
+                                      <td><p class="text-right">$58.00</p></td>
+                                      <td><p class="text-right">$18,597.00</p></td>
+                                      <td><p class="text-left">MONTERREY</p></td>
+                                      <td>
+                                        <a data-toggle="modal" data-target="#modalDetalleFactura3">
+                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        </a>
+                                      </td>
+                                      <td><span class="label label-success">Conciliada</span></td>
+                                  </tr>
+                                  <tr>
+                                      <td>4367124</td>
+                                      <td>25/04/2015</td>
+                                      <td>POLMAL SA CV</td>
+                                      <td><p class="text-right">$1,345.00</p></td>
+                                      <td><p class="text-right">$18,655.00</p></td>
+                                      <td><p class="text-left">MONTERREY</p></td>
+                                      <td>
+                                        <a data-toggle="modal" data-target="#modalDetalleFactura2">
+                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        </a>
+                                      </td>
+                                      <td><span class="label label-success">Conciliada</span></td>
+                                  </tr>
+                                  <tr>
+                                      <td>4468104</td>
+                                      <td>25/04/2015</td>
+                                      <td>CAPITAL JEANS SA CV</td>
+                                      <td><p class="text-right">$ 756.00</p></td>
+                                      <td><p class="text-right">$ 20,000.00</p></td>
+                                      <td><p class="text-left">MONTERREY</p></td>
+                                      <td>
+                                        <a data-toggle="modal" data-target="#modalDetalleFactura1">
+                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        </a>
+                                      </td>
+                                      <td><span class="label label-success" href="pdf/file1.pdf">Conciliada</span></td>
+                                  </tr>
+                                  <tr>
+                                      <td>4367124</td>
+                                      <td>16/04/2015</td>
+                                      <td>IHOP</td>
+                                      <td><p class="text-right">$375.00</p></td>
+                                      <td><p class="text-right">$ ?? .00</p></td>
+                                      <td><p class="text-left">CALIFORNIA</p></td>
+                                      <td>
+                                        <a data-toggle="modal" data-target="#modalDetalleFactura1">
+                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        </a>
+                                      </td>
+                                      <td><span class="label label-success" href="pdf/file1.pdf">Conciliada</span></td>
+                                  </tr>
+
+                                  <tr>
+                                      <td>5846902</td>
+                                      <td>06/03/2015</td>
+                                      <td>HOTEL EMPORIO ACAPULCO</td>
+                                      <td><p class="text-right">$5,233.00</p></td>
+                                      <td><p class="text-right">$ ?? .00</p></td>
+                                      <td><p class="text-left">ACAPULCO</p></td>
+                                      <td>
+                                        <a data-toggle="modal" data-target="#modalDetalleFactura1">
+                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        </a>
+                                      </td>
+                                      <td><span class="label label-success">Conciliada</span></td>
+                                  </tr>
+                                  <tr>
+                                      <td>7549445</td>
+                                      <td>07/03/2015</td>
+                                      <td>RESTAURANTE PACIFICO</td>
+                                      <td><p class="text-right">$ 756.00</p></td>
+                                      <td><p class="text-right">$ ?? .00</p></td>
+                                      <td><p class="text-left">ACAPULCO</p></td>
+                                      <td>
+                                        <a data-toggle="modal" data-target="#modalDetalleFactura1">
+                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        </a>
+                                      </td>
+                                      <td><span class="label label-success">Conciliada</span></td>
+                                  </tr>
+                                  <tr>
+                                      <td>4468104</td>
+                                      <td>02/03/2015</td>
+                                      <td>RESTAURANTE LA MILPA</td>
+                                      <td><p class="text-right">$ 250.00</p></td>
+                                      <td><p class="text-right">$ ?? .00</p></td>
+                                      <td><p class="text-left">PACHUCA</p></td>
+                                      <td>
+                                        <a data-toggle="modal" data-target="#modalDetalleFactura1">
+                                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                                        </a>
+                                      </td>
+                                      <td><span class="label label-success">Conciliada</span></td>
                                   </tr>
                               </tbody>
                           </table>
@@ -348,6 +407,397 @@
 
 
 
+    <!-- ==================================================
+                    MODAL VIEWS
+    ================================================== -->
+
+
+    <!-- MODAL AGREGA COMPROBANTE SUGERIDO #1 -->
+    <div class="modal fade" id="modalComprobanteSug_1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Detalle de Factura</h4>
+          </div>
+          <div class="modal-body">
+
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="active"><a href="#tabFacturasSug" role="tab" data-toggle="tab">Facturas</a></li>
+              <li><a href="#tabTicketsSug" role="tab" data-toggle="tab">Ticket</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <!-- TAB Facturas -->
+              <div role="tabpanel" class="tab-pane active" id="tabFacturasSug">
+
+                <!--TABLA DE FACTURAS MISMO USUARIO-->
+                <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th style="width:  80px;">Folio</th>
+                          <th style="width: 100px;">Fecha</th>
+                          <th >RFC Emisor</th>
+                          <th style="width:  80px;" class="text-center">Monto</th>
+                          <th style="width: 150px;" class="text-center">Propina</th>
+                          <th style="width:  80px;" class="text-center">Total</th>
+                          <th style="width:  40px;">Asociar</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>31212</td>
+                          <td>26/04/2015</td>
+                          <td>RESTAURANTE CHILIS SA DE CV <span class="label label-danger">Sugerida</span></td>
+                          <td><p class="text-right" id="monto_S11">463.50</p></td>
+                          <td>
+                            <div class="input-group">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_S11"
+                                      oninput="propinaFunction(monto_S11, propina_S11, total_S11, alertaPropinaFacSug)">
+                            </div>
+                          </td>
+                          <td><p class="text-right" id="total_S11">463.50</p></td>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
+                            </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>43242</td>
+                          <td>27/04/2015</td>
+                          <td>RESTAURANTE CHILIS SA DE CV <span class="label label-danger">Sugerida</span></td>
+                          <td><p class="text-right" id="monto_S12">490.00</p></td>
+                          <td>
+                            <div class="input-group">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_S12"
+                                      oninput="propinaFunction(monto_S12, propina_S12, total_S12, alertaPropinaFacSug)">
+                            </div>
+                          </td>
+                          <td><p class="text-right" id="total_S12">490.00</p></td>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
+                            </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>87578</td>
+                          <td>29/04/2015</td>
+                          <td>WINGS AS 32<span class="label label-danger">Sugerida</span></td>
+                          <td><p class="text-right" id="monto_S13">500.00</p></td>
+                          <td>
+                            <div class="input-group">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_S13"
+                                      oninput="propinaFunction(monto_S13, propina_S13, total_S13, alertaPropinaFacSug)">
+                            </div>
+                          </td>
+                          <td><p class="text-right" id="total_S13">500.00</p></td>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
+                            </div>
+                          </td>
+                      </tr>
+
+                      
+                  </tbody>
+                </table><!--TERMINA TABLA DE FACTURAS MISMO USUARIO-->
+
+                <!--<h3>Tabla de Comentarios</h3>-->
+                <table class="table">
+                  <thead>
+                  </thead>
+                  <tbody>
+                      <tr>
+                        <td style="width: 120px;">Comentarios: </td>
+                        <td colspan="6">
+                          <div class="form-group">
+                            <textarea class="form-control" id="message-text"></textarea>
+                          </div>
+                        </td>
+                      </tr>
+                  </tbody>
+                </table>
+
+                <p class="text-center" id="alertaPropinaFacSug" style="color:red; font-size:120%"></p>
+                <p class="text-center">
+                  <a type="button" class="btn btn-warning" href="2_transacciones_1.html">Vincular</a>
+                </p>
+              </div><!-- Termina TAB Facturas -->
+              <!-- TAB Tickets -->
+              <div role="tabpanel" class="tab-pane" id="tabTicketsSug">
+                <table class="table">
+                  <thead>
+                      <tr>
+                        <td colspan="6"><h5>Ingresa datos de ticket</h5></td>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr style="height: 75px;">
+                        <td style="width: 100px;">Fecha:</td>
+                        <td style="width: 200px;">
+                          <div class="form-group">
+                              <div class="input-group date" id="datetimepicker1">
+                                  <input type="text" class="form-control" data-provide="datepicker">
+                                  <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                  </span>
+                              </div>
+                          </div>
+                        </td>
+                        <td style="width: 100px;">Ticket:</td>
+                        <td style="width: 200px;">
+                          <span class="btn btn-default btn-file">
+                            <span class="glyphicon glyphicon-folder-open" aria-hidden="true"> 
+                              Explorar
+                              <input type="file">
+                            </span>
+                          </span>
+                        </td>
+                      </tr>
+                      <tr style="height: 75px;">
+                          <td>Monto:</td>
+                          <td>
+                            <div class="input-group">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="monto_ticket_sug"
+                                      oninput="propinaTicket(monto_ticket_sug, propina_ticket_sug, total_ticket_sug, alertaPropinaTicketSug)">
+                            </div>
+                          </td>
+                          <td>Propina:</td>
+                          <td>
+                            <div class="input-group">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_ticket_sug"
+                                      oninput="propinaTicket(monto_ticket_sug, propina_ticket_sug, total_ticket_sug, alertaPropinaTicketSug)">
+                            </div>
+                          </td>
+                          <td>Total:</td>
+                          <td><p class="text" id="total_ticket_sug">0.00</p></td>
+                      </tr>
+                      <tr style="height: 75px;">
+                        <td>Comentarios: </td>
+                        <td colspan="5">
+                           <div class="form-group">
+                            <textarea class="form-control" id="message-text"></textarea>
+                          </div>
+                        </td>
+                      </tr>
+                  </tbody>
+                </table>
+                <br/>
+                <p class="text-center" id="alertaPropinaTicketSug" style="color:red; font-size:120%"></p>
+                <p class="text-center">
+                  <a type="button" class="btn btn-warning" href="#">Vincular</a>
+                </p>
+              </div><!-- Termina TAB Tickets -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--TERMINA MODAL AGREGA COMPROBANTE SUGERIDO #1 -->
+
+
+    <!-- ==================================================
+                    NEW MODAL 
+    ================================================== -->
+
+
+    <!-- MODAL AGREGA COMPROBANTE SUGERIDO #2 -->
+    <div class="modal fade" id="modalComprobanteSug_2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Detalle de Factura</h4>
+          </div>
+          <div class="modal-body">
+
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="active"><a href="#tabFacturasSug2" role="tab" data-toggle="tab">Facturas</a></li>
+              <li><a href="#tabTicketsSug2" role="tab" data-toggle="tab">Ticket</a></li>
+            </ul>
+
+            <div class="tab-content">
+              <!-- TAB Facturas -->
+              <div role="tabpanel" class="tab-pane active" id="tabFacturasSug2">
+
+                <!--TABLA DE FACTURAS MISMO USUARIO-->
+                <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th style="width:  80px;">Folio</th>
+                          <th style="width: 100px;">Fecha</th>
+                          <th >RFC Emisor</th>
+                          <th style="width:  80px;" class="text-center">Monto</th>
+                          <th style="width: 150px;" class="text-center">Propina</th>
+                          <th style="width:  80px;" class="text-center">Total</th>
+                          <th style="width:  40px;">Asociar</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>987534</td>
+                          <td>02/05/2015</td>
+                          <td>SUSHI ROLL SA DE CV<span class="label label-danger">Sugerida</span></td>
+                          <td><p class="text-right" id="monto_S21">148.00</p></td>
+                          <td>
+                            <div class="input-group">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_S21"
+                                      oninput="propinaFunction(monto_S21, propina_S21, total_S21, alertaPropinaFacSug2)">
+                            </div>
+                          </td>
+                          <td><p class="text-right" id="total_S21">148.00</p></td>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
+                            </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>987534</td>
+                          <td>03/05/2015</td>
+                          <td>SUSHI ROLL SA DE CV<span class="label label-danger">Sugerida</span></td>
+                          <td><p class="text-right" id="monto_S22">150.00</p></td>
+                          <td>
+                            <div class="input-group">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_S22"
+                                      oninput="propinaFunction(monto_S22, propina_S22, total_S22, alertaPropinaFacSug2)">
+                            </div>
+                          </td>
+                          <td><p class="text-right" id="total_S22">150.00</p></td>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
+                            </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>987534</td>
+                          <td>01/05/2015</td>
+                          <td>OXXO GONZALEZ C.<span class="label label-danger">Sugerida</span></td>
+                          <td><p class="text-right" id="monto_S23">152.00</p></td>
+                          <td>
+                            <div class="input-group">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_S23"
+                                      oninput="propinaFunction(monto_S23, propina_S23, total_S23, alertaPropinaFacSug2)">
+                            </div>
+                          </td>
+                          <td><p class="text-right" id="total_S23">152.00</p></td>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
+                            </div>
+                          </td>
+                      </tr>
+                  </tbody>
+                </table><!--TERMINA TABLA DE FACTURAS MISMO USUARIO-->
+
+                <!--<h3>Tabla de Comentarios</h3>-->
+                <table class="table">
+                  <thead>
+                  </thead>
+                  <tbody>
+                      <tr>
+                        <td style="width: 120px;">Comentarios: </td>
+                        <td colspan="6">
+                          <div class="form-group">
+                            <textarea class="form-control" id="message-text"></textarea>
+                          </div>
+                        </td>
+                      </tr>
+                  </tbody>
+                </table>
+
+                <p class="text-center" id="alertaPropinaFacSug2" style="color:red; font-size:120%"></p>
+                <p class="text-center">
+                  <a type="button" class="btn btn-warning" href="">Vincular</a>
+                </p>
+              </div><!-- Termina TAB Facturas -->
+              <!-- TAB Tickets -->
+              <div role="tabpanel" class="tab-pane" id="tabTicketsSug2">
+                <table class="table">
+                  <thead>
+                      <tr>
+                        <td colspan="6"><h5>Ingresa datos de ticket</h5></td>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr style="height: 75px;">
+                        <td style="width: 100px;">Fecha:</td>
+                        <td style="width: 200px;">
+                          <div class="form-group">
+                              <div class="input-group date" id="datetimepicker1">
+                                  <input type="text" class="form-control" data-provide="datepicker">
+                                  <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                  </span>
+                              </div>
+                          </div>
+                        </td>
+                        <td style="width: 100px;">Ticket:</td>
+                        <td style="width: 200px;">
+                          <span class="btn btn-default btn-file">
+                            <span class="glyphicon glyphicon-folder-open" aria-hidden="true"> 
+                              Explorar
+                              <input type="file">
+                            </span>
+                          </span>
+                        </td>
+                      </tr>
+                      <tr style="height: 75px;">
+                          <td>Monto:</td>
+                          <td>
+                            <div class="input-group">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="monto_ticket_sug2"
+                                      oninput="propinaTicket(monto_ticket_sug2, propina_ticket_sug2, total_ticket_sug2, alertaPropinaTicketSug2)">
+                            </div>
+                          </td>
+                          <td>Propina:</td>
+                          <td>
+                            <div class="input-group">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_ticket_sug2"
+                                      oninput="propinaTicket(monto_ticket_sug2, propina_ticket_sug2, total_ticket_sug2, alertaPropinaTicketSug2)">
+                            </div>
+                          </td>
+                          <td>Total:</td>
+                          <td><p class="text" id="total_ticket_sug2">0.00</p></td>
+                      </tr>
+                      <tr style="height: 75px;">
+                        <td>Comentarios: </td>
+                        <td colspan="5">
+                           <div class="form-group">
+                            <textarea class="form-control" id="message-text"></textarea>
+                          </div>
+                        </td>
+                      </tr>
+                  </tbody>
+                </table>
+                <br/>
+                <p class="text-center" id="alertaPropinaTicketSug2" style="color:red; font-size:120%"></p>
+                <p class="text-center">
+                  <a type="button" class="btn btn-warning" href="#">Vincular</a>
+                </p>
+              </div><!-- Termina TAB Tickets -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--TERMINA MODAL AGREGA COMPROBANTE SUGERIDO #1 -->
+
+
+    <!-- ==================================================
+                    NEW MODAL 
+    ================================================== -->
 
     <!-- MODAL AGREGA COMPROBANTE GENERAL #1 -->
     <div class="modal fade" id="modalComprobanteGral" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -383,18 +833,18 @@
                   </thead>
                   <tbody>
                       <tr>
-                          <td>987534</td>
-                          <td>11/04/2015</td>
-                          <td>SORIANA SA CV <span class="label label-danger">Sugerida</span></td>
-                          <td><p class="text-right" id="monto_G01">345.00</p></td>
+                          <td>23712</td>
+                          <td>03/05/2015</td>
+                          <td>SUSHI ROLL SA DE CV</td>
+                          <td><p class="text-right" id="monto_GS22">148.00</p></td>
                           <td>
                             <div class="input-group">
                               <span class="input-group-addon">$</span>
-                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_G01"
-                                      oninput="propinaFunction(monto_G01, propina_G01, total_G01, alertaPropinaFacGral)">
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_GS22"
+                                      oninput="propinaFunction(monto_GS22, propina_GS22, total_GS22, alertaPropinaFacGral)">
                             </div>
                           </td>
-                          <td><p class="text-right" id="total_G01">345.00</p></td>
+                          <td><p class="text-right" id="total_GS22">148.00</p></td>
                           <td>
                             <div class="radio">
                               <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
@@ -402,18 +852,113 @@
                           </td>
                       </tr>
                       <tr>
-                          <td>76534</td>
-                          <td>19/04/2015</td>
-                          <td>RESTAURANTE EL CAPITAN SA CV</td>
-                          <td><p class="text-right" id="monto_G02">750.00</p></td>
+                          <td>56823</td>
+                          <td>02/05/2015</td>
+                          <td>SUSHI ROLL SA DE CV</td>
+                          <td><p class="text-right" id="monto_GS21">150.00</p></td>
                           <td>
                             <div class="input-group">
                               <span class="input-group-addon">$</span>
-                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_G02"
-                                      oninput="propinaFunction(monto_G02, propina_G02, total_G02, alertaPropinaFacGral)">
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_GS21"
+                                      oninput="propinaFunction(monto_GS21, propina_GS21, total_GS21, alertaPropinaFacGral)">
                             </div>
                           </td>
-                          <td><p class="text-right" id="total_G02">750.00</p></td>
+                          <td><p class="text-right" id="total_GS21">150.00</p></td>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
+                            </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>23435</td>
+                          <td>01/05/2015</td>
+                          <td>OXXO GONZALEZ C.</td>
+                          <td><p class="text-right" id="monto_GS23">152.00</p></td>
+                          <td>
+                            <div class="input-group">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_GS23"
+                                      oninput="propinaFunction(monto_GS23, propina_GS23, total_GS23, alertaPropinaFacGral)">
+                            </div>
+                          </td>
+                          <td><p class="text-right" id="total_GS23">152.00</p></td>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
+                            </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>98752</td>
+                          <td>29/04/2015</td>
+                          <td>WINGS AS 32</td>
+                          <td><p class="text-right" id="monto_GS13">500.00</p></td>
+                          <td>
+                            <div class="input-group">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_GS13"
+                                      oninput="propinaFunction(monto_GS13, propina_GS13, total_GS13, alertaPropinaFacGral)">
+                            </div>
+                          </td>
+                          <td><p class="text-right" id="total_GS13">500.00</p></td>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
+                            </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>87562</td>
+                          <td>27/04/2015</td>
+                          <td>RESTAURANTE CHILIS SA DE CV </td>
+                          <td><p class="text-right" id="monto_GS12">490.00</p></td>
+                          <td>
+                            <div class="input-group">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_GS12"
+                                      oninput="propinaFunction(monto_GS12, propina_GS12, total_GS12, alertaPropinaFacGral)">
+                            </div>
+                          </td>
+                          <td><p class="text-right" id="total_GS12">490.00</p></td>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
+                            </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>87459</td>
+                          <td>26/04/2015</td>
+                          <td>RESTAURANTE CHILIS SA DE CV </td>
+                          <td><p class="text-right" id="monto_GS11">463.50</p></td>
+                          <td>
+                            <div class="input-group">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_GS11"
+                                      oninput="propinaFunction(monto_GS11, propina_GS11, total_GS11, alertaPropinaFacGral)">
+                            </div>
+                          </td>
+                          <td><p class="text-right" id="total_GS11">463.50</p></td>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
+                            </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>987534</td>
+                          <td>26/04/2015</td>
+                          <td>RESTAURANTE CHILIS SA DE CV</td>
+                          <td><p class="text-right" id="monto_G01">463.50</p></td>
+                          <td>
+                            <div class="input-group">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_G01"
+                                      oninput="propinaFunction(monto_G01, propina_G01, total_G01, alertaPropinaFacGral)">
+                            </div>
+                          </td>
+                          <td><p class="text-right" id="total_G01">463.50</p></td>
                           <td>
                             <div class="radio">
                               <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
@@ -439,110 +984,27 @@
                             </div>
                           </td>
                       </tr>
+                      <tr>
+                          <td>76534</td>
+                          <td>19/04/2015</td>
+                          <td>RESTAURANTE EL CAPITAN SA CV</td>
+                          <td><p class="text-right" id="monto_G02">750.00</p></td>
+                          <td>
+                            <div class="input-group">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_G02"
+                                      oninput="propinaFunction(monto_G02, propina_G02, total_G02, alertaPropinaFacGral)">
+                            </div>
+                          </td>
+                          <td><p class="text-right" id="total_G02">750.00</p></td>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
+                            </div>
+                          </td>
+                      </tr>
                   </tbody>
                 </table><!--TERMINA TABLA DE FACTURAS MISMO USUARIO-->
-
-                <!-- ACORDEON PARA TABLA DE MAS FACTURAS-->
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                  
-                  <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingTwo">
-                      <h4 class="panel-title">
-                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          Ver facturas de otros usuarios
-                        </a>
-                      </h4>
-                    </div>
-                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                      <div class="panel-body">
-                        
-
-                            <!--TABLA DE FACTURAS MISMO USUARIO-->
-                            <table class="table table-striped">
-                              <thead>
-                                  <tr>
-                                      <th style="width: 100px;">Usuario</th>
-                                      <th style="width:  70px;">Tarjeta</th>
-                                      <th style="width:  80px;">Folio</th>
-                                      <th style="width:  80px;">Fecha</th>
-                                      <th >RFC Emisor</th>
-                                      <th style="width:  80px;" class="text-center">Monto</th>
-                                      <th style="width: 150px;" class="text-center">Propina</th>
-                                      <th style="width:  80px;" class="text-center">Total</th>
-                                      <th style="width:  30px;">Asociar</th>
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                  <tr>
-                                      <td>Mariana Cantú</td>
-                                      <td>876234579</td>
-                                      <td>987534</td>
-                                      <td>11/04/2015</td>
-                                      <td>SORIANA SA CV</td>
-                                      <td><p class="text-right" id="monto_OTH_01">345.00</p></td>
-                                      <td>
-                                        <div class="input-group">
-                                          <span class="input-group-addon">$</span>
-                                          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_OTH_01"
-                                                  oninput="propinaFunction(monto_OTH_01, propina_OTH_01, total_OTH_01, alertaPropinaFacGral)">
-                                        </div>
-                                      </td>
-                                      <td><p class="text-right" id="total_OTH_01">345.00</p></td>
-                                      <td>
-                                        <div class="radio">
-                                          <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
-                                        </div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>Mariana Cantú</td>
-                                      <td>876234579</td>
-                                      <td>76534</td>
-                                      <td>19/04/2015</td>
-                                      <td>RESTAURANTE EL CAPITAN SA CV</td>
-                                      <td><p class="text-right" id="monto_OTH_02">750.00</p></td>
-                                      <td>
-                                        <div class="input-group">
-                                          <span class="input-group-addon">$</span>
-                                          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_OTH_02"
-                                                  oninput="propinaFunction(monto_OTH_02, propina_OTH_02, total_OTH_02, alertaPropinaFacGral)">
-                                        </div>
-                                      </td>
-                                      <td><p class="text-right" id="total_OTH_02">750.00</p></td>
-                                      <td>
-                                        <div class="radio">
-                                          <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
-                                        </div>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <td>Mariana Cantú</td>
-                                      <td>876234579</td>
-                                      <td>654373</td>
-                                      <td>20/04/2015</td>
-                                      <td>HOTEL DE MEXICO SA CV</td>
-                                      <td><p class="text-right" id="monto_OTH_03">1250.00</p></td>
-                                      <td>
-                                        <div class="input-group">
-                                          <span class="input-group-addon">$</span>
-                                          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="propina_OTH_03"
-                                                  oninput="propinaFunction(monto_OTH_03, propina_OTH_03, total_OTH_03, alertaPropinaFacGral)">
-                                        </div>
-                                      </td>
-                                      <td><p class="text-right" id="total_OTH_03">1250.00</p></td>
-                                      <td>
-                                        <div class="radio">
-                                          <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura"/>
-                                        </div>
-                                      </td>
-                                  </tr>
-                              </tbody>
-                            </table><!--TERMINA TABLA DE FACTURAS MISMO USUARIO-->
-
-                      </div>
-                    </div>
-                  </div>
-                </div><!-- TERMINA ACORDEON PARA TABLA DE MAS FACTURAS-->
 
                 <!--<h3>Tabla de Comentarios</h3>-->
                 <table class="table">
@@ -562,7 +1024,7 @@
 
                 <p class="text-center" id="alertaPropinaFacGral" style="color:red; font-size:120%"></p>
                 <p class="text-center">
-                  <a type="button" class="btn btn-warning" href="7_justificante_detalle_1.html">Vincular</a>
+                  <a type="button" class="btn btn-warning" href="">Vincular</a>
                 </p>
               </div><!-- Termina TAB Facturas -->
               <!-- TAB Tickets -->
@@ -638,192 +1100,9 @@
       </div>
     </div><!--TERMINA MODAL AGREGA COMPROBANTE GENERAL #1 -->
 
-
-
-
-
-
-
-
-
-    <!-- MODAL VINCULAR FACTURAS #3-->
-    <div class="modal fade" id="modalVinc_Facturas3_old" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Facturas Pendientes</h4>
-          </div>
-          <div class="modal-body">
-          <!--Formulario Alta Justificante-->        
-            <div class="bs-example">
-
-              <!--<h3>Transacciones Conciliadas</h3>-->
-              <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Folio</th>
-                        <th>Fecha</th>
-                        <th>RFC Emisor</th>
-                        <th class="text-center">Monto</th>
-                        <th>Asociar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>987534</td>
-                        <td>11/04/2015</td>
-                        <td>SORIANA SA CV</td>
-                        <td><p class="text-right">$ 345.00</p></td>
-                        <td>
-                          <div class="radio">
-                            <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
-                          </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>76534</td>
-                        <td>19/04/2015</td>
-                        <td>RESTAURANTE EL CAPITAN SA CV</td>
-                        <td><p class="text-right">$ 750.00</p></td>
-                        <td>
-                          <div class="radio">
-                            <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
-                          </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>654373</td>
-                        <td>20/04/2015</td>
-                        <td>HOTEL DE MEXICO SA CV</td>
-                        <td><p class="text-right">$ 1,250.00</p></td>
-                        <td>
-                          <div class="radio">
-                            <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
-                          </div>
-                        </td>
-                    </tr>
-                </tbody>
-
-              </table>
-              <p class="text-center">
-                <a type="button" class="btn btn-warning" href="2_transacciones_1.html">Vincular</a>
-              </p>
-            </div>        
-          </div>
-        </div>
-      </div>
-    </div><!--TERMINA MODAL VINCULAR FACTURAS -->
-
-    <!-- MODAL VINCULAR FACTURAS #2-->
-    <div class="modal fade" id="modalVinc_Facturas2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Facturas Pendientes</h4>
-          </div>
-          <div class="modal-body">
-          <!--Formulario Alta Justificante-->        
-            <div class="bs-example">
-
-              <!--<h3>Transacciones Conciliadas</h3>-->
-              <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Folio</th>
-                        <th>Fecha</th>
-                        <th>RFC Emisor</th>
-                        <th class="text-center">Monto</th>
-                        <th>Asociar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>987534</td>
-                        <td>11/04/2015</td>
-                        <td>SORIANA SA CV</td>
-                        <td><p class="text-right">$ 345.00</p></td>
-                        <td>
-                          <div class="radio">
-                            <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
-                          </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>76534</td>
-                        <td>19/04/2015</td>
-                        <td>RESTAURANTE EL CAPITAN SA CV</td>
-                        <td><p class="text-right">$ 750.00</p></td>
-                        <td>
-                          <div class="radio">
-                            <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
-                          </div>
-                        </td>
-                    </tr>
-                </tbody>
-
-              </table>
-              <p class="text-center">
-                <a type="button" class="btn btn-warning" href="#">Vincular</a>
-              </p>
-            </div>        
-          </div>
-        </div>
-      </div>
-    </div><!--TERMINA MODAL VINCULAR FACTURAS -->
-
-    <!-- MODAL VINCULAR FACTURAS #1-->
-    <div class="modal fade" id="modalVinc_Facturas1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Facturas Pendientes</h4>
-          </div>
-          <div class="modal-body">
-          <!--Formulario Alta Justificante-->        
-            <div class="bs-example">
-
-              <!--<h3>Transacciones Conciliadas</h3>-->
-              <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Folio</th>
-                        <th>Fecha</th>
-                        <th>RFC Emisor</th>
-                        <th class="text-center">Monto</th>
-                        <th>Asociar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>987534</td>
-                        <td>11/04/2015</td>
-                        <td>SORIANA SA CV</td>
-                        <td><p class="text-right">$ 345.00</p></td>
-                        <td>
-                          <div class="radio">
-                            <input type="radio" style="vertical-align: up; margin: 0px;" name="radioFactura">
-                          </div>
-                        </td>
-                    </tr>
-                </tbody>
-
-              </table>
-              <p class="text-center">
-                <a type="button" class="btn btn-warning" href="#">Vincular</a>
-              </p>
-            </div>        
-          </div>
-        </div>
-      </div>
-    </div><!--TERMINA MODAL VINCULAR FACTURAS -->
-
-
-
-
-
+    <!-- ==================================================
+                    NEW MODAL 
+    ================================================== -->
 
     <!-- MODAL DETALLE FACTURA #1-->
     <div class="modal fade" id="modalDetalleFactura1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -853,7 +1132,7 @@
                     </tr>
                     <tr>
                       <td>Fecha:</td>
-                      <td>02/04/2015 10:32:54</td>
+                      <td>25/04/2015 10:32:54</td>
                     </tr>
                     <tr>
                         <td>Monto:</td>
@@ -885,7 +1164,9 @@
     </div><!--TERMINA MODAL DETALLE FACTURA #1-->
 
 
-
+    <!-- ==================================================
+                    NEW MODAL 
+    ================================================== -->
 
     <!-- MODAL DETALLE FACTURA #2-->
     <div class="modal fade" id="modalDetalleFactura2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -915,7 +1196,7 @@
                     </tr>
                     <tr>
                         <td>Fecha:</td>
-                        <td>04/04/2015 10:32:54</td>
+                        <td>25/04/2015 10:32:54</td>
                     </tr>
                     <tr>
                         <td>Monto:</td>
@@ -947,6 +1228,9 @@
     </div><!--TERMINA MODAL DETALLE FACTURA #2 -->
 
 
+    <!-- ==================================================
+                    NEW MODAL 
+    ================================================== -->
 
     <!-- MODAL DETALLE FACTURA #3 -->
     <div class="modal fade" id="modalDetalleFactura3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -976,7 +1260,7 @@
                     </tr>
                     <tr>
                         <td>Fecha:</td>
-                        <td>05/04/2015 10:32:54</td>
+                        <td>25/04/2015 10:32:54</td>
                     </tr>
                     <tr>
                         <td>Monto:</td>
@@ -1007,6 +1291,72 @@
       </div>
     </div><!--TERMINA MODAL DETALLE FACTURA #3 -->
 
+    <!-- ==================================================
+                    NEW MODAL 
+    ================================================== -->
+
+    <!-- MODAL DETALLE FACTURA #4 -->
+    <div class="modal fade" id="modalDetalleFactura4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Detalle de Factura</h4>
+          </div>
+          <div class="modal-body">
+          <!--Formulario Alta Justificante-->        
+            <div class="bs-example">
+            
+              <table class="table table-striped">
+                <tbody>
+                    <tr>
+                      <td>Vinculada a: </td>
+                      <td>'RESTAURANTE CHILIS'</td>
+                    </tr>
+                    <tr>
+                      <td>Folio:</td>
+                      <td>987534</td>
+                    </tr>
+                    <tr>
+                      <td>RFC:</td>
+                      <td>CHIL8756HDF</td>
+                    </tr>
+                    <tr>
+                        <td>Fecha:</td>
+                        <td>26/04/2015 10:32:54</td>
+                    </tr>
+                    <tr>
+                        <td>Monto:</td>
+                        <td>$ 463.50</td>
+                    </tr>
+
+                    <tr>
+                      <td>Factura:</td>
+                      <td>
+                        <a href="#">
+                          <img src="img/xml.png" alt="XML" style="width:20px;height:20px">
+                        </a>
+                        <a href="#">
+                          <img src="img/pdf.png" alt="pdf" style="width:20px;height:20px">
+                        </a>
+                      </td>
+                    </tr>
+
+                </tbody>
+              </table>
+              <br/>
+              <p class="text-center">
+                <a type="button" class="btn btn-warning" href="#">Desvincular</a>
+              </p>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div><!--TERMINA MODAL DETALLE FACTURA #4 -->
+
+    <!-- ==================================================
+                    NEW MODAL 
+    ================================================== -->
 
     <!-- MODAL DETALLE FACTURA #5A-->
     <div class="modal fade" id="modalDetalleFactura5A" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -1036,7 +1386,7 @@
                     </tr>
                     <tr>
                       <td>Fecha:</td>
-                      <td>13/04/2015 10:32:54</td>
+                      <td>27/04/2015 10:32:54</td>
                     </tr>
                     <tr>
                         <td>Monto:</td>
@@ -1067,6 +1417,9 @@
       </div>
     </div><!--TERMINA MODAL DETALLE FACTURA #5A-->
 
+    <!-- ==================================================
+                    NEW MODAL 
+    ================================================== -->
 
     <!-- MODAL DETALLE FACTURA #5B-->
     <div class="modal fade" id="modalDetalleFactura5B" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -1096,7 +1449,7 @@
                     </tr>
                     <tr>
                         <td>Fecha:</td>
-                        <td>14/04/2015 10:32:54</td>
+                        <td>27/04/2015 10:32:54</td>
                     </tr>
                     <tr>
                         <td>Monto:</td>
@@ -1126,6 +1479,11 @@
         </div>
       </div>
     </div><!--TERMINA MODAL DETALLE FACTURA #5B-->
+
+    
+    <!-- ==================================================
+                    NEW MODAL 
+    ================================================== -->
 
     <!-- MODAL DETALLE FACTURA #NuevaA-->
     <div class="modal fade" id="modalDetalleFacturaNuevaA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -1187,6 +1545,9 @@
     </div><!--TERMINA MODAL DETALLE FACTURA #Nueva -->
 
 
+    <!-- ==================================================
+                    NEW MODAL 
+    ================================================== -->
 
     <!-- MODAL DETALLE FACTURA #NuevaB-->
     <div class="modal fade" id="modalDetalleFacturaNuevaB" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -1246,21 +1607,6 @@
         </div>
       </div>
     </div><!--TERMINA MODAL DETALLE FACTURA #Nueva -->
-
-
-
-
-    <!-- ==================================================
-                    MODAL VIEWS
-    ================================================== -->
-
-
-
-
-
-
-
-
 
 
 
