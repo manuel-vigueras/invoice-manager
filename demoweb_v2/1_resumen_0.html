@@ -332,90 +332,90 @@
               <script src="js/d3pie.min.js"></script>
               <script>
               var pie1 = new d3pie("pieChart1", {
-              	"header": {
-              		"title": {
-              			"text": "Transacciones por Estatus",
-              			"fontSize": 22,
-              			"font": "verdana"
-              		},
-              		"subtitle": {
-              			"color": "#999999",
-              			"fontSize": 10,
-              			"font": "verdana"
-              		},
-              		"titleSubtitlePadding": 12
-              	},
-              	"footer": {
-              		"text": " ",
-              		"color": "#999999",
-              		"fontSize": 11,
-              		"font": "open sans",
-              		"location": "bottom-center"
-              	},
-              	"size": {
-              		"canvasHeight": 400,
-              		"canvasWidth": 450
-              	},
-              	"data": {
-              		"smallSegmentGrouping": {
-              			"enabled": true
-              		},
-              		"content": [
-              			{
-              				"label": "Conciliadas",
-              				"value": 23,
-              				"color": "#93c144"
-              			},
-              			{
-              				"label": "No conciliadas",
-              				"value": 8,
-              				"color": "#72925b"
-              			}
-              		]
-              	},
-              	"labels": {
-              		"outer": {
-              			"pieDistance": 25
-              		},
-              		"mainLabel": {
-              			"font": "verdana",
-              			"fontSize": 12
-              		},
-              		"percentage": {
-              			"color": "#e1e1e1",
-              			"font": "verdana",
-              			"decimalPlaces": 0
-              		},
-              		"value": {
-              			"color": "#e1e1e1",
-              			"font": "verdana",
-              			"fontSize": 11
-              		},
-              		"lines": {
-              			"enabled": true,
-              			"color": "#cccccc"
-              		}
-              	},
-              	"tooltips": {
-              		"enabled": true,
-              		"type": "placeholder",
-              		"string": "{label}: {percentage}%",
-              		"styles": {
-              			"fadeInSpeed": 276,
-              			"backgroundOpacity": 0.43
-              		}
-              	},
-              	"effects": {
-              		"pullOutSegmentOnClick": {
-              			"speed": 400,
-              			"size": 8
-              		}
-              	},
-              	"callbacks": {
-              		"onMouseoverSegment": null,
-              		"onMouseoutSegment": null,
-              		"onClickSegment": null
-              	}
+                "header": {
+                  "title": {
+                    "text": "Transacciones por Estatus",
+                    "fontSize": 22,
+                    "font": "verdana"
+                  },
+                  "subtitle": {
+                    "color": "#999999",
+                    "fontSize": 10,
+                    "font": "verdana"
+                  },
+                  "titleSubtitlePadding": 12
+                },
+                "footer": {
+                  "text": " ",
+                  "color": "#999999",
+                  "fontSize": 11,
+                  "font": "open sans",
+                  "location": "bottom-center"
+                },
+                "size": {
+                  "canvasHeight": 400,
+                  "canvasWidth": 450
+                },
+                "data": {
+                  "smallSegmentGrouping": {
+                    "enabled": true
+                  },
+                  "content": [
+                    {
+                      "label": "Conciliadas",
+                      "value": 23,
+                      "color": "#93c144"
+                    },
+                    {
+                      "label": "No conciliadas",
+                      "value": 8,
+                      "color": "#72925b"
+                    }
+                  ]
+                },
+                "labels": {
+                  "outer": {
+                    "pieDistance": 25
+                  },
+                  "mainLabel": {
+                    "font": "verdana",
+                    "fontSize": 12
+                  },
+                  "percentage": {
+                    "color": "#e1e1e1",
+                    "font": "verdana",
+                    "decimalPlaces": 0
+                  },
+                  "value": {
+                    "color": "#e1e1e1",
+                    "font": "verdana",
+                    "fontSize": 11
+                  },
+                  "lines": {
+                    "enabled": true,
+                    "color": "#cccccc"
+                  }
+                },
+                "tooltips": {
+                  "enabled": true,
+                  "type": "placeholder",
+                  "string": "{label}: {value}",
+                  "styles": {
+                    "fadeInSpeed": 276,
+                    "backgroundOpacity": 0.43
+                  }
+                },
+                "effects": {
+                  "pullOutSegmentOnClick": {
+                    "speed": 400,
+                    "size": 8
+                  }
+                },
+                "callbacks": {
+                  "onMouseoverSegment": null,
+                  "onMouseoutSegment": null,
+                  "onClickSegment": null
+                }
               });
               </script>
             </div>
@@ -425,90 +425,90 @@
 
               <script>
               var pie2 = new d3pie("pieChart2", {
-              	"header": {
-              		"title": {
-              			"text": "Facturas por Estatus",
-              			"fontSize": 22,
-              			"font": "verdana"
-              		},
-              		"subtitle": {
-              			"color": "#999999",
-              			"fontSize": 10,
-              			"font": "verdana"
-              		},
-              		"titleSubtitlePadding": 12
-              	},
-              	"footer": {
-              		"text": "",
-              		"color": "#999999",
-              		"fontSize": 11,
-              		"font": "open sans",
-              		"location": "bottom-center"
-              	},
-              	"size": {
-              		"canvasHeight": 400,
-              		"canvasWidth": 450
-              	},
-              	"data": {
-              		"smallSegmentGrouping": {
-              			"enabled": true
-              		},
-              		"content": [
-              			{
-              				"label": "Conciliadas",
-              				"value": 19,
-              				"color": "#F0430A"
-              			},
-              			{
-              				"label": "No conciliadas",
-              				"value": 11,
-              				"color": "#FA7E55"
-              			}
-              		]
-              	},
-              	"labels": {
-              		"outer": {
-              			"pieDistance": 25
-              		},
-              		"mainLabel": {
-              			"font": "verdana",
-              			"fontSize": 12
-              		},
-              		"percentage": {
-              			"color": "#ffffff", //e1e1e1
-              			"font": "verdana",
-              			"decimalPlaces": 0
-              		},
-              		"value": {
-              			"color": "#e1e1e1",
-              			"font": "verdana",
-              			"fontSize": 11
-              		},
-              		"lines": {
-              			"enabled": true,
-              			"color": "#cccccc"
-              		}
-              	},
-              	"tooltips": {
-              		"enabled": true,
-              		"type": "placeholder",
-              		"string": "{label}: {percentage}%",
-              		"styles": {
-              			"fadeInSpeed": 276,
-              			"backgroundOpacity": 0.43
-              		}
-              	},
-              	"effects": {
-              		"pullOutSegmentOnClick": {
-              			"speed": 400,
-              			"size": 8
-              		}
-              	},
-              	"callbacks": {
-              		"onMouseoverSegment": null,
-              		"onMouseoutSegment": null,
-              		"onClickSegment": null
-              	}
+                "header": {
+                  "title": {
+                    "text": "Facturas por Estatus",
+                    "fontSize": 22,
+                    "font": "verdana"
+                  },
+                  "subtitle": {
+                    "color": "#999999",
+                    "fontSize": 10,
+                    "font": "verdana"
+                  },
+                  "titleSubtitlePadding": 12
+                },
+                "footer": {
+                  "text": "",
+                  "color": "#999999",
+                  "fontSize": 11,
+                  "font": "open sans",
+                  "location": "bottom-center"
+                },
+                "size": {
+                  "canvasHeight": 400,
+                  "canvasWidth": 450
+                },
+                "data": {
+                  "smallSegmentGrouping": {
+                    "enabled": true
+                  },
+                  "content": [
+                    {
+                      "label": "Conciliadas",
+                      "value": 19,
+                      "color": "#F0430A"
+                    },
+                    {
+                      "label": "No conciliadas",
+                      "value": 11,
+                      "color": "#FA7E55"
+                    }
+                  ]
+                },
+                "labels": {
+                  "outer": {
+                    "pieDistance": 25
+                  },
+                  "mainLabel": {
+                    "font": "verdana",
+                    "fontSize": 12
+                  },
+                  "percentage": {
+                    "color": "#ffffff", //e1e1e1
+                    "font": "verdana",
+                    "decimalPlaces": 0
+                  },
+                  "value": {
+                    "color": "#e1e1e1",
+                    "font": "verdana",
+                    "fontSize": 11
+                  },
+                  "lines": {
+                    "enabled": true,
+                    "color": "#cccccc"
+                  }
+                },
+                "tooltips": {
+                  "enabled": true,
+                  "type": "placeholder",
+                  "string": "{label}: {value}",
+                  "styles": {
+                    "fadeInSpeed": 276,
+                    "backgroundOpacity": 0.43
+                  }
+                },
+                "effects": {
+                  "pullOutSegmentOnClick": {
+                    "speed": 400,
+                    "size": 8
+                  }
+                },
+                "callbacks": {
+                  "onMouseoverSegment": null,
+                  "onMouseoutSegment": null,
+                  "onClickSegment": null
+                }
               });
               </script>
             </div>

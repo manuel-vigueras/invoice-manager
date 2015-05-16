@@ -14,6 +14,7 @@
     <![endif]-->
     <!--<link href="css/styles.css" rel="stylesheet">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
     <style type="text/css">
 
       /* Sticky footer styles
@@ -122,16 +123,6 @@
         top: 100%;
         left: 0;
       }
-      #if_lineChart {
-        width: 100%;
-        height: 450px;
-        border: 0;
-      }
-      .space {
-        padding-top: 25px;
-        padding-bottom: 25px;
-        background-color: transparent;
-      }
     </style>
   </head>
 
@@ -161,10 +152,10 @@
               <p class="navbar-text" id="date"></p>
             </ul>
             <ul class="nav navbar-nav">
-              <li><a>Alfonso López Alcántara</a></li>
+              <li><a>Francisco Rodríguez Peña</a></li>
             </ul>
             <ul class="nav navbar-nav">
-              <li><a href="login.html">
+              <li><a href="login_adm.html">
                 <span class="glyphicon glyphicon-log-out" aria-hidden="true">Salir</span></a>
               </li>
             </ul>
@@ -184,17 +175,45 @@
         <div class="col-md-10">
 
           <div class="row">
-            <div class="col-md-6">
+
+            <div class="col-md-2">
               <br/>
-              <h5>Tarjeta:  2364 0015 3816</h5>
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuPeriodo" data-toggle="dropdown" aria-expanded="true">
+                  Filtro Usuarios <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Promedios Globales (todos los usuarios)</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2364001538164532 - Alfonso López Alcántara</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2364001538876234 - David Gutiérrez Hernández</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2364001538167285 - Antonio Cortés Zamora</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2364001538145683 - Mariana Ramírez Cantú</a></li>
+                </ul>
             </div>
-            <div class="col-md-6">
+
+            <div class="col-md-2">
+              <br/>
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuPeriodo" data-toggle="dropdown" aria-expanded="true">
+                  Filtro Justificantes <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Todos</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Pachuca</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Acapulco</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">California</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Monterrey</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-8">
               <span class="pull-right">
                 <div class="navbar">
                   <ul class="nav navbar-nav navbar-default">
-                    <li class="active"><a href="1_resumen_0.html">Resumen<span class="sr-only">(current)</span></a></li>
-                    <li><a href="2_transacciones_0.html" class="btn-sm">Mis Movimientos</a></li>
-                    <li><a href="6_justificantes_0.html" class="btn-sm">Mis Justificantes</a></li>
+                    <li class="active"><a href="adm_1_resumen_0.html">Resumen<span class="sr-only">(current)</span></a></li>
+                    <li><a href="adm_2_transacciones_0.html" class="btn-sm">Movimientos</a></li>
+                    <li><a href="adm_6_justificantes_0.html" class="btn-sm">Justificantes</a></li>
+                    <li><a href="reportes_tableau.html" class="btn-sm">Reportes</a></li>
+                    <li><a href="adm_11_anexo24_0.html" class="btn-sm">SAT</a></li>
+                    <li><a href="adm_12_settings_0.html" class="btn-sm">Configuración</a></li>
                   </ul>
                 </div>
               </span>
@@ -203,8 +222,7 @@
 
           <div class="row">
             <div class="col-md-8">
-              <h3>Resumen de Cuenta</h3>
-              <h2>Monto comprobado: $ 2,385.50</h2>
+              <h2>Saldo promedio: $ 2,385.50</h2>
             </div>
           </div>
 
@@ -216,18 +234,14 @@
 
             </div> -->
 
-            <div class="col-md-6">
-              <iframe src="http://localhost/d3/demoweb/demoweb/lineChart.html" scrolling="no" id="if_lineChart">
-              </iframe>
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
               <script src="http://d3js.org/d3.v3.min.js"></script>
               <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
               <svg id="bar-chart"></svg>
               <script>
-                var height = 360;
-                var width = 420;
-                var margin = {top: 40, right: 20, bottom: 70, left: 43};
+                var height = 400;
+                var width = 690;
+                var margin = {top: 40, right: 20, bottom: 30, left: 40};
 
                 var formatPercent = d3.format("");
 
@@ -268,27 +282,14 @@
                   x.domain(data.map(function(d) { return d.letter; }));
                   y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
 
-                  // svg.append("g")
-                  //     .attr("class", "x axis")
-                  //     .attr("font-size","8px")
-                  //     .attr("transform", "translate(0," + height + ")")
-                  //     .call(xAxis);
                   svg.append("g")
-                    .attr("class", "x axis")
-                    .attr("font-size","9px")
-                    .attr("transform", "translate(0," + height + ")")
-                    .call(xAxis)
-                    .selectAll("text")
-                        .style("text-anchor", "end")
-                        .attr("dx", "-.8em")
-                        .attr("dy", ".15em")
-                        .attr("transform", function(d) {
-                            return "rotate(-27)"
-                    });
+                      .attr("class", "x axis")
+                      .attr("font-size","11px")
+                      .attr("transform", "translate(0," + height + ")")
+                      .call(xAxis);
 
                   svg.append("g")
                       .attr("class", "y axis")
-                      .attr("font-size","10px")
                       .call(yAxis)
                     .append("text")
                       .attr("transform", "rotate(-90)")
@@ -332,90 +333,90 @@
               <script src="js/d3pie.min.js"></script>
               <script>
               var pie1 = new d3pie("pieChart1", {
-              	"header": {
-              		"title": {
-              			"text": "Transacciones por Estatus",
-              			"fontSize": 22,
-              			"font": "verdana"
-              		},
-              		"subtitle": {
-              			"color": "#999999",
-              			"fontSize": 10,
-              			"font": "verdana"
-              		},
-              		"titleSubtitlePadding": 12
-              	},
-              	"footer": {
-              		"text": " ",
-              		"color": "#999999",
-              		"fontSize": 11,
-              		"font": "open sans",
-              		"location": "bottom-center"
-              	},
-              	"size": {
-              		"canvasHeight": 400,
-              		"canvasWidth": 450
-              	},
-              	"data": {
-              		"smallSegmentGrouping": {
-              			"enabled": true
-              		},
-              		"content": [
-              			{
-              				"label": "Conciliadas",
-              				"value": 23,
-              				"color": "#93c144"
-              			},
-              			{
-              				"label": "No conciliadas",
-              				"value": 8,
-              				"color": "#72925b"
-              			}
-              		]
-              	},
-              	"labels": {
-              		"outer": {
-              			"pieDistance": 25
-              		},
-              		"mainLabel": {
-              			"font": "verdana",
-              			"fontSize": 12
-              		},
-              		"percentage": {
-              			"color": "#e1e1e1",
-              			"font": "verdana",
-              			"decimalPlaces": 0
-              		},
-              		"value": {
-              			"color": "#e1e1e1",
-              			"font": "verdana",
-              			"fontSize": 11
-              		},
-              		"lines": {
-              			"enabled": true,
-              			"color": "#cccccc"
-              		}
-              	},
-              	"tooltips": {
-              		"enabled": true,
-              		"type": "placeholder",
-              		"string": "{label}: {percentage}%",
-              		"styles": {
-              			"fadeInSpeed": 276,
-              			"backgroundOpacity": 0.43
-              		}
-              	},
-              	"effects": {
-              		"pullOutSegmentOnClick": {
-              			"speed": 400,
-              			"size": 8
-              		}
-              	},
-              	"callbacks": {
-              		"onMouseoverSegment": null,
-              		"onMouseoutSegment": null,
-              		"onClickSegment": null
-              	}
+                "header": {
+                  "title": {
+                    "text": "Transacciones por Estatus",
+                    "fontSize": 22,
+                    "font": "verdana"
+                  },
+                  "subtitle": {
+                    "color": "#999999",
+                    "fontSize": 10,
+                    "font": "verdana"
+                  },
+                  "titleSubtitlePadding": 12
+                },
+                "footer": {
+                  "text": " ",
+                  "color": "#999999",
+                  "fontSize": 11,
+                  "font": "open sans",
+                  "location": "bottom-center"
+                },
+                "size": {
+                  "canvasHeight": 500,
+                  "canvasWidth": 500
+                },
+                "data": {
+                  "smallSegmentGrouping": {
+                    "enabled": true
+                  },
+                  "content": [
+                    {
+                      "label": "Conciliadas",
+                      "value": 23,
+                      "color": "#93c144"
+                    },
+                    {
+                      "label": "No conciliadas",
+                      "value": 8,
+                      "color": "#72925b"
+                    }
+                  ]
+                },
+                "labels": {
+                  "outer": {
+                    "pieDistance": 25
+                  },
+                  "mainLabel": {
+                    "font": "verdana",
+                    "fontSize": 12
+                  },
+                  "percentage": {
+                    "color": "#e1e1e1",
+                    "font": "verdana",
+                    "decimalPlaces": 0
+                  },
+                  "value": {
+                    "color": "#e1e1e1",
+                    "font": "verdana",
+                    "fontSize": 11
+                  },
+                  "lines": {
+                    "enabled": true,
+                    "color": "#cccccc"
+                  }
+                },
+                "tooltips": {
+                  "enabled": true,
+                  "type": "placeholder",
+                  "string": "{label}: {value}",
+                  "styles": {
+                    "fadeInSpeed": 276,
+                    "backgroundOpacity": 0.43
+                  }
+                },
+                "effects": {
+                  "pullOutSegmentOnClick": {
+                    "speed": 400,
+                    "size": 8
+                  }
+                },
+                "callbacks": {
+                  "onMouseoverSegment": null,
+                  "onMouseoutSegment": null,
+                  "onClickSegment": null
+                }
               });
               </script>
             </div>
@@ -425,90 +426,90 @@
 
               <script>
               var pie2 = new d3pie("pieChart2", {
-              	"header": {
-              		"title": {
-              			"text": "Facturas por Estatus",
-              			"fontSize": 22,
-              			"font": "verdana"
-              		},
-              		"subtitle": {
-              			"color": "#999999",
-              			"fontSize": 10,
-              			"font": "verdana"
-              		},
-              		"titleSubtitlePadding": 12
-              	},
-              	"footer": {
-              		"text": "",
-              		"color": "#999999",
-              		"fontSize": 11,
-              		"font": "open sans",
-              		"location": "bottom-center"
-              	},
-              	"size": {
-              		"canvasHeight": 400,
-              		"canvasWidth": 450
-              	},
-              	"data": {
-              		"smallSegmentGrouping": {
-              			"enabled": true
-              		},
-              		"content": [
-              			{
-              				"label": "Conciliadas",
-              				"value": 19,
-              				"color": "#F0430A"
-              			},
-              			{
-              				"label": "No conciliadas",
-              				"value": 11,
-              				"color": "#FA7E55"
-              			}
-              		]
-              	},
-              	"labels": {
-              		"outer": {
-              			"pieDistance": 25
-              		},
-              		"mainLabel": {
-              			"font": "verdana",
-              			"fontSize": 12
-              		},
-              		"percentage": {
-              			"color": "#ffffff", //e1e1e1
-              			"font": "verdana",
-              			"decimalPlaces": 0
-              		},
-              		"value": {
-              			"color": "#e1e1e1",
-              			"font": "verdana",
-              			"fontSize": 11
-              		},
-              		"lines": {
-              			"enabled": true,
-              			"color": "#cccccc"
-              		}
-              	},
-              	"tooltips": {
-              		"enabled": true,
-              		"type": "placeholder",
-              		"string": "{label}: {percentage}%",
-              		"styles": {
-              			"fadeInSpeed": 276,
-              			"backgroundOpacity": 0.43
-              		}
-              	},
-              	"effects": {
-              		"pullOutSegmentOnClick": {
-              			"speed": 400,
-              			"size": 8
-              		}
-              	},
-              	"callbacks": {
-              		"onMouseoverSegment": null,
-              		"onMouseoutSegment": null,
-              		"onClickSegment": null
-              	}
+                "header": {
+                  "title": {
+                    "text": "Facturas por Estatus",
+                    "fontSize": 22,
+                    "font": "verdana"
+                  },
+                  "subtitle": {
+                    "color": "#999999",
+                    "fontSize": 10,
+                    "font": "verdana"
+                  },
+                  "titleSubtitlePadding": 12
+                },
+                "footer": {
+                  "text": "",
+                  "color": "#999999",
+                  "fontSize": 11,
+                  "font": "open sans",
+                  "location": "bottom-center"
+                },
+                "size": {
+                  "canvasHeight": 500,
+                  "canvasWidth": 500
+                },
+                "data": {
+                  "smallSegmentGrouping": {
+                    "enabled": true
+                  },
+                  "content": [
+                    {
+                      "label": "Conciliadas",
+                      "value": 19,
+                      "color": "#F0430A"
+                    },
+                    {
+                      "label": "No conciliadas",
+                      "value": 11,
+                      "color": "#FA7E55"
+                    }
+                  ]
+                },
+                "labels": {
+                  "outer": {
+                    "pieDistance": 25
+                  },
+                  "mainLabel": {
+                    "font": "verdana",
+                    "fontSize": 12
+                  },
+                  "percentage": {
+                    "color": "#ffffff", //e1e1e1
+                    "font": "verdana",
+                    "decimalPlaces": 0
+                  },
+                  "value": {
+                    "color": "#e1e1e1",
+                    "font": "verdana",
+                    "fontSize": 11
+                  },
+                  "lines": {
+                    "enabled": true,
+                    "color": "#cccccc"
+                  }
+                },
+                "tooltips": {
+                  "enabled": true,
+                  "type": "placeholder",
+                  "string": "{label}: {value}",
+                  "styles": {
+                    "fadeInSpeed": 276,
+                    "backgroundOpacity": 0.43
+                  }
+                },
+                "effects": {
+                  "pullOutSegmentOnClick": {
+                    "speed": 400,
+                    "size": 8
+                  }
+                },
+                "callbacks": {
+                  "onMouseoverSegment": null,
+                  "onMouseoutSegment": null,
+                  "onClickSegment": null
+                }
               });
               </script>
             </div>
@@ -525,7 +526,7 @@
 
   </div><!-- End of MAIN CONTAINER -->
 
-
+</div>
     <!-- Footer
     ================================================== -->
     <div id="footer">

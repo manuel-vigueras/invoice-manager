@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head starts here -->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Justificantes | Si Vale</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--<link href="css/styles.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  
+    <style type="text/css">
+
+      /* Sticky footer styles
+      -------------------------------------------------- */
+
+      html,
+      body {
+        height: 100%;
+        /* The html and body elements cannot have any padding or margin. */
+      }
+
+      /* Wrapper for page content to push down footer */
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by its height */
+        margin: 0 auto -60px;
+        /* Pad bottom by footer height */
+        padding: 0 0 60px;
+      }
+
+       .blue {
+        color:  #1874CD;
+        font-size: 15px;
+        font-weight: bold;
+      }
+
+       .green {
+        color:  #00AA00;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      
+       .red {
+        color:  #CD3700;
+        font-size: 15px;
+        font-weight: bold;
+      }
+
+      .head4 {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .userName {
+        font-size: 15px;
+      }
+      
+      .table-responsive {
+        overflow-x: visible !important;
+        overflow-y: visible !important;
+      }
+
+      /* Set the fixed height of the footer here */
+      #footer {
+        height: 60px;
+        background-color: #f5f5f5;
+      }
+
+      /* Custom page CSS
+      -------------------------------------------------- */
+      /* Not required for template or sticky footer method. */
+
+      #wrap > .container {
+         /*padding: 60px 15px 0; */
+        padding-top: 60px; padding-bottom: 0px;
+      }
+
+      .container .credit {
+        margin: 20px 0;
+      }
+      .navbar-xs { min-height:28px; height: 28px; }
+      .navbar-xs .navbar-brand{ padding: 0px 0px;font-size: 16px;line-height: 28px; }
+      .navbar-xs .navbar-nav > li > a {  padding-top: 0px; padding-bottom: 0px; line-height: 28px; }
+
+      #footer > .container {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      code {
+        font-size: 80%;
+      }
+    </style>
+  </head>
+  
+
+<!-- Body starts here -->
+  <body>
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+
+      <!-- Top Fixed navbar -->
+      <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+              <img alt="Brand" src="img/logo-nav.png">
+            </a>
+          </div>
+          <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+              <p class="navbar-text" id="date"></p>
+            </ul>
+            <ul class="nav navbar-nav">
+              <li><a>Antonio Cortés Zamora</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+              <li><a href="login_gral.html">
+                <span class="glyphicon glyphicon-log-out" aria-hidden="true">Salir</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div> <!-- End of Top Fixed navbar --> 
+      
+
+    <!-- MAIN CONTAINER 
+    =========================================== -->
+    <div class="container container-xs">    
+
+      <!-- Grid for Panel and Banner -->
+      <div class="row">
+
+        <!-- Col for Panel -->
+        <div class="col-md-10">
+          
+         
+          <!-- ROW de botones -->
+          <div class="row">
+            <div class="col-md-9">
+              <h4>Configuraciones Generales</h4>
+            </div>
+            <div class="col-md-3">
+              <span class="pull-right">
+                <ul class="nav nav-pills">
+                  <li><a href="reportes_tableau_gral.html">Reportes Si Vale</a></li>
+                </ul>
+              </span>
+            </div>
+          </div><!-- TERMINA ROW de botones -->
+
+
+
+
+          <br/>
+
+          <!-- Grid for Table content -->
+          <div class="row">
+            <div class="col-md-12">
+
+
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="active"><a href="#tabUsuarios" role="tab" data-toggle="tab">Usuarios</a></li>
+              
+              <li><a href="#tabBanners" role="tab" data-toggle="tab">Banners</a></li>
+            </ul>
+
+            <div class="tab-content">
+              
+
+              <!-- TAB Usuarios -->
+              <div role="tabpanel" class="tab-pane active" id="tabUsuarios">
+
+                  <!-- Data Table Panel-->
+                  <div class="panel panel-default">
+                      
+                      <div class="panel-heading">
+                          <div class="row">  
+                            <div class="col-md-6">
+                              <h3 class="panel-title">Lista de usuarios</h3>
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="btn-group pull-right ">
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modalNuevoUsuario">
+                                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </div><!-- End of Table Header right -->
+
+                          </div>
+                      </div>
+
+                      <div class="panel-body">
+                          <div class="table-responsive">
+                              <table class="table table-striped">
+                                  <thead>
+                                      <tr>
+                                          <th style="width:  150px;">Id</th>
+                                          <th>Usuario</th>
+                                          <th>Supervisor</th>
+                                          <th style="width:  150px;" class="text-right">Acción</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <td>8765</td>
+                                          <td>Alfonso López Alcántara</td>
+                                          <td>Francisco Rodríguez Peña</td>
+                                          <td>
+                                            <div class="btn-group pull-right ">
+                                                <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
+                                                  <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+                                                </button>
+                                                <ul class="dropdown-menu" role="menu">
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#editUsuario">Editar</a></li>
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#eliminaUsuario">Eliminar</a></li>
+                                                </ul>
+                                            </div>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td>4569</td>
+                                          <td>Antonio Cortés Zamora</td>
+                                          <td>Francisco Rodríguez Peña</td>
+                                          <td>
+                                            <div class="btn-group pull-right ">
+                                                <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
+                                                  <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+                                                </button>
+                                                <ul class="dropdown-menu" role="menu">
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#editUsuarioX">Editar</a></li>
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#eliminaUsuario">Eliminar</a></li>
+                                                </ul>
+                                            </div>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td>8374</td>
+                                          <td>Francisco Rodríguez Peña</td>
+                                          <td>Francisco Rodríguez Peña</td>
+                                          <td>
+                                            <div class="btn-group pull-right ">
+                                                <button type="button" class="btn btn-default btn-xs dropdown-toggle"data-toggle="dropdown"> 
+                                                  <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+                                                </button>
+                                                <ul class="dropdown-menu" role="menu">
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#editUsuario">Editar</a></li>
+                                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-toggle="modal" data-target="#eliminaUsuario">Eliminar</a></li>
+                                                </ul>
+                                            </div>
+                                          </td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div> 
+                      </div>
+                  </div><!-- End of Data Table Panel-->
+
+
+
+
+
+
+              </div><!-- TERMINA TAB Usuarios -->
+
+              <!-- TAB Perfiles -->
+              <div role="tabpanel" class="tab-pane" id="tabPerfiles">
+                TAB Perfiles
+              </div><!-- TERMINA TAB Perfiles -->
+              
+              <!-- TAB Banners -->
+              <div role="tabpanel" class="tab-pane" id="tabBanners">
+                
+                <!--Formulario -->
+                <form>
+                  <br/>
+                  <div class="row">
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="form-group">
+                          <label for="exampleInputFile">Imagen GIF</label>
+                          <input type="file" id="exampleInputFile" value="banner_0100.gif">
+                          <p class="help-block"></p>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-10 col-md-offset-1">
+                        <div class="form-group">
+                          <label for="newCuentaNombre">URL</label>
+                          <input type="text" class="form-control" id="exampleInputEmail1" value="www.sivale.com.mx">
+                        </div>
+                      </div>
+                  </div>
+                </form>
+
+              </div>
+                
+            </div><!-- TERMINA TAB Content -->
+
+
+
+
+
+
+            </div>
+          </div><!-- End of Grid for Table content -->
+        </div><!-- Col for Panel -->
+        <!-- Col for Banner -->
+        <div class="col-md-2">
+          <img src="img/sivale-banner.gif" class="img-responsive" alt="Responsive image" aligne="right">
+        </div><!-- End of Col for Banner -->
+      </div><!-- End of Grid for Panel and Banner -->
+
+
+
+
+<!-- ==================================================
+                    MODAL VIEWS
+    ================================================== -->
+
+
+
+<!-- MODAL AGREGAR USUARIO -->
+    <div class="modal fade" id="modalNuevoUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Nuevo usuario</h4>
+          </div>
+          <div class="modal-body">
+            <!--Formulario -->
+            <form>
+              <br/>
+              <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="form-group">
+                      <label for="newClave">Clave</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="form-group">
+                      <label for="newCuentaNombre">Nombre</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="form-group">
+                      <label for="newCentroCostos">Supervisor</label>
+                      <select class="form-control">
+                        <option>8374 - Francisco Rodríguez Peña</option>
+                        <option>7568 - Manuel Velasco Torres</option>
+                      </select>
+                    </div>
+                  </div>
+              </div>
+              <br/>
+              <p class="text-center">
+                <a type="button" class="btn btn-warning" href="adm_13_general_1_addUser.html">Guardar</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div><!--TERMINA MODAL AGREGAR USUARIO -->
+
+
+
+
+<!-- MODAL EDITAR USUARIO -->
+    <div class="modal fade" id="editUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Editar Usuario</h4>
+          </div>
+          <div class="modal-body">
+            <!--Formulario -->
+            <form>
+              <br/>
+              <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="form-group">
+                      <label for="newClave">Clave</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" value="">
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="form-group">
+                      <label for="newCuentaNombre">Nombre</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" value="">
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="form-group">
+                      <label for="newCentroCostos">Supervisor</label>
+                      <select class="form-control">
+                        <option>8374 - Francisco Rodríguez Peña</option>
+                        <option>7568 - Manuel Velasco Torres</option>
+                      </select>
+                    </div>
+                  </div>
+              </div>
+              <br/>
+              <p class="text-center">
+                <a type="button" class="btn btn-warning" href="#">Guardar</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div><!--TERMINA MODAL EDITAR USUARIO -->
+
+
+<!-- MODAL EDITAR USUARIO X -->
+    <div class="modal fade" id="editUsuarioX" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Editar Usuario</h4>
+          </div>
+          <div class="modal-body">
+            <!--Formulario -->
+            <form>
+              <br/>
+              <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="form-group">
+                      <label for="newClave">Clave</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" value="4569">
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="form-group">
+                      <label for="newCuentaNombre">Nombre</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" value="Antonio Cortés Zamora">
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="form-group">
+                      <label for="newCentroCostos">Supervisor</label>
+                      <select class="form-control">
+                        <option>8374 - Francisco Rodríguez Peña</option>
+                        <option>7568 - Manuel Velasco Torres</option>
+                      </select>
+                    </div>
+                  </div>
+              </div>
+              <br/>
+              <p class="text-center">
+                <a type="button" class="btn btn-warning" href="adm_13_general_2_editUser.html">Guardar</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div><!--TERMINA MODAL EDITAR USUARIO X -->
+
+
+    <!-- MODAL PARA ELIMINAR USUARIO -->
+    <div class="modal fade" id="eliminaUsuario" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Eliminar usuario</h4>
+          </div>
+          <div class="modal-body">
+            <div class="bs-example">
+              <br/>
+              <p><span class="label label-danger">Atención</span> El usuario será eliminado.</p>
+              <br/>
+              <p class="text-center">
+              <a type="button" class="btn btn-warning" href="">Aceptar</a>
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- TERMINA MODAL PARA ELIMINAR USUARIO -->
+
+
+<!-- ==================================================
+                    TEMRINA MODAL VIEWS
+    ================================================== -->
+
+  </div><!-- End of MAIN CONTAINER -->
+
+   </div>
+    <!-- Footer
+    ================================================== -->
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted credit">Si Vale <a href="http://latbc.com">Latbc 2015</a> Todos los derechos reservados.</p>
+      </div>
+    </div><!-- End of Footer -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <!-- script references -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-filestyle.min.js"> </script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">$(function () {$('.datepicker').datepicker();});</script>
+    <script>var d = new Date();document.getElementById("date").innerHTML = d.toDateString();</script>
+  </body>
+</html>
