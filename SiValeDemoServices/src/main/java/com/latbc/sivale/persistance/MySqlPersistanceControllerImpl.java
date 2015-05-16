@@ -31,9 +31,9 @@ public class MySqlPersistanceControllerImpl implements PersistanceController {
 	public List<TransactionBean> getTransactions(String cardId, String period) {
 		List<TransactionBean> transactions = new ArrayList<TransactionBean>();
 		try {
-			List<TransactionBean> transactionBean = trxDao.getTransactions();
+			transactions = trxDao.getTransactions();
 		} catch (Exception e) {
-			LOGGER.error("Sql exception: " + e.getMessage(), e);
+			LOGGER.error("Exception: " + e.getMessage(), e);
 			
 			//TODO hardcode
 			TransactionBean trx = new TransactionBean();
