@@ -1,11 +1,14 @@
 package com.mx.sivale.actions;
 
+import java.util.List;
+
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.mx.sivale.service.UsuarioService;
+import com.mx.sivale.to.Stock;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -39,9 +42,12 @@ public class LoginAction extends ActionSupport {
 			@Result(name = SUCCESS, location = "/secured/resumen.jsp"),
 			@Result(name = ERROR, location = "/error.jsp") })
 	public String login() throws Exception {
-		if ("a".equals(getUser()) && "a".equals(getPassword()))
+		if ("a".equals(getUser()) && "a".equals(getPassword())) {
+
+//			List<Stock> lista = usuarioService.getAll();
+
 			return SUCCESS;
-		else
+		} else
 			return ERROR;
 	}
 

@@ -9,7 +9,7 @@ import com.mx.sivale.to.UsuarioTO;
  *
  */
 public interface UsuarioDAO {
-	
+
 	public void insert(UsuarioTO usuarioTO);
 
 	public void update(UsuarioTO usuarioTO);
@@ -17,6 +17,5 @@ public interface UsuarioDAO {
 	public void delete(UsuarioTO usuarioTO);
 
 	public List<UsuarioTO> getAll();
-	
 
 }

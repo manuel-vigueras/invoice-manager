@@ -18,5 +18,4 @@ public interface UsuarioService {
 
 	public List<UsuarioTO> getAll();
 	
-
 }
