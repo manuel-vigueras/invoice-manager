@@ -1,14 +1,15 @@
 package com.mx.sivale.actions;
 
-import java.util.List;
+import java.util.Date;
+import java.util.Map;
 
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.mx.sivale.service.UsuarioService;
-import com.mx.sivale.to.Stock;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -19,7 +20,7 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 
 @Namespace("/")
-public class LoginAction extends ActionSupport {
+public class LoginAction extends ActionSupport implements SessionAware {
 
 	/**
 	 * 
@@ -31,6 +32,12 @@ public class LoginAction extends ActionSupport {
 
 	private String user;
 	private String password;
+	public Map<String, Object> session;
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
 
 	/**
 	 * Metodo que se ejecuta con el llamado del form en login.jsp.
@@ -42,13 +49,32 @@ public class LoginAction extends ActionSupport {
 			@Result(name = SUCCESS, location = "/secured/resumen.jsp"),
 			@Result(name = ERROR, location = "/error.jsp") })
 	public String login() throws Exception {
-		if ("a".equals(getUser()) && "a".equals(getPassword())) {
 
-//			List<Stock> lista = usuarioService.getAll();
+		// if ("Kevin".equals(getUser()) && "a".equals(getPassword())) {
+		//
+		// session.put("logged", new Date());
+		// session.put("userName", getUser());
+		//
+		// return SUCCESS;
+		// } else
+		// return ERROR;
 
-			return SUCCESS;
-		} else
-			return ERROR;
+		//
+		session.put("logged", new Date());
+		session.put("userName", getUser());
+
+		return SUCCESS;
+
+	}
+
+	@Action(value = "logout", results = {
+			@Result(name = SUCCESS, location = "/login.jsp"),
+			@Result(name = ERROR, location = "/error.jsp") })
+	public String logout() throws Exception {
+
+		session.remove("logged");
+		session.remove("userName");
+		return SUCCESS;
 	}
 
 	public String getUser() {

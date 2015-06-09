@@ -1,5 +1,6 @@
 package com.mx.sivale.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +38,36 @@ public class UsuarioServiceImpl implements UsuarioService {
 	public List<UsuarioTO> getAll() {
 		// TODO Auto-generated method stub
 		return usuarioDAO.getAll();
+	}
+
+	public List<UsuarioTO> getAllByAdmin(int idAdmin) {
+
+		List<UsuarioTO> listaUsuarios = new ArrayList<UsuarioTO>();
+
+		UsuarioTO usuarioTO = new UsuarioTO();
+		usuarioTO.setId(1);
+		usuarioTO.setNombre("Alfonso López Alcántara");
+		usuarioTO.setIdUser("2364001538164532");
+		listaUsuarios.add(usuarioTO);
+
+		usuarioTO = new UsuarioTO();
+		usuarioTO.setId(2);
+		usuarioTO.setNombre("David Gutiérrez Hernández");
+		usuarioTO.setIdUser("2364001538876234");
+		listaUsuarios.add(usuarioTO);
+
+		usuarioTO = new UsuarioTO();
+		usuarioTO.setId(3);
+		usuarioTO.setNombre("Antonio Cortés Zamora");
+		usuarioTO.setIdUser("2364001538167285");
+		listaUsuarios.add(usuarioTO);
+
+		usuarioTO = new UsuarioTO();
+		usuarioTO.setId(4);
+		usuarioTO.setNombre("Mariana Ramírez Cantú");
+		usuarioTO.setIdUser("2364001538145683");
+		listaUsuarios.add(usuarioTO);
+
+		return listaUsuarios;
 	}
 }

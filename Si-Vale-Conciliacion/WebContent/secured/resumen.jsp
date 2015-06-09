@@ -4,556 +4,552 @@
 <%@ taglib prefix="sb" uri="/struts-bootstrap-tags"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ng-app>
 
 <!-- Head starts here -->
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <title>Resumen | Si Vale</title>
-    <meta name="generator" content="Bootply" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!--[if lt IE 9]>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Resumen | Si Vale</title>
+<meta name="generator" content="Bootply" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <!--<link href="css/styles.css" rel="stylesheet">-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<!--<link href="css/styles.css" rel="stylesheet">-->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-    <style type="text/css">
+<style type="text/css">
 
-      /* Sticky footer styles
+/* Sticky footer styles
       -------------------------------------------------- */
+html, body {
+	height: 100%;
+	/* The html and body elements cannot have any padding or margin. */
+}
 
-      html,
-      body {
-        height: 100%;
-        /* The html and body elements cannot have any padding or margin. */
-      }
+/* Wrapper for page content to push down footer */
+#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	/* Negative indent footer by its height */
+	margin: 0 auto -60px;
+	/* Pad bottom by footer height */
+	padding: 0 0 60px;
+}
 
-      /* Wrapper for page content to push down footer */
-      #wrap {
-        min-height: 100%;
-        height: auto !important;
-        height: 100%;
-        /* Negative indent footer by its height */
-        margin: 0 auto -60px;
-        /* Pad bottom by footer height */
-        padding: 0 0 60px;
-      }
+/* Set the fixed height of the footer here */
+#footer {
+	height: 60px;
+	background-color: #f5f5f5;
+}
 
-      /* Set the fixed height of the footer here */
-      #footer {
-        height: 60px;
-        background-color: #f5f5f5;
-      }
-
-      /* Custom page CSS
+/* Custom page CSS
       -------------------------------------------------- */
-      /* Not required for template or sticky footer method. */
+/* Not required for template or sticky footer method. */
+#wrap>.container {
+	/*padding: 60px 15px 0; */
+	padding-top: 60px;
+	padding-bottom: 0px;
+}
 
-      #wrap > .container {
-         /*padding: 60px 15px 0; */
-        padding-top: 60px; padding-bottom: 0px;
-      }
+.container .credit {
+	margin: 20px 0;
+}
 
-      .container .credit {
-        margin: 20px 0;
-      }
-      .navbar-xs { min-height:28px; height: 28px; }
-      .navbar-xs .navbar-brand{ padding: 0px 0px;font-size: 16px;line-height: 28px; }
-      .navbar-xs .navbar-nav > li > a {  padding-top: 0px; padding-bottom: 0px; line-height: 28px; }
+.navbar-xs {
+	min-height: 28px;
+	height: 28px;
+}
 
-      #footer > .container {
-        padding-left: 15px;
-        padding-right: 15px;
-      }
+.navbar-xs .navbar-brand {
+	padding: 0px 0px;
+	font-size: 16px;
+	line-height: 28px;
+}
 
-      code {
-        font-size: 80%;
-      }
+.navbar-xs .navbar-nav>li>a {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	line-height: 28px;
+}
 
+#footer>.container {
+	padding-left: 15px;
+	padding-right: 15px;
+}
 
-      body .modal-sm {
-          /* new custom width */
-          width: 30%;
-          /* must be half of the width, minus scrollbar on the left (30px) */
-          /* margin-left:-375px; */
-          margin-left: 35%;
-      }
-      .axis path,
-      .axis line {
-        fill: none;
-        stroke: #000;
-        shape-rendering: crispEdges;
-      }
+code {
+	font-size: 80%;
+}
 
-      .bar {
-        fill: orange;
-      }
+body .modal-sm {
+	/* new custom width */
+	width: 30%;
+	/* must be half of the width, minus scrollbar on the left (30px) */
+	/* margin-left:-375px; */
+	margin-left: 35%;
+}
 
-      .bar:hover {
-        fill: orangered ;
-      }
+.axis path, .axis line {
+	fill: none;
+	stroke: #000;
+	shape-rendering: crispEdges;
+}
 
-      .x.axis path {
-        display: none;
-      }
+.bar {
+	fill: orange;
+}
 
-      .d3-tip {
-        line-height: 1;
-        font-weight: bold;
-        padding: 12px;
-        background: rgba(0, 0, 0, 0.8);
-        color: #fff;
-        border-radius: 2px;
-      }
+.bar:hover {
+	fill: orangered;
+}
 
+.x.axis path {
+	display: none;
+}
 
-      .d3-tip:after {
-        box-sizing: border-box;
-        display: inline;
-        font-size: 10px;
-        width: 100%;
-        line-height: 1;
-        color: rgba(0, 0, 0, 0.8);
-        content: "\25BC";
-        position: absolute;
-        text-align: center;
-      }
+.d3-tip {
+	line-height: 1;
+	font-weight: bold;
+	padding: 12px;
+	background: rgba(0, 0, 0, 0.8);
+	color: #fff;
+	border-radius: 2px;
+}
 
+.d3-tip:after {
+	box-sizing: border-box;
+	display: inline;
+	font-size: 10px;
+	width: 100%;
+	line-height: 1;
+	color: rgba(0, 0, 0, 0.8);
+	content: "\25BC";
+	position: absolute;
+	text-align: center;
+}
 
-      .d3-tip.n:after {
-        margin: -1px 0 0 0;
-        top: 100%;
-        left: 0;
-      }
-    </style>
-  </head>
+.d3-tip.n:after {
+	margin: -1px 0 0 0;
+	top: 100%;
+	left: 0;
+}
+</style>
+</head>
 
 
 <!-- Body starts here -->
-  <body>
+<body >
 
 
-    <!-- Wrap all page content here -->
-    <div id="wrap">
 
-      <!-- Top Fixed navbar -->
-      <div class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">
-              <img alt="Brand" src="img/logo-nav.png">
-            </a>
-          </div>
-          <div class="collapse navbar-collapse navbar-right">
-            <ul class="nav navbar-nav">
-              <p class="navbar-text" id="date"></p>
-            </ul>
-            <ul class="nav navbar-nav">
-              <li><a>Francisco Rodríguez Peña</a></li>
-            </ul>
-            <ul class="nav navbar-nav">
-              <li><a href="login_adm.html">
-                <span class="glyphicon glyphicon-log-out" aria-hidden="true">Salir</span></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div> <!-- End of Top Fixed navbar -->
+	<!-- Wrap all page content here -->
+	<div id="wrap">
 
+		<jsp:include page="../templates/headerTemplate.jsp" />
 
-    <!-- MAIN CONTAINER
+		<!-- MAIN CONTAINER
     =========================================== -->
-    <div class="container container-xs">
+		<div class="container container-xs">
 
-      <!-- Grid for Panel and Banner -->
-      <div class="row">
+			<!-- Grid for Panel and Banner -->
+			<div class="row">
 
-        <!-- Col for Panel -->
-        <div class="col-md-10">
+				<!-- Col for Panel -->
+				<div class="col-md-10">
+				
+				<jsp:include page="../templates/menuTemplate.jsp" />
 
-          <div class="row">
+					<div class="row">
 
-            <div class="col-md-2">
-              <br/>
-              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuPeriodo" data-toggle="dropdown" aria-expanded="true">
-                  Filtro Usuarios <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Promedios Globales (todos los usuarios)</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2364001538164532 - Alfonso López Alcántara</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2364001538876234 - David Gutiérrez Hernández</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2364001538167285 - Antonio Cortés Zamora</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2364001538145683 - Mariana Ramírez Cantú</a></li>
-                </ul>
-            </div>
+						<div class="col-md-2" data-ng-controller="getUsuarios">
+							<br />
+							<button class="btn btn-default dropdown-toggle" type="button"
+								id="dropdownMenuPeriodo" data-toggle="dropdown"
+								aria-expanded="true">
+								Filtro Usuarios <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu"
+								aria-labelledby="dropdownMenu1">
+								<li role="presentation"><a role="menuitem" tabindex="-1"
+									href="#">Promedios Globales (todos los usuarios)</a></li>
+								<li role="presentation" data-ng-repeat="usr in usuarios"><a
+									role="menuitem" tabindex="-1" href="" data-ng-model="selected">{{usr.idUser}}
+										- {{usr.nombre}}</a></li>
+							</ul>
+						</div>
 
-            <div class="col-md-2">
-              <br/>
-              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuPeriodo" data-toggle="dropdown" aria-expanded="true">
-                  Filtro Justificantes <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Todos</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Pachuca</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Acapulco</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">California</a></li>
-                  <li role="presentation"><a role="menuitem" tabindex="-1" href="">Monterrey</a></li>
-                </ul>
-            </div>
+						<div class="col-md-2" data-ng-controller="getJustificantes">
+							<br />
+							<button class="btn btn-default dropdown-toggle" type="button"
+								id="dropdownMenuPeriodo" data-toggle="dropdown"
+								aria-expanded="true">
+								Filtro Justificantes <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu"
+								aria-labelledby="dropdownMenu1">
+								<li role="presentation"><a role="menuitem" tabindex="-1"
+									href="">Todos</a></li>
+								<li role="presentation" data-ng-repeat="just in justificantes"><a
+									role="menuitem" tabindex="-1" href="">{{just}}</a></li>
+							</ul>
+						</div>
+					</div>
 
-            <div class="col-md-8">
-              <span class="pull-right">
-                <div class="navbar">
-                  <ul class="nav navbar-nav navbar-default">
-                    <li class="active"><a href="adm_1_resumen_0.html">Resumen<span class="sr-only">(current)</span></a></li>
-                    <li><a href="adm_2_transacciones_0.html" class="btn-sm">Movimientos</a></li>
-                    <li><a href="adm_6_justificantes_0.html" class="btn-sm">Justificantes</a></li>
-                    <li><a href="reportes_tableau.html" class="btn-sm">Reportes</a></li>
-                    <li><a href="adm_11_anexo24_0.html" class="btn-sm">SAT</a></li>
-                    <li><a href="adm_12_settings_0.html" class="btn-sm">Configuración</a></li>
-                  </ul>
-                </div>
-              </span>
-            </div>
-          </div>
+					<div class="row">
+						<div class="col-md-8">
+							<h2>Saldo promedio: $ 2,385.50</h2>
+						</div>
+					</div>
 
-          <div class="row">
-            <div class="col-md-8">
-              <h2>Saldo promedio: $ 2,385.50</h2>
-            </div>
-          </div>
+					<br />
 
-          <br/>
-
-          <!-- Grid for Table content -->
-          <div class="row">
-            <!-- <div class="col-md-6">
+					<!-- Grid for Table content -->
+					<div class="row">
+						<!-- <div class="col-md-6">
 
             </div> -->
 
-            <div class="col-md-12">
-              <script src="http://d3js.org/d3.v3.min.js"></script>
-              <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-              <svg id="bar-chart"></svg>
-              <script>
-                var height = 400;
-                var width = 690;
-                var margin = {top: 40, right: 20, bottom: 30, left: 40};
+						<div class="col-md-12">
+							<script src="http://d3js.org/d3.v3.min.js"></script>
+							<script
+								src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+							<svg id="bar-chart"></svg>
+							<script>
+								var height = 400;
+								var width = 690;
+								var margin = {
+									top : 40,
+									right : 20,
+									bottom : 30,
+									left : 40
+								};
 
-                var formatPercent = d3.format("");
+								var formatPercent = d3.format("");
 
-                var x = d3.scale.ordinal()
-                    .rangeRoundBands([0, width], .1);
+								var x = d3.scale.ordinal().rangeRoundBands(
+										[ 0, width ], .1);
 
-                var y = d3.scale.linear()
-                    .range([height, 0]);
+								var y = d3.scale.linear().range([ height, 0 ]);
 
-                var xAxis = d3.svg.axis()
-                    .scale(x)
-                    .orient("bottom");
+								var xAxis = d3.svg.axis().scale(x).orient(
+										"bottom");
+
+								var yAxis = d3.svg.axis().scale(y).orient(
+										"left").tickFormat(formatPercent);
+
+								var tip = d3
+										.tip()
+										.attr('class', 'd3-tip')
+										.attr('id', 'bar-chart')
+										.offset([ -10, 0 ])
+										.html(
+												function(d) {
+													return "<strong>Cantidad:</strong> <span style='color:red'>"
+															+ d.frequency
+															+ "</span>";
+												})
+
+								var svg = d3.select('#bar-chart').attr("width",
+										width + margin.left + margin.right)
+										.attr(
+												"height",
+												height + margin.top
+														+ margin.bottom)
+										.append("g").attr(
+												"transform",
+												"translate(" + margin.left
+														+ "," + margin.top
+														+ ")");
+
+								svg.call(tip);
+
+								d3.tsv("data.tsv", type, function(error, data) {
+									x.domain(data.map(function(d) {
+										return d.letter;
+									}));
+									y.domain([ 0, d3.max(data, function(d) {
+										return d.frequency;
+									}) ]);
+
+									svg.append("g").attr("class", "x axis")
+											.attr("font-size", "11px").attr(
+													"transform",
+													"translate(0," + height
+															+ ")").call(xAxis);
+
+									svg.append("g").attr("class", "y axis")
+											.call(yAxis).append("text").attr(
+													"transform", "rotate(-90)")
+											.attr("y", 6).attr("dy", ".71em")
+											.style("text-anchor", "end").text(
+													"");
+
+									svg.selectAll(".bar").data(data).enter()
+											.append("rect")
+											.attr("class", "bar").attr("x",
+													function(d) {
+														return x(d.letter);
+													}).attr("width",
+													x.rangeBand()).attr("y",
+													function(d) {
+														return y(d.frequency);
+													})
+											.attr("height", function(d) {
+												return height - y(d.frequency);
+											}).on('mouseover', tip.show).on(
+													'mouseout', tip.hide)
+
+								});
+
+								function type(d) {
+									d.frequency = +d.frequency;
+									return d;
+								}
+							</script>
+						</div>
+
+					</div>
+					<!-- End of Grid for Table content -->
+
+					<br> <br> <br> <br> <br>
+
+					<!-- Grid for Table content -->
+					<div class="row">
+						<div class="col-md-6">
+							<div id="pieChart1"></div>
+							<script src="js/d3pie.min.js"></script>
+							<script>
+								var pie1 = new d3pie(
+										"pieChart1",
+										{
+											"header" : {
+												"title" : {
+													"text" : "Transacciones por Estatus",
+													"fontSize" : 22,
+													"font" : "verdana"
+												},
+												"subtitle" : {
+													"color" : "#999999",
+													"fontSize" : 10,
+													"font" : "verdana"
+												},
+												"titleSubtitlePadding" : 12
+											},
+											"footer" : {
+												"text" : " ",
+												"color" : "#999999",
+												"fontSize" : 11,
+												"font" : "open sans",
+												"location" : "bottom-center"
+											},
+											"size" : {
+												"canvasHeight" : 500,
+												"canvasWidth" : 500
+											},
+											"data" : {
+												"smallSegmentGrouping" : {
+													"enabled" : true
+												},
+												"content" : [ {
+													"label" : "Conciliadas",
+													"value" : 23,
+													"color" : "#93c144"
+												}, {
+													"label" : "No conciliadas",
+													"value" : 8,
+													"color" : "#72925b"
+												} ]
+											},
+											"labels" : {
+												"outer" : {
+													"pieDistance" : 25
+												},
+												"mainLabel" : {
+													"font" : "verdana",
+													"fontSize" : 12
+												},
+												"percentage" : {
+													"color" : "#e1e1e1",
+													"font" : "verdana",
+													"decimalPlaces" : 0
+												},
+												"value" : {
+													"color" : "#e1e1e1",
+													"font" : "verdana",
+													"fontSize" : 11
+												},
+												"lines" : {
+													"enabled" : true,
+													"color" : "#cccccc"
+												}
+											},
+											"tooltips" : {
+												"enabled" : true,
+												"type" : "placeholder",
+												"string" : "{label}: {value}",
+												"styles" : {
+													"fadeInSpeed" : 276,
+													"backgroundOpacity" : 0.43
+												}
+											},
+											"effects" : {
+												"pullOutSegmentOnClick" : {
+													"speed" : 400,
+													"size" : 8
+												}
+											},
+											"callbacks" : {
+												"onMouseoverSegment" : null,
+												"onMouseoutSegment" : null,
+												"onClickSegment" : null
+											}
+										});
+							</script>
+						</div>
+
+						<div class="col-md-6">
+							<div id="pieChart2"></div>
+
+							<script>
+								var pie2 = new d3pie("pieChart2", {
+									"header" : {
+										"title" : {
+											"text" : "Facturas por Estatus",
+											"fontSize" : 22,
+											"font" : "verdana"
+										},
+										"subtitle" : {
+											"color" : "#999999",
+											"fontSize" : 10,
+											"font" : "verdana"
+										},
+										"titleSubtitlePadding" : 12
+									},
+									"footer" : {
+										"text" : "",
+										"color" : "#999999",
+										"fontSize" : 11,
+										"font" : "open sans",
+										"location" : "bottom-center"
+									},
+									"size" : {
+										"canvasHeight" : 500,
+										"canvasWidth" : 500
+									},
+									"data" : {
+										"smallSegmentGrouping" : {
+											"enabled" : true
+										},
+										"content" : [ {
+											"label" : "Conciliadas",
+											"value" : 19,
+											"color" : "#F0430A"
+										}, {
+											"label" : "No conciliadas",
+											"value" : 11,
+											"color" : "#FA7E55"
+										} ]
+									},
+									"labels" : {
+										"outer" : {
+											"pieDistance" : 25
+										},
+										"mainLabel" : {
+											"font" : "verdana",
+											"fontSize" : 12
+										},
+										"percentage" : {
+											"color" : "#ffffff", //e1e1e1
+											"font" : "verdana",
+											"decimalPlaces" : 0
+										},
+										"value" : {
+											"color" : "#e1e1e1",
+											"font" : "verdana",
+											"fontSize" : 11
+										},
+										"lines" : {
+											"enabled" : true,
+											"color" : "#cccccc"
+										}
+									},
+									"tooltips" : {
+										"enabled" : true,
+										"type" : "placeholder",
+										"string" : "{label}: {value}",
+										"styles" : {
+											"fadeInSpeed" : 276,
+											"backgroundOpacity" : 0.43
+										}
+									},
+									"effects" : {
+										"pullOutSegmentOnClick" : {
+											"speed" : 400,
+											"size" : 8
+										}
+									},
+									"callbacks" : {
+										"onMouseoverSegment" : null,
+										"onMouseoutSegment" : null,
+										"onClickSegment" : null
+									}
+								});
+							</script>
+						</div>
+
+					</div>
+					<!-- End of Grid for Table content -->
 
 
-                var yAxis = d3.svg.axis()
-                    .scale(y)
-                    .orient("left")
-                    .tickFormat(formatPercent);
+				</div>
+				<!-- Col for Panel -->
+				<!-- Col for Banner -->
+				<div class="col-md-2">
+					<img src="img/sivale-banner.gif" class="img-responsive"
+						alt="Responsive image" aligne="right">
+				</div>
+				<!-- End of Col for Banner -->
+			</div>
+			<!-- End of Grid for Panel and Banner -->
 
-                var tip = d3.tip()
-                  .attr('class', 'd3-tip')
-                  .attr('id','bar-chart')
-                  .offset([-10, 0])
-                  .html(function(d) {
-                    return "<strong>Cantidad:</strong> <span style='color:red'>" + d.frequency + "</span>";
-                  })
+		</div>
+		<!-- End of MAIN CONTAINER -->
 
-                var svg = d3.select('#bar-chart')
-                    .attr("width", width + margin.left + margin.right)
-                    .attr("height", height + margin.top + margin.bottom)
-                  .append("g")
-                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-
-                svg.call(tip);
-
-                d3.tsv("data.tsv", type, function(error, data) {
-                  x.domain(data.map(function(d) { return d.letter; }));
-                  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
-
-                  svg.append("g")
-                      .attr("class", "x axis")
-                      .attr("font-size","11px")
-                      .attr("transform", "translate(0," + height + ")")
-                      .call(xAxis);
-
-                  svg.append("g")
-                      .attr("class", "y axis")
-                      .call(yAxis)
-                    .append("text")
-                      .attr("transform", "rotate(-90)")
-                      .attr("y", 6)
-                      .attr("dy", ".71em")
-                      .style("text-anchor", "end")
-                      .text("");
-
-                  svg.selectAll(".bar")
-                      .data(data)
-                    .enter().append("rect")
-                      .attr("class", "bar")
-                      .attr("x", function(d) { return x(d.letter); })
-                      .attr("width", x.rangeBand())
-                      .attr("y", function(d) { return y(d.frequency); })
-                      .attr("height", function(d) { return height - y(d.frequency); })
-                      .on('mouseover', tip.show)
-                      .on('mouseout', tip.hide)
-
-                });
-
-                function type(d) {
-                  d.frequency = +d.frequency;
-                  return d;
-                }
-              </script>
-            </div>
-
-          </div><!-- End of Grid for Table content -->
-
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-
-          <!-- Grid for Table content -->
-          <div class="row">
-            <div class="col-md-6">
-              <div id="pieChart1"></div>
-              <script src="js/d3pie.min.js"></script>
-              <script>
-              var pie1 = new d3pie("pieChart1", {
-                "header": {
-                  "title": {
-                    "text": "Transacciones por Estatus",
-                    "fontSize": 22,
-                    "font": "verdana"
-                  },
-                  "subtitle": {
-                    "color": "#999999",
-                    "fontSize": 10,
-                    "font": "verdana"
-                  },
-                  "titleSubtitlePadding": 12
-                },
-                "footer": {
-                  "text": " ",
-                  "color": "#999999",
-                  "fontSize": 11,
-                  "font": "open sans",
-                  "location": "bottom-center"
-                },
-                "size": {
-                  "canvasHeight": 500,
-                  "canvasWidth": 500
-                },
-                "data": {
-                  "smallSegmentGrouping": {
-                    "enabled": true
-                  },
-                  "content": [
-                    {
-                      "label": "Conciliadas",
-                      "value": 23,
-                      "color": "#93c144"
-                    },
-                    {
-                      "label": "No conciliadas",
-                      "value": 8,
-                      "color": "#72925b"
-                    }
-                  ]
-                },
-                "labels": {
-                  "outer": {
-                    "pieDistance": 25
-                  },
-                  "mainLabel": {
-                    "font": "verdana",
-                    "fontSize": 12
-                  },
-                  "percentage": {
-                    "color": "#e1e1e1",
-                    "font": "verdana",
-                    "decimalPlaces": 0
-                  },
-                  "value": {
-                    "color": "#e1e1e1",
-                    "font": "verdana",
-                    "fontSize": 11
-                  },
-                  "lines": {
-                    "enabled": true,
-                    "color": "#cccccc"
-                  }
-                },
-                "tooltips": {
-                  "enabled": true,
-                  "type": "placeholder",
-                  "string": "{label}: {value}",
-                  "styles": {
-                    "fadeInSpeed": 276,
-                    "backgroundOpacity": 0.43
-                  }
-                },
-                "effects": {
-                  "pullOutSegmentOnClick": {
-                    "speed": 400,
-                    "size": 8
-                  }
-                },
-                "callbacks": {
-                  "onMouseoverSegment": null,
-                  "onMouseoutSegment": null,
-                  "onClickSegment": null
-                }
-              });
-              </script>
-            </div>
-
-            <div class="col-md-6">
-              <div id="pieChart2"></div>
-
-              <script>
-              var pie2 = new d3pie("pieChart2", {
-                "header": {
-                  "title": {
-                    "text": "Facturas por Estatus",
-                    "fontSize": 22,
-                    "font": "verdana"
-                  },
-                  "subtitle": {
-                    "color": "#999999",
-                    "fontSize": 10,
-                    "font": "verdana"
-                  },
-                  "titleSubtitlePadding": 12
-                },
-                "footer": {
-                  "text": "",
-                  "color": "#999999",
-                  "fontSize": 11,
-                  "font": "open sans",
-                  "location": "bottom-center"
-                },
-                "size": {
-                  "canvasHeight": 500,
-                  "canvasWidth": 500
-                },
-                "data": {
-                  "smallSegmentGrouping": {
-                    "enabled": true
-                  },
-                  "content": [
-                    {
-                      "label": "Conciliadas",
-                      "value": 19,
-                      "color": "#F0430A"
-                    },
-                    {
-                      "label": "No conciliadas",
-                      "value": 11,
-                      "color": "#FA7E55"
-                    }
-                  ]
-                },
-                "labels": {
-                  "outer": {
-                    "pieDistance": 25
-                  },
-                  "mainLabel": {
-                    "font": "verdana",
-                    "fontSize": 12
-                  },
-                  "percentage": {
-                    "color": "#ffffff", //e1e1e1
-                    "font": "verdana",
-                    "decimalPlaces": 0
-                  },
-                  "value": {
-                    "color": "#e1e1e1",
-                    "font": "verdana",
-                    "fontSize": 11
-                  },
-                  "lines": {
-                    "enabled": true,
-                    "color": "#cccccc"
-                  }
-                },
-                "tooltips": {
-                  "enabled": true,
-                  "type": "placeholder",
-                  "string": "{label}: {value}",
-                  "styles": {
-                    "fadeInSpeed": 276,
-                    "backgroundOpacity": 0.43
-                  }
-                },
-                "effects": {
-                  "pullOutSegmentOnClick": {
-                    "speed": 400,
-                    "size": 8
-                  }
-                },
-                "callbacks": {
-                  "onMouseoverSegment": null,
-                  "onMouseoutSegment": null,
-                  "onClickSegment": null
-                }
-              });
-              </script>
-            </div>
-
-          </div><!-- End of Grid for Table content -->
-
-
-        </div><!-- Col for Panel -->
-        <!-- Col for Banner -->
-        <div class="col-md-2">
-          <img src="img/sivale-banner.gif" class="img-responsive" alt="Responsive image" aligne="right">
-        </div><!-- End of Col for Banner -->
-      </div><!-- End of Grid for Panel and Banner -->
-
-  </div><!-- End of MAIN CONTAINER -->
-
-</div>
-    <!-- Footer
+	</div>
+	<!-- Footer
     ================================================== -->
-    <div id="footer">
-      <div class="container">
-        <p class="text-muted credit">Si Vale <a href="http://latbc.com">Latbc 2015</a> Todos los derechos reservados.</p>
-      </div>
-    </div><!-- End of Footer -->
+	<div id="footer">
+		<div class="container">
+			<p class="text-muted credit">
+				Si Vale <a href="http://latbc.com">Latbc 2015</a> Todos los derechos
+				reservados.
+			</p>
+		</div>
+	</div>
+	<!-- End of Footer -->
 
 
-    <!-- Bootstrap core JavaScript
+	<!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-    <!-- script references -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-filestyle.min.js"></script>
-    <script>
-      var d = new Date();
-        document.getElementById("date").innerHTML = d.toDateString();
-    </script>
-  </body>
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="js/ie10-viewport-bug-workaround.js"></script>
+	<!-- script references -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-filestyle.min.js"></script>
+	<script>
+		var d = new Date();
+		document.getElementById("date").innerHTML = d.toDateString();
+	</script>
+</body>
 </html>

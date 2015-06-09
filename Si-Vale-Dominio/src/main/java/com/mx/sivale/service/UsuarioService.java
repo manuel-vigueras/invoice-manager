@@ -18,4 +18,6 @@ public interface UsuarioService {
 
 	public List<UsuarioTO> getAll();
 	
+	public List<UsuarioTO> getAllByAdmin(int idAdmin);
+	
 }

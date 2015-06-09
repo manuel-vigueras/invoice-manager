@@ -1,4 +1,11 @@
 eclipse.preferences.version=1
 encoding//WebContent/login.jsp=UTF-8
+encoding//WebContent/secured/anexo24.jsp=UTF-8
+encoding//WebContent/secured/facturas.jsp=UTF-8
+encoding//WebContent/secured/justificantes.jsp=UTF-8
+encoding//WebContent/secured/reportesTableau.jsp=UTF-8
 encoding//WebContent/secured/resumen.jsp=UTF-8
+encoding//WebContent/secured/settings.jsp=UTF-8
+encoding//WebContent/secured/transacciones.jsp=UTF-8
+encoding//WebContent/templates/menuTemplate.jsp=UTF-8
 encoding//WebContent/welcome.jsp=UTF-8
