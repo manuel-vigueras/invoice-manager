@@ -140,8 +140,6 @@ body .modal-sm {
 	left: 0;
 }
 </style>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
 
 <script src="js/si-vale.js"></script>
 </head>

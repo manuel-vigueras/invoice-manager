@@ -140,11 +140,15 @@ body .modal-sm {
 	left: 0;
 }
 </style>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+
 </head>
 
 
 <!-- Body starts here -->
-<body >
+<body>
 
 
 
@@ -162,8 +166,8 @@ body .modal-sm {
 
 				<!-- Col for Panel -->
 				<div class="col-md-10">
-				
-				<jsp:include page="../templates/menuTemplate.jsp" />
+
+					<jsp:include page="../templates/menuTemplate.jsp" />
 
 					<div class="row">
 
