@@ -113,11 +113,15 @@ code {
 	font-size: 80%;
 }
 </style>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+
 </head>
 
 
 <!-- Body starts here -->
-<body>
+<body data-ng-app="myApp">
 
 	<!-- Wrap all page content here -->
 	<div id="wrap">
@@ -129,7 +133,7 @@ code {
 		<div class="container container-xs">
 
 			<!-- Grid for Panel and Banner -->
-			<div class="row">
+			<div class="row" data-ng-controller="satController">
 
 				<!-- Col for Panel -->
 				<div class="col-md-10">
@@ -137,12 +141,6 @@ code {
 
 					<!-- ROW de botones -->
 					<div class="row">
-
-
-
-
-
-
 
 
 						<ul class="nav nav-tabs" role="tablist">
@@ -158,7 +156,7 @@ code {
 							<div role="tabpanel" class="tab-pane active" id="tabFacturas">
 
 								<!-- Data Table Panel-->
-								<div class="panel panel-default">
+								<div class="panel panel-default" data-ng-controller="getAllFacturasConciliadas">
 
 									<div class="panel-heading">
 										<div class="row">
@@ -173,11 +171,17 @@ code {
 												<ul class="dropdown-menu" role="menu"
 													aria-labelledby="dropdownMenu1">
 													<li role="presentation"><a role="menuitem"
-														tabindex="-1" href="#">Mes anterior</a></li>
+														tabindex="-1"
+														data-ng-click="filterFacturasConciliadasByPeriodo('mesAnterior')">Mes
+															anterior</a></li>
 													<li role="presentation"><a role="menuitem"
-														tabindex="-1" href="#">Dos meses atrás</a></li>
+														tabindex="-1"
+														data-ng-click="filterFacturasConciliadasByPeriodo('dosAnterior')">Dos
+															meses atras</a></li>
 													<li role="presentation"><a role="menuitem"
-														tabindex="-1" href="#">Tres meses atrás</a></li>
+														tabindex="-1"
+														data-ng-click="filterFacturasConciliadasByPeriodo('tresAnterior')">Tres
+															meses atras</a></li>
 												</ul>
 											</div>
 
@@ -199,46 +203,24 @@ code {
 									<div class="panel-body">
 										<div class="table-responsive">
 											<table class="table table-striped">
-												<thead>
-													<tr>
-														<th style="width: 120px;">Usuario</th>
-														<th style="width: 100px;">Tarjeta</th>
-														<th style="width: 80px;">Folio</th>
-														<th style="width: 100px;">Fecha</th>
-														<th>RFC Emisor</th>
-														<th class="text-right" style="width: 100px;">Monto</th>
-														<th style="width: 120px;">Validación SAT</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Mariana Cantú</td>
-														<td>876234579</td>
-														<td>987534</td>
-														<td>11/04/2015</td>
-														<td>SORIANA SA CV</td>
-														<td><p class="text-right">$ 345.00</p></td>
-														<td><span class="label label-success">válido</span></td>
-													</tr>
-													<tr>
-														<td>Mariana Cantú</td>
-														<td>876234579</td>
-														<td>76534</td>
-														<td>19/04/2015</td>
-														<td>RESTAURANTE EL CAPITAN SA CV</td>
-														<td><p class="text-right">$ 750.00</p></td>
-														<td><span class="label label-success">válido</span></td>
-													</tr>
-													<tr>
-														<td>Mariana Cantú</td>
-														<td>876234579</td>
-														<td>654373</td>
-														<td>20/04/2015</td>
-														<td>HOTEL DE MEXICO SA CV</td>
-														<td><p class="text-right">$ 1,250.00</p></td>
-														<td><span class="label label-danger">inválido</span></td>
-													</tr>
-												</tbody>
+												<tr>
+													<th style="width: 120px;">Usuario</th>
+													<th style="width: 100px;">Tarjeta</th>
+													<th style="width: 80px;">Folio</th>
+													<th style="width: 100px;">Fecha</th>
+													<th>RFC Emisor</th>
+													<th class="text-right" style="width: 100px;">Monto</th>
+													<th style="width: 120px;">Validación SAT</th>
+												</tr>
+												<tr data-ng-repeat="factura in facturas">
+													<td>{{factura.usuario}}</td>
+													<td>{{factura.tarjeta}}</td>
+													<td>{{factura.folio}}</td>
+													<td>{{factura.fecha}}</td>
+													<td>{{factura.rfcEmisor}}</td>
+													<td><p class="text-right">$ {{factura.monto}}</p></td>
+													<td><span class="label label-success">{{factura.estatusSat}}</span></td>
+												</tr>
 											</table>
 										</div>
 									</div>

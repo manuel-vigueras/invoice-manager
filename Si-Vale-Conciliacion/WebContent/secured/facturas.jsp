@@ -3,7 +3,7 @@
 <%@ taglib uri="/struts-tags" prefix="s"%>
 <%@ taglib prefix="sb" uri="/struts-bootstrap-tags"%>
 <!DOCTYPE html>
-<html lang="en" data-ng-app>
+<html lang="en">
 
 <!-- Head starts here -->
 <head>
@@ -86,15 +86,18 @@ code {
 	font-size: 80%;
 }
 </style>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
 </head>
 
 
 <!-- Body starts here -->
-<body>
+<body data-ng-app="myApp">
 
 
 	<!-- Wrap all page content here -->
-	<div id="wrap">
+	<div id="wrap" data-ng-controller="facturasController">
 
 		<jsp:include page="../templates/headerTemplate.jsp" />
 
@@ -123,10 +126,12 @@ code {
 								<li role="presentation"><a role="menuitem" tabindex="-1"
 									href="#">Promedios Globales (todos los usuarios)</a></li>
 								<li role="presentation" data-ng-repeat="usr in usuarios"><a
-									role="menuitem" tabindex="-1" href="" data-ng-model="selected">{{usr.idUser}}
+									role="menuitem" tabindex="-1"
+									data-ng-click="filterFacturasByUser(usr.nombre)">{{usr.idUser}}
 										- {{usr.nombre}}</a></li>
 							</ul>
 						</div>
+
 						<div class="col-md-4">
 							<span class="pull-right">
 								<ul class="nav nav-pills">
@@ -140,7 +145,7 @@ code {
 					<br />
 
 					<!-- Grid for Table content -->
-					<div class="row">
+					<div class="row" data-ng-controller="getAllFacturas">
 						<div class="col-md-12">
 
 							<!-- Data Table Panel-->
@@ -152,137 +157,28 @@ code {
 								<div class="panel-body">
 									<div class="table-responsive">
 										<table class="table table-striped">
-											<thead>
-												<tr>
-													<th style="width: 120px;">Usuario</th>
-													<th style="width: 100px;">Tarjeta</th>
-													<th style="width: 100px;">Folio</th>
-													<th style="width: 150px;">Fecha</th>
-													<th>RFC Emisor</th>
-													<th style="width: 100px;">Archivo</th>
-													<th style="width: 120px;" class="text-right">Monto</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Mariana Ramírez Cantú</td>
-													<td>2364001538145683</td>
-													<td>23712</td>
-													<td>03/05/2015</td>
-													<td>SORIANA BLVD</td>
-													<td><a href="#"> <img src="img/xml.png" alt="XML"
-															style="width: 20px; height: 20px">
-													</a> <a href="#"> <img src="img/pdf.png" alt="pdf"
-															style="width: 20px; height: 20px">
-													</a></td>
-													<td><p class="text-right">$ 105.00</p></td>
-												</tr>
-												<tr>
-													<td>Alfonso López Alcántara</td>
-													<td>2364001538164532</td>
-													<td>56823</td>
-													<td>02/05/2015</td>
-													<td>SORIANA BLVD</td>
-													<td><a href="#"> <img src="img/xml.png" alt="XML"
-															style="width: 20px; height: 20px">
-													</a> <a href="#"> <img src="img/pdf.png" alt="pdf"
-															style="width: 20px; height: 20px">
-													</a></td>
-													<td><p class="text-right">$ 120.00</p></td>
-												</tr>
-												<tr>
-													<td>David Gutiérrez Hernández</td>
-													<td>2364001538876234</td>
-													<td>23435</td>
-													<td>01/05/2015</td>
-													<td>OXXO GONZALEZ C.</td>
-													<td><a href="#"> <img src="img/xml.png" alt="XML"
-															style="width: 20px; height: 20px">
-													</a> <a href="#"> <img src="img/pdf.png" alt="pdf"
-															style="width: 20px; height: 20px">
-													</a></td>
-													<td><p class="text-right">$ 108.00</p></td>
-												</tr>
-
-												<tr>
-													<td>Alfonso López Alcántara</td>
-													<td>2364001538164532</td>
-													<td>98752</td>
-													<td>29/04/2015</td>
-													<td>WINGS AS 32</td>
-													<td><a href="#"> <img src="img/xml.png" alt="XML"
-															style="width: 20px; height: 20px">
-													</a> <a href="#"> <img src="img/pdf.png" alt="pdf"
-															style="width: 20px; height: 20px">
-													</a></td>
-													<td><p class="text-right">$ 500.00</p></td>
-												</tr>
-												<tr>
-													<td>David Gutiérrez Hernández</td>
-													<td>2364001538876234</td>
-													<td>87562</td>
-													<td>27/04/2015</td>
-													<td>RESTAURANTE CHILIS SA DE CV</td>
-													<td><a href="#"> <img src="img/xml.png" alt="XML"
-															style="width: 20px; height: 20px">
-													</a> <a href="#"> <img src="img/pdf.png" alt="pdf"
-															style="width: 20px; height: 20px">
-													</a></td>
-													<td><p class="text-right">$ 490.00</p></td>
-												</tr>
-												<tr>
-													<td>Alfonso López Alcántara</td>
-													<td>2364001538164532</td>
-													<td>987534</td>
-													<td>26/04/2015</td>
-													<td>RESTAURANTE CHILIS SA DE CV</td>
-													<td><a href="#"> <img src="img/xml.png" alt="XML"
-															style="width: 20px; height: 20px">
-													</a> <a href="#"> <img src="img/pdf.png" alt="pdf"
-															style="width: 20px; height: 20px">
-													</a></td>
-													<td><p class="text-right">$ 463.50</p></td>
-												</tr>
-												<tr>
-													<td>Mariana Ramírez Cantú</td>
-													<td>2364001538145683</td>
-													<td>87459</td>
-													<td>26/04/2015</td>
-													<td>RESTAURANTE CHILIS SA DE CV</td>
-													<td><a href="#"> <img src="img/xml.png" alt="XML"
-															style="width: 20px; height: 20px">
-													</a> <a href="#"> <img src="img/pdf.png" alt="pdf"
-															style="width: 20px; height: 20px">
-													</a></td>
-													<td><p class="text-right">$ 463.50</p></td>
-												</tr>
-												<tr>
-													<td>Antonio Cortés Zamora</td>
-													<td>2364001538167285</td>
-													<td>654373</td>
-													<td>20/04/2015</td>
-													<td>HOTEL DE MEXICO SA CV</td>
-													<td><a href="#"> <img src="img/xml.png" alt="XML"
-															style="width: 20px; height: 20px">
-													</a> <a href="#"> <img src="img/pdf.png" alt="pdf"
-															style="width: 20px; height: 20px">
-													</a></td>
-													<td><p class="text-right">$ 1250.00</p></td>
-												</tr>
-												<tr>
-													<td>Antonio Cortés Zamora</td>
-													<td>2364001538167285</td>
-													<td>76534</td>
-													<td>19/04/2015</td>
-													<td>RESTAURANTE EL CAPITAN SA CV</td>
-													<td><a href="#"> <img src="img/xml.png" alt="XML"
-															style="width: 20px; height: 20px">
-													</a> <a href="#"> <img src="img/pdf.png" alt="pdf"
-															style="width: 20px; height: 20px">
-													</a></td>
-													<td><p class="text-right">$ 750.00</p></td>
-												</tr>
-											</tbody>
+											<tr>
+												<th style="width: 120px;">Usuario</th>
+												<th style="width: 100px;">Tarjeta</th>
+												<th style="width: 100px;">Folio</th>
+												<th style="width: 150px;">Fecha</th>
+												<th>RFC Emisor</th>
+												<th style="width: 100px;">Archivo</th>
+												<th style="width: 120px;" class="text-right">Monto</th>
+											</tr>
+											<tr data-ng-repeat="factura in facturas">
+												<td>{{factura.usuario}}</td>
+												<td>{{factura.tarjeta}}</td>
+												<td>{{factura.folio}}</td>
+												<td>{{factura.fecha}}</td>
+												<td>{{factura.rfcEmisor}}</td>
+												<td><a href="#"> <img src="img/xml.png" alt="XML"
+														style="width: 20px; height: 20px">
+												</a> <a href="#"> <img src="img/pdf.png" alt="pdf"
+														style="width: 20px; height: 20px">
+												</a></td>
+												<td><p class="text-right">$ {{factura.monto}}</p></td>
+											</tr>
 										</table>
 									</div>
 								</div>

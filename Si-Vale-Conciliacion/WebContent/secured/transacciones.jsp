@@ -129,7 +129,7 @@ body .modal-sm {
 	<form>
 
 		<!-- Wrap all page content here -->
-		<div id="wrap" data-ng-controller="MyController">
+		<div id="wrap" data-ng-controller="transaccionesController">
 
 			<jsp:include page="../templates/headerTemplate.jsp" />
 			<!-- MAIN CONTAINER 
@@ -169,7 +169,8 @@ body .modal-sm {
 								<ul class="dropdown-menu" role="menu"
 									aria-labelledby="dropdownMenu1">
 									<li role="presentation"><a role="menuitem" tabindex="-1"
-										href="#">Promedios Globales (todos los usuarios)</a></li>
+										data-ng-click="getTransacciones()">Promedios Globales
+											(todos los usuarios)</a></li>
 									<li role="presentation" data-ng-repeat="usr in usuarios"><a
 										role="menuitem" tabindex="-1"
 										data-ng-click="filterTransaccionesByUser(usr.nombre)">{{usr.idUser}}
@@ -187,7 +188,7 @@ body .modal-sm {
 								<ul class="dropdown-menu" role="menu"
 									aria-labelledby="dropdownMenu1">
 									<li role="presentation"><a role="menuitem" tabindex="-1"
-										href="">Todos</a></li>
+										data-ng-click="getTransacciones()">Todos</a></li>
 									<li role="presentation" data-ng-repeat="just in justificantes"><a
 										role="menuitem" tabindex="-1"
 										data-ng-click="filterTransaccionesByJustificante(just)">{{just}}</a></li>
@@ -229,11 +230,11 @@ body .modal-sm {
 														<li role="presentation"><a role="menuitem"
 															tabindex="-1"
 															data-ng-click="filterTransaccionesByPeriodo('dosAnterior')">Dos
-																meses atrás</a></li>
+																meses atras</a></li>
 														<li role="presentation"><a role="menuitem"
 															tabindex="-1"
 															data-ng-click="filterTransaccionesByPeriodo('tresAnterior')">Tres
-																meses atrás</a></li>
+																meses atras</a></li>
 													</ul>
 												</span>
 											</div>
