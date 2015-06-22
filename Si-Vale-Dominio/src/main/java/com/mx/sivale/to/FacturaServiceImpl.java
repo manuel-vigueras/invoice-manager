@@ -83,7 +83,7 @@ public class FacturaServiceImpl implements FacturaService {
 		return listaFacturas;
 	}
 
-	public List<FacturaTO> getFacturasConciliadas() {
+	public List<FacturaTO> getFacturasVinculadas() {
 
 		List<FacturaTO> listaFacturas = new ArrayList<FacturaTO>();
 
@@ -145,7 +145,50 @@ public class FacturaServiceImpl implements FacturaService {
 		return listaFacturas;
 	}
 
-	public List<FacturaTO> getFacturasConciliadasByPeriodo(String periodo) {
+	public List<FacturaTO> getFacturasVinculadasByPeriodo(String periodo) {
+		List<FacturaTO> listaFacturas = new ArrayList<FacturaTO>();
+
+		FacturaTO to = new FacturaTO();
+		to.setUsuario("Mariana Ram??rez Cant??");
+		to.setTarjeta("2364001538145683");
+		to.setFolio("23712");
+		to.setFecha("03/05/2015");
+		to.setRfcEmisor("SORIANA BLVD");
+		to.setMonto(105.00);
+		to.setEstatusSat("Valido");
+
+		listaFacturas.add(to);
+
+		to = new FacturaTO();
+		to.setUsuario("Mariana Ram??rez Cant??");
+		to.setTarjeta("2364001538145683");
+		to.setFolio("23712");
+		to.setFecha("03/05/2015");
+		to.setRfcEmisor("SORIANA BLVD");
+		to.setMonto(105.00);
+		to.setEstatusSat("Valido");
+
+		listaFacturas.add(to);
+
+		return listaFacturas;
+	}
+
+	public FacturaTO getFacturaByFolio(String folio) {
+
+		FacturaTO to = new FacturaTO();
+
+		to.setUsuario("Mariana Ram??rez Cant??");
+		to.setTarjeta("2364001538145683");
+		to.setFolio("23712");
+		to.setFecha("03/05/2015");
+		to.setRfcEmisor("SORIANA BLVD");
+		to.setMonto(105.00);
+		to.setEstatusSat("Valido");
+
+		return to;
+	}
+
+	public List<FacturaTO> getFacturasNoVinculadas() {
 		List<FacturaTO> listaFacturas = new ArrayList<FacturaTO>();
 
 		FacturaTO to = new FacturaTO();

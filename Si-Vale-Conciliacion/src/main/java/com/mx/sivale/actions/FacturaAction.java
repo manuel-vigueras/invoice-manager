@@ -57,27 +57,27 @@ public class FacturaAction extends ActionSupport {
 		return SUCCESS;
 	}
 
-	@Action(value = "facturasConciliadasAction", results = {
+	@Action(value = "facturasVinculadasAction", results = {
 			@Result(name = SUCCESS, type = "json", params = { "root",
 					"listaFacturas", "excludeNullProperties", "true",
 					"noCache", "true" }),
 			@Result(name = ERROR, location = "/error.jsp") })
-	public String getFacturasConciliadas() {
+	public String getFacturasVinculadas() {
 
-		listaFacturas = facturaService.getFacturasConciliadas();
+		listaFacturas = facturaService.getFacturasVinculadas();
 
 		return SUCCESS;
 	}
 
-	@Action(value = "facturasConciliadasPeriodoAction", results = {
+	@Action(value = "facturasVinculadasPeriodoAction", results = {
 			@Result(name = SUCCESS, type = "json", params = { "root",
 					"listaFacturas", "excludeNullProperties", "true",
 					"noCache", "true" }),
 			@Result(name = ERROR, location = "/error.jsp") })
-	public String getFacturasConciliadasByPeriodo() {
+	public String getFacturasVinculadasByPeriodo() {
 
 		listaFacturas = facturaService
-				.getFacturasConciliadasByPeriodo(periodoSeleccionado);
+				.getFacturasVinculadasByPeriodo(periodoSeleccionado);
 
 		return SUCCESS;
 	}

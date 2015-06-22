@@ -119,6 +119,8 @@ code {
 
 </head>
 
+</head>
+
 
 <!-- Body starts here -->
 <body data-ng-app="myApp">
@@ -128,203 +130,107 @@ code {
 
 		<jsp:include page="../templates/headerTemplate.jsp" />
 
+
 		<!-- MAIN CONTAINER 
     =========================================== -->
-		<div class="container container-xs">
+		<div class="container container-xs" data-ng-controller="satController">
 
 			<!-- Grid for Panel and Banner -->
-			<div class="row" data-ng-controller="satController">
+			<div class="row">
 
 				<!-- Col for Panel -->
 				<div class="col-md-10">
+
 					<jsp:include page="../templates/menuTemplate.jsp" />
 
 					<!-- ROW de botones -->
 					<div class="row">
-
-
-						<ul class="nav nav-tabs" role="tablist">
-							<li class="active"><a href="#tabFacturas" role="tab"
-								data-toggle="tab">Facturas</a></li>
-							<li><a href="#tabHistorial" role="tab" data-toggle="tab">Historial</a></li>
-						</ul>
-
-						<div class="tab-content">
-
-
-							<!-- TAB Usuarios -->
-							<div role="tabpanel" class="tab-pane active" id="tabFacturas">
-
-								<!-- Data Table Panel-->
-								<div class="panel panel-default" data-ng-controller="getAllFacturasConciliadas">
-
-									<div class="panel-heading">
-										<div class="row">
-											<div class="col-md-6">
-												<h3 class="panel-title">Facturas conciliadas</h3>
-												<br /> Periodo:
-												<button class="btn btn-default dropdown-toggle"
-													type="button" id="dropdownMenuPeriodo"
-													data-toggle="dropdown" aria-expanded="true">
-													Actual<span class="caret"></span>
-												</button>
-												<ul class="dropdown-menu" role="menu"
-													aria-labelledby="dropdownMenu1">
-													<li role="presentation"><a role="menuitem"
-														tabindex="-1"
-														data-ng-click="filterFacturasConciliadasByPeriodo('mesAnterior')">Mes
-															anterior</a></li>
-													<li role="presentation"><a role="menuitem"
-														tabindex="-1"
-														data-ng-click="filterFacturasConciliadasByPeriodo('dosAnterior')">Dos
-															meses atras</a></li>
-													<li role="presentation"><a role="menuitem"
-														tabindex="-1"
-														data-ng-click="filterFacturasConciliadasByPeriodo('tresAnterior')">Tres
-															meses atras</a></li>
-												</ul>
-											</div>
-
-											<div class="col-md-6">
-												<div class="btn-group-vertical pull-right" role="group"
-													aria-label="...">
-													<button type="button" class="btn btn-default"
-														data-toggle="modal" data-target="#modalAnexo24">
-														<span class="glyphicon glyphicon-open-file"
-															aria-hidden="true"></span> Generar Anexo
-													</button>
-												</div>
-											</div>
-											<!-- End of Table Header right -->
-
-										</div>
-									</div>
-
-									<div class="panel-body">
-										<div class="table-responsive">
-											<table class="table table-striped">
-												<tr>
-													<th style="width: 120px;">Usuario</th>
-													<th style="width: 100px;">Tarjeta</th>
-													<th style="width: 80px;">Folio</th>
-													<th style="width: 100px;">Fecha</th>
-													<th>RFC Emisor</th>
-													<th class="text-right" style="width: 100px;">Monto</th>
-													<th style="width: 120px;">Validación SAT</th>
-												</tr>
-												<tr data-ng-repeat="factura in facturas">
-													<td>{{factura.usuario}}</td>
-													<td>{{factura.tarjeta}}</td>
-													<td>{{factura.folio}}</td>
-													<td>{{factura.fecha}}</td>
-													<td>{{factura.rfcEmisor}}</td>
-													<td><p class="text-right">$ {{factura.monto}}</p></td>
-													<td><span class="label label-success">{{factura.estatusSat}}</span></td>
-												</tr>
-											</table>
-										</div>
-									</div>
-								</div>
-								<!-- End of Data Table Panel-->
-							</div>
-							<!-- TERMINA TAB FACTURAS -->
-
-
-
-
-
-
-
-							<!-- TAB HISTORIAL -->
-							<div role="tabpanel" class="tab-pane" id="tabHistorial">
-
-								<!-- Data Table Panel-->
-								<div class="panel panel-default">
-
-									<div class="panel-heading">
-										<div class="row">
-											<div class="col-md-6">
-												<h3 class="panel-title">Anexo 24</h3>
-												<br />
-											</div>
-										</div>
-									</div>
-
-									<div class="panel-body">
-										<div class="table-responsive">
-											<table class="table table-striped">
-												<thead>
-													<tr>
-														<th style="width: 180px;">Mes</th>
-														<th style="width: 180px;">Archivo</th>
-														<th style="width: 180px;">Descarga</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>2015 Enero</td>
-														<td>Anexo_24</td>
-														<td><a data-toggle="modal"
-															data-target="#modalDetalleFactura3"> <img
-																src="img/xml.png" alt="XML"
-																style="width: 20px; height: 20px">
-														</a></td>
-													</tr>
-													<tr>
-														<td>2015 Febrero</td>
-														<td>Anexo_24</td>
-														<td><a data-toggle="modal"
-															data-target="#modalDetalleFactura3"> <img
-																src="img/xml.png" alt="XML"
-																style="width: 20px; height: 20px">
-														</a></td>
-													</tr>
-													<tr>
-														<td>2015 Marzo</td>
-														<td>Anexo_24</td>
-														<td><a data-toggle="modal"
-															data-target="#modalDetalleFactura3"> <img
-																src="img/xml.png" alt="XML"
-																style="width: 20px; height: 20px">
-														</a></td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-								<!-- End of Data Table Panel-->
-							</div>
-							<!-- TERMINA TAB HISTORIAL -->
-
+						<div class="col-md-9">
+							<h4>Facturas vinculadas.</h4>
+							Periodo:
+							<button class="btn btn-default dropdown-toggle" type="button"
+								id="dropdownMenuPeriodo" data-toggle="dropdown"
+								aria-expanded="true">
+								Actual<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu"
+								aria-labelledby="dropdownMenu1">
+								<li role="presentation"><a role="menuitem" tabindex="-1"
+									data-ng-click="filterFacturasVinculadasByPeriodo('mesAnterior')">Mes
+										anterior</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1"
+									data-ng-click="filterFacturasVinculadasByPeriodo('dosAnterior')">Dos
+										meses atras</a></li>
+								<li role="presentation"><a role="menuitem" tabindex="-1"
+									data-ng-click="filterFacturasVinculadasByPeriodo('tresAnterior')">Tres
+										meses atras</a></li>
+							</ul>
 						</div>
-						<!-- TERMINA TAB Content -->
 
+						<div class="col-md-3">
+							<div class="btn-group-vertical pull-right" role="group"
+								aria-label="...">
+								<button type="button" class="btn btn-default"
+									data-toggle="modal" data-target="#modalValidar">
+									<span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+									Validar
+								</button>
+								<button type="button" class="btn btn-default"
+									data-toggle="modal" data-target="#modalAnexo24">
+									<span class="glyphicon glyphicon-open-file" aria-hidden="true"></span>
+									Generar Anexo
+								</button>
+							</div>
+						</div>
 					</div>
 					<!-- TERMINA ROW de botones -->
 
+					<br />
+
+					<!-- Grid for Table content -->
+					<div class="row">
+						<div class="col-md-12">
 
 
 
+							<!-- Data Table Panel-->
+							<div class="panel panel-default"
+								data-ng-controller="getAllFacturasVinculadas">
+								<div class="panel-heading">
+									<h3 class="panel-title">Detalle facturas</h3>
+								</div>
+
+								<div class="panel-body">
+									<div class="table-responsive">
+										<table class="table table-striped">
+											<tr>
+												<th style="width: 120px;">Usuario</th>
+												<th style="width: 100px;">Tarjeta</th>
+												<th style="width: 80px;">Folio</th>
+												<th style="width: 100px;">Fecha</th>
+												<th>RFC Emisor</th>
+												<th class="text-right" style="width: 100px;">Monto</th>
+												<th style="width: 120px;">Validación SAT</th>
+											</tr>
+											<tr data-ng-repeat="factura in facturas">
+												<td>{{factura.usuario}}</td>
+												<td>{{factura.tarjeta}}</td>
+												<td>{{factura.folio}}</td>
+												<td>{{factura.fecha}}</td>
+												<td>{{factura.rfcEmisor}}</td>
+												<td><p class="text-right">$ {{factura.monto}}</p></td>
+												<td><span class="label label-success">{{factura.estatusSat}}</span></td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+							<!-- End of Data Table Panel-->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+						</div>
+					</div>
+					<!-- End of Grid for Table content -->
 				</div>
 				<!-- Col for Panel -->
 				<!-- Col for Banner -->

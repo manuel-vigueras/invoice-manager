@@ -124,7 +124,7 @@ code {
 							<ul class="dropdown-menu" role="menu"
 								aria-labelledby="dropdownMenu1">
 								<li role="presentation"><a role="menuitem" tabindex="-1"
-									href="#">Promedios Globales (todos los usuarios)</a></li>
+									data-ng-click="getAllFacturas()">Promedios Globales (todos los usuarios)</a></li>
 								<li role="presentation" data-ng-repeat="usr in usuarios"><a
 									role="menuitem" tabindex="-1"
 									data-ng-click="filterFacturasByUser(usr.nombre)">{{usr.idUser}}

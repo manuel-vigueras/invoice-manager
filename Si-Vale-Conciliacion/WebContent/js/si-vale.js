@@ -65,9 +65,9 @@ myApp.controller('facturasController', function($scope, $http) {
 
 myApp.controller('satController', function($scope, $http) {
 
-	$scope.filterFacturasConciliadasByPeriodo = function(periodo) {
+	$scope.filterFacturasVinculadasByPeriodo = function(periodo) {
 		$http.get(
-				'facturasConciliadasPeriodoAction?periodoSeleccionado='
+				'facturasVinculadasPeriodoAction?periodoSeleccionado='
 						+ periodo).success(
 				function(data, status, headers, config) {
 					$scope.facturas = data;
@@ -75,9 +75,9 @@ myApp.controller('satController', function($scope, $http) {
 		});
 	};
 
-	$scope.getAllFacturasConciliadas = function() {
+	$scope.getAllFacturasVinculadas = function() {
 
-		$http.get('facturasConciliadasAction').success(
+		$http.get('facturasVinculadasAction').success(
 				function(data, status, headers, config) {
 					$scope.facturas = data;
 				}).error(function(data, status, headers, config) {

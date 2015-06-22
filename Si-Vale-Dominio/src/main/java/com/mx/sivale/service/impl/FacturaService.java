@@ -11,8 +11,12 @@ public interface FacturaService {
 
 	public List<FacturaTO> getFacturasByUsuario(UsuarioTO usuarioTO);
 	
-	public List<FacturaTO> getFacturasConciliadas(); 
+	public List<FacturaTO> getFacturasVinculadas(); 
 	
-	public List<FacturaTO> getFacturasConciliadasByPeriodo(String periodo); 
+	public List<FacturaTO> getFacturasVinculadasByPeriodo(String periodo); 
+	
+	public FacturaTO getFacturaByFolio(String folio);
+	
+	public List<FacturaTO> getFacturasNoVinculadas(); 
 
 }
