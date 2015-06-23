@@ -5,11 +5,7 @@
     <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
   
-  
-  <context-param>
-<param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
-<param-value>/WEB-INF/config/tiles.xml</param-value>
-</context-param>
+
 	 <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>/WEB-INF/config/application-context.xml</param-value>
@@ -33,9 +29,7 @@
          org.springframework.web.context.ContextLoaderListener  
       </listener-class>
   </listener>
-  <listener>
-		<listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
-	</listener>
+
 	
   <!-- How long the sessions will stick around for -->
   <session-config>
