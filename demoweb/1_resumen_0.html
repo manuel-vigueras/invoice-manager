@@ -14,7 +14,6 @@
     <![endif]-->
     <!--<link href="css/styles.css" rel="stylesheet">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  
     <style type="text/css">
 
       /* Sticky footer styles
@@ -76,15 +75,71 @@
           /* margin-left:-375px; */
           margin-left: 35%;
       }
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+      }
 
+      .bar {
+        fill: orange;
+      }
+
+      .bar:hover {
+        fill: orangered ;
+      }
+
+      .x.axis path {
+        display: none;
+      }
+
+      .d3-tip {
+        line-height: 1;
+        font-weight: bold;
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        border-radius: 2px;
+      }
+
+
+      .d3-tip:after {
+        box-sizing: border-box;
+        display: inline;
+        font-size: 10px;
+        width: 100%;
+        line-height: 1;
+        color: rgba(0, 0, 0, 0.8);
+        content: "\25BC";
+        position: absolute;
+        text-align: center;
+      }
+
+
+      .d3-tip.n:after {
+        margin: -1px 0 0 0;
+        top: 100%;
+        left: 0;
+      }
+      #if_lineChart {
+        width: 100%;
+        height: 450px;
+        border: 0;
+      }
+      .space {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        background-color: transparent;
+      }
     </style>
   </head>
-  
+
 
 <!-- Body starts here -->
   <body>
 
-    
+
     <!-- Wrap all page content here -->
     <div id="wrap">
 
@@ -115,19 +170,19 @@
             </ul>
           </div>
         </div>
-      </div> <!-- End of Top Fixed navbar --> 
-      
-      
-    <!-- MAIN CONTAINER 
+      </div> <!-- End of Top Fixed navbar -->
+
+
+    <!-- MAIN CONTAINER
     =========================================== -->
-    <div class="container container-xs">    
+    <div class="container container-xs">
 
       <!-- Grid for Panel and Banner -->
       <div class="row">
 
         <!-- Col for Panel -->
         <div class="col-md-10">
-          
+
           <div class="row">
             <div class="col-md-6">
               <br/>
@@ -152,42 +207,314 @@
               <h2>Monto comprobado: $ 2,385.50</h2>
             </div>
           </div>
-          
+
           <br/>
 
           <!-- Grid for Table content -->
           <div class="row">
-            <div class="col-md-6">
-              <p class="text-center">
-                <a type="button" class="btn btn-warning" href="#">Vincular</a>
-              </p>
-            </div>
+            <!-- <div class="col-md-6">
+
+            </div> -->
 
             <div class="col-md-6">
-              <p class="text-center">
-                <a type="button" class="btn btn-warning" href="#">Vincular</a>
-              </p>
+              <iframe src="http://localhost/d3/demoweb/demoweb/lineChart.html" scrolling="no" id="if_lineChart">
+              </iframe>
+            </div>
+            <div class="col-md-6">
+              <script src="http://d3js.org/d3.v3.min.js"></script>
+              <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+              <svg id="bar-chart"></svg>
+              <script>
+                var height = 360;
+                var width = 420;
+                var margin = {top: 40, right: 20, bottom: 70, left: 43};
+
+                var formatPercent = d3.format("");
+
+                var x = d3.scale.ordinal()
+                    .rangeRoundBands([0, width], .1);
+
+                var y = d3.scale.linear()
+                    .range([height, 0]);
+
+                var xAxis = d3.svg.axis()
+                    .scale(x)
+                    .orient("bottom");
+
+
+                var yAxis = d3.svg.axis()
+                    .scale(y)
+                    .orient("left")
+                    .tickFormat(formatPercent);
+
+                var tip = d3.tip()
+                  .attr('class', 'd3-tip')
+                  .attr('id','bar-chart')
+                  .offset([-10, 0])
+                  .html(function(d) {
+                    return "<strong>Cantidad:</strong> <span style='color:red'>" + d.frequency + "</span>";
+                  })
+
+                var svg = d3.select('#bar-chart')
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                  .append("g")
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+                svg.call(tip);
+
+                d3.tsv("data.tsv", type, function(error, data) {
+                  x.domain(data.map(function(d) { return d.letter; }));
+                  y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
+
+                  // svg.append("g")
+                  //     .attr("class", "x axis")
+                  //     .attr("font-size","8px")
+                  //     .attr("transform", "translate(0," + height + ")")
+                  //     .call(xAxis);
+                  svg.append("g")
+                    .attr("class", "x axis")
+                    .attr("font-size","9px")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(xAxis)
+                    .selectAll("text")
+                        .style("text-anchor", "end")
+                        .attr("dx", "-.8em")
+                        .attr("dy", ".15em")
+                        .attr("transform", function(d) {
+                            return "rotate(-27)"
+                    });
+
+                  svg.append("g")
+                      .attr("class", "y axis")
+                      .attr("font-size","10px")
+                      .call(yAxis)
+                    .append("text")
+                      .attr("transform", "rotate(-90)")
+                      .attr("y", 6)
+                      .attr("dy", ".71em")
+                      .style("text-anchor", "end")
+                      .text("");
+
+                  svg.selectAll(".bar")
+                      .data(data)
+                    .enter().append("rect")
+                      .attr("class", "bar")
+                      .attr("x", function(d) { return x(d.letter); })
+                      .attr("width", x.rangeBand())
+                      .attr("y", function(d) { return y(d.frequency); })
+                      .attr("height", function(d) { return height - y(d.frequency); })
+                      .on('mouseover', tip.show)
+                      .on('mouseout', tip.hide)
+
+                });
+
+                function type(d) {
+                  d.frequency = +d.frequency;
+                  return d;
+                }
+              </script>
             </div>
 
           </div><!-- End of Grid for Table content -->
 
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
 
           <!-- Grid for Table content -->
           <div class="row">
             <div class="col-md-6">
-              <p class="text-center">
-                <a type="button" class="btn btn-warning" href="#">Vincular</a>
-              </p>
+              <div id="pieChart1"></div>
+              <script src="js/d3pie.min.js"></script>
+              <script>
+              var pie1 = new d3pie("pieChart1", {
+              	"header": {
+              		"title": {
+              			"text": "Transacciones por Estatus",
+              			"fontSize": 22,
+              			"font": "verdana"
+              		},
+              		"subtitle": {
+              			"color": "#999999",
+              			"fontSize": 10,
+              			"font": "verdana"
+              		},
+              		"titleSubtitlePadding": 12
+              	},
+              	"footer": {
+              		"text": " ",
+              		"color": "#999999",
+              		"fontSize": 11,
+              		"font": "open sans",
+              		"location": "bottom-center"
+              	},
+              	"size": {
+              		"canvasHeight": 400,
+              		"canvasWidth": 450
+              	},
+              	"data": {
+              		"smallSegmentGrouping": {
+              			"enabled": true
+              		},
+              		"content": [
+              			{
+              				"label": "Conciliadas",
+              				"value": 23,
+              				"color": "#93c144"
+              			},
+              			{
+              				"label": "No conciliadas",
+              				"value": 8,
+              				"color": "#72925b"
+              			}
+              		]
+              	},
+              	"labels": {
+              		"outer": {
+              			"pieDistance": 25
+              		},
+              		"mainLabel": {
+              			"font": "verdana",
+              			"fontSize": 12
+              		},
+              		"percentage": {
+              			"color": "#e1e1e1",
+              			"font": "verdana",
+              			"decimalPlaces": 0
+              		},
+              		"value": {
+              			"color": "#e1e1e1",
+              			"font": "verdana",
+              			"fontSize": 11
+              		},
+              		"lines": {
+              			"enabled": true,
+              			"color": "#cccccc"
+              		}
+              	},
+              	"tooltips": {
+              		"enabled": true,
+              		"type": "placeholder",
+              		"string": "{label}: {percentage}%",
+              		"styles": {
+              			"fadeInSpeed": 276,
+              			"backgroundOpacity": 0.43
+              		}
+              	},
+              	"effects": {
+              		"pullOutSegmentOnClick": {
+              			"speed": 400,
+              			"size": 8
+              		}
+              	},
+              	"callbacks": {
+              		"onMouseoverSegment": null,
+              		"onMouseoutSegment": null,
+              		"onClickSegment": null
+              	}
+              });
+              </script>
             </div>
 
             <div class="col-md-6">
-              <p class="text-center">
-                <a type="button" class="btn btn-warning" href="#">Vincular</a>
-              </p>
+              <div id="pieChart2"></div>
+
+              <script>
+              var pie2 = new d3pie("pieChart2", {
+              	"header": {
+              		"title": {
+              			"text": "Facturas por Estatus",
+              			"fontSize": 22,
+              			"font": "verdana"
+              		},
+              		"subtitle": {
+              			"color": "#999999",
+              			"fontSize": 10,
+              			"font": "verdana"
+              		},
+              		"titleSubtitlePadding": 12
+              	},
+              	"footer": {
+              		"text": "",
+              		"color": "#999999",
+              		"fontSize": 11,
+              		"font": "open sans",
+              		"location": "bottom-center"
+              	},
+              	"size": {
+              		"canvasHeight": 400,
+              		"canvasWidth": 450
+              	},
+              	"data": {
+              		"smallSegmentGrouping": {
+              			"enabled": true
+              		},
+              		"content": [
+              			{
+              				"label": "Conciliadas",
+              				"value": 19,
+              				"color": "#F0430A"
+              			},
+              			{
+              				"label": "No conciliadas",
+              				"value": 11,
+              				"color": "#FA7E55"
+              			}
+              		]
+              	},
+              	"labels": {
+              		"outer": {
+              			"pieDistance": 25
+              		},
+              		"mainLabel": {
+              			"font": "verdana",
+              			"fontSize": 12
+              		},
+              		"percentage": {
+              			"color": "#ffffff", //e1e1e1
+              			"font": "verdana",
+              			"decimalPlaces": 0
+              		},
+              		"value": {
+              			"color": "#e1e1e1",
+              			"font": "verdana",
+              			"fontSize": 11
+              		},
+              		"lines": {
+              			"enabled": true,
+              			"color": "#cccccc"
+              		}
+              	},
+              	"tooltips": {
+              		"enabled": true,
+              		"type": "placeholder",
+              		"string": "{label}: {percentage}%",
+              		"styles": {
+              			"fadeInSpeed": 276,
+              			"backgroundOpacity": 0.43
+              		}
+              	},
+              	"effects": {
+              		"pullOutSegmentOnClick": {
+              			"speed": 400,
+              			"size": 8
+              		}
+              	},
+              	"callbacks": {
+              		"onMouseoverSegment": null,
+              		"onMouseoutSegment": null,
+              		"onClickSegment": null
+              	}
+              });
+              </script>
             </div>
 
           </div><!-- End of Grid for Table content -->
-          
+
 
         </div><!-- Col for Panel -->
         <!-- Col for Banner -->
@@ -198,7 +525,7 @@
 
   </div><!-- End of MAIN CONTAINER -->
 
-</div>   
+
     <!-- Footer
     ================================================== -->
     <div id="footer">
@@ -217,7 +544,10 @@
     <!-- script references -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-filestyle.min.js"> </script>
-    <script>var d = new Date();document.getElementById("date").innerHTML = d.toDateString();</script>
+    <script src="js/bootstrap-filestyle.min.js"></script>
+    <script>
+      var d = new Date();
+        document.getElementById("date").innerHTML = d.toDateString();
+    </script>
   </body>
 </html>

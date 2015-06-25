@@ -3,6 +3,7 @@ package com.latbc.sivale.services;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -25,7 +26,7 @@ import com.latbc.sivale.beans.BillServiceBean;
 import com.latbc.sivale.beans.InvoiceBean;
 import com.latbc.sivale.beans.TransactionBean;
 import com.latbc.sivale.parser.ParseXml;
-import com.latbc.sivale.persistance.HivePersistanceControllerImpl;
+import com.latbc.sivale.persistance.MemoryPersistanceControllerImpl;
 import com.latbc.sivale.persistance.PersistanceController;
 import com.sun.jersey.core.header.ContentDisposition;
 import com.sun.jersey.multipart.FormDataBodyPart;
@@ -35,7 +36,7 @@ import com.sun.jersey.multipart.FormDataMultiPart;
 public class Services {
 
 	private static Logger LOGGER = LoggerFactory.getLogger(Services.class.getName());
-	PersistanceController persister = new HivePersistanceControllerImpl();
+	static PersistanceController persister = new MemoryPersistanceControllerImpl();
 
 	@POST
 	@Path("/uploadFile")
@@ -97,7 +98,7 @@ public class Services {
 	 * @deprecated
 	 */
 	@GET
-	@Path("/transactions/{cardId}")
+	@Path("/transactions_old/{cardId}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response requestTransactions(@PathParam("cardId") String cardId) {
 		LOGGER.info("Se han consultado transacciones para tarjeta " + cardId);
@@ -130,7 +131,18 @@ public class Services {
 	public Response test(@PathParam("cardId") String cardId) {
 		LOGGER.info("Se han consultado transacciones para tarjeta " + cardId);
 
-		List<TransactionBean> transactions = persister.getTransactions(cardId, "");
+		Collection<TransactionBean> transactions = persister.getTransactions(cardId, "");
+		return Response.status(200).entity(transactions).build();
+		
+	}
+	
+	@GET
+	@Path("/transactions/{cardId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response testSql(@PathParam("cardId") String cardId) {
+		LOGGER.info("Se han consultado transacciones para tarjeta " + cardId);
+		
+		Collection<TransactionBean> transactions = persister.getTransactions(cardId, "");
 		return Response.status(200).entity(transactions).build();
 		
 	}

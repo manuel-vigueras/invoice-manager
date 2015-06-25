@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head starts here -->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Detalle de Justificante | Si Vale</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--<link href="css/styles.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  
+    <style type="text/css">
+
+      /* Sticky footer styles
+      -------------------------------------------------- */
+
+      html,
+      body {
+        height: 100%;
+        /* The html and body elements cannot have any padding or margin. */
+      }
+
+      /* Wrapper for page content to push down footer */
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by its height */
+        margin: 0 auto -60px;
+        /* Pad bottom by footer height */
+        padding: 0 0 60px;
+      }
+
+      .btn-file {
+          position: relative;
+          overflow: hidden;
+      }
+      .btn-file input[type=file] {
+          position: absolute;
+          top: 0;
+          right: 0;
+          min-width: 100%;
+          min-height: 100%;
+          font-size: 100px;
+          text-align: right;
+          filter: alpha(opacity=0);
+          opacity: 0;
+          outline: none;
+          background: #f5f5f5;
+          background-color: #f5f5f5;
+          cursor: inherit;
+          display: block;
+      }
+
+      /* Set the fixed height of the footer here */
+      #footer {
+        height: 60px;
+        background-color: #f5f5f5;
+      }
+
+      /* Custom page CSS
+      -------------------------------------------------- */
+      /* Not required for template or sticky footer method. */
+
+      #wrap > .container {
+         /*padding: 60px 15px 0; */
+        padding-top: 60px; padding-bottom: 0px;
+      }
+
+      .container .credit {
+        margin: 20px 0;
+      }
+      .navbar-xs { min-height:28px; height: 28px; }
+      .navbar-xs .navbar-brand{ padding: 0px 0px;font-size: 16px;line-height: 28px; }
+      .navbar-xs .navbar-nav > li > a {  padding-top: 0px; padding-bottom: 0px; line-height: 28px; }
+
+      #footer > .container {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      code {
+        font-size: 80%;
+      }
+    </style>
+  </head>
+  
+
+<!-- Body starts here -->
+  <body>
+
+    
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+
+      <!-- Top Fixed navbar -->
+      <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+              <img alt="Brand" src="img/logo-nav.png">
+            </a>
+          </div>
+          <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+              <p class="navbar-text" id="date"></p>
+            </ul>
+            <ul class="nav navbar-nav">
+              <li><a>Alfonso López Alcántara</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+              <li><a href="login.html">
+                <span class="glyphicon glyphicon-log-out" aria-hidden="true">Salir</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div> <!-- End of Top Fixed navbar --> 
+    
+
+    <!-- MAIN CONTAINER 
+    =========================================== -->
+    <div class="container">    
+
+      <div class="container">
+          <div class="row">
+
+
+
+        <div class="searchDatePickerRow">
+            <div class="searchFrmDate">
+                <form class="formMargin" role="form">
+                    <div class="form-group">
+                <div class="input-group date" id="datetimepicker9">
+                    <input type="text" class="form-control" />
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+                </form>
+            </div>
+            <div class="searchToDate">
+                <form class="formMargin" role="form">
+                    <div class="form-group">
+                <div class="input-group date " id="datetimepicker10">
+                    <input type="text" class="form-control" />
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+          </div>
+      </div>
+
+
+    </div><!-- End of MAIN CONTAINER -->
+
+</div>
+    <!-- Footer
+    ================================================== -->
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted credit">Si Vale <a href="http://latbc.com">Latbc 2015</a> Todos los derechos reservados.</p>
+      </div>
+    </div><!-- End of Footer -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <!-- script references -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-filestyle.min.js"> </script>
+    <script>var d = new Date();document.getElementById("date").innerHTML = d.toDateString();</script>
+
+
+
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker9').datepicker();
+            $('#datetimepicker10').datepicker();
+            $("#datetimepicker9").onclick ("dp.change", function (e) {
+                $('#datetimepicker10').data("DateTimePicker").setDate(e.date);
+            });
+            $("#datetimepicker10").onclick("dp.change", function (e) {
+               $('#datetimepicker9').data("DateTimePicker").setDate(e.date);
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
