@@ -1,6 +1,10 @@
 package com.twobig.driver;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,13 +20,12 @@ import com.twobig.implementations.TransactionsDaoImpl;
 public class LoaderMapper extends Mapper<Object, Text, Text, IntWritable> {
 
 	private static Logger LOGGER = Logger.getLogger(LoaderMapper.class);
-	private final static IntWritable one = new IntWritable(1);
 	private final static Splitter splitter = Splitter.on(',');
-	private final static String[] qualifiers = { "m", "card", "f", "date", "hour", "amount",
-		"f2", "balance", "commerce", "f3", "trxCD", "r", "aut",
-		"commerceData", "ms", "ref", "money", "f4" };
-	private Text word = new Text();
+	private final static String[] qualifiers = { "m", "card", "f", "account",
+			"date", "hour", "amount", "f2", "balance", "commerce", "f3",
+			"trxCD", "r", "aut", "commerceData", "ms", "ref", "money", "f4" };
 	private boolean firstTime = true;
+	private TransactionsDaoImpl transactionsImpl = null;
 
 	public void map(Object key, Text value, Context context)
 			throws IOException, InterruptedException {
@@ -35,28 +38,49 @@ public class LoaderMapper extends Mapper<Object, Text, Text, IntWritable> {
 			return;
 		}
 
-		String hbaseKey = results[4] + results[5] + results[2] + results[13];
+		String parseDate = parseDate(results[4]);
 
-		TransactionsDaoImpl transactionsImpl = new TransactionsDaoImpl();
+		String hbaseKey = parseDate + results[5] + results[3] + results[13];
 
-		if (transactionsImpl.createTable()) {
+		if (transactionsImpl == null) {
 
-			Map<String, String> transactionsMap = new HashMap<String, String>();
-
-			for (int i = 0; i < qualifiers.length; i++) {
-				
-				transactionsMap.put(qualifiers[i], results[i]);
-			}
-
-			transactionsImpl.insertTransaction(transactionsMap, hbaseKey);
-
-			LOGGER.info("The record was inserted");
-		} else {
-
-			LOGGER.info("Records was not inserted " + value.toString());
+			transactionsImpl = new TransactionsDaoImpl();
 		}
 
-		// word.set(hbaseKey); // Set word to next token (word in line)
-		// context.write(word,one);
+		Map<String, String> transactionsMap = new HashMap<String, String>();
+
+		LOGGER.info("Record to be inserted: " + value.toString());
+
+		for (int i = 0; i < qualifiers.length; i++) {
+
+			if (i == 4) {
+
+				transactionsMap.put(qualifiers[i], parseDate);
+			} else {
+
+				transactionsMap.put(qualifiers[i], results[i]);
+			}
+		}
+
+		transactionsImpl.insertTransaction(transactionsMap, hbaseKey,
+				context.getConfiguration());
+
+		LOGGER.info("The record was inserted");
+	}
+
+	private String parseDate(String dateString) {
+
+		DateFormat indate = new SimpleDateFormat("M/d/yy");
+		SimpleDateFormat outdate = new SimpleDateFormat("yyyyMMdd");
+		Date date;
+		String outputDate = "";
+		try {
+			date = indate.parse(dateString);
+			outputDate = outdate.format(date);
+		} catch (ParseException e) {
+			LOGGER.error("Error parsing the date: " + e.getMessage());
+		}
+
+		return outputDate;
 	}
 }

@@ -5,15 +5,15 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.HColumnDescriptor;
 import org.apache.hadoop.hbase.HTableDescriptor;
 import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.Admin;
+import org.apache.hadoop.hbase.client.BufferedMutator;
+import org.apache.hadoop.hbase.client.BufferedMutatorParams;
 import org.apache.hadoop.hbase.client.Connection;
 import org.apache.hadoop.hbase.client.ConnectionFactory;
 import org.apache.hadoop.hbase.client.Put;
-import org.apache.hadoop.hbase.client.Table;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,34 +25,48 @@ public class TransactionsDaoImpl implements TransactionsDao {
 
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(TransactionsDaoImpl.class);
+	private BufferedMutator bufferMutator = null;
+	private Connection connection = null;
 
-	public boolean createTable() throws IOException {
+	public boolean createTable(Configuration config) throws IOException {
 
-		Configuration config = HBaseConfiguration.create();
+		Connection conn = ConnectionFactory.createConnection(config);
+		boolean tableCreated = false;
 
-		Connection connection = ConnectionFactory.createConnection(config);
-		Admin admin = connection.getAdmin();
+		try {
 
-		HTableDescriptor tableDescriptor = new HTableDescriptor(
-				TableName.valueOf("transactions"));
-		tableDescriptor.addFamily(new HColumnDescriptor("csvFile"));
+			Admin admin = conn.getAdmin();
 
-		if (admin.tableExists(tableDescriptor.getTableName())) {
+			HTableDescriptor tableDescriptor = new HTableDescriptor(
+					TableName.valueOf("transactions"));
+			tableDescriptor.addFamily(new HColumnDescriptor("csvFile"));
 
-			LOGGER.info("The tables already exists");
-			return true;
+			if (admin.tableExists(tableDescriptor.getTableName())) {
+
+				LOGGER.info("The table already exists");
+				return true;
+			}
+
+			admin.createTable(tableDescriptor);
+			LOGGER.info("The tables was created");
+			tableCreated = true;
+		} finally {
+			conn.close();
 		}
 
-		admin.createTable(tableDescriptor);
-		LOGGER.info("The tables was created");
-		return true;
+		return tableCreated;
 	}
 
 	public void insertTransaction(Map<String, String> transactionsMap,
-			String rowKey) {
-
-		Configuration config = HBaseConfiguration.create();
-
+			String rowKey, Configuration config) throws IOException {
+		
+		if (connection == null) {
+			
+			connection = ConnectionFactory.createConnection(config);
+			BufferedMutatorParams params = new BufferedMutatorParams(TableName.valueOf("transactions"));
+			bufferMutator = connection.getBufferedMutator(params);
+		}
+		
 		try {
 
 			byte[] CF = "csvFile".getBytes();
@@ -65,15 +79,10 @@ public class TransactionsDaoImpl implements TransactionsDao {
 						Bytes.toBytes(entry.getValue()));
 			}
 
-			Connection connection = ConnectionFactory.createConnection(config);
-			Table table = connection
-					.getTable(TableName.valueOf("transactions"));
-
-			table.put(put);
-			table.close();
-		} catch (IOException e) {
-
-			LOGGER.error("The record was not inserted: " + e.getMessage());
+			bufferMutator.mutate(put);
+			//connection.close();
+		} finally {
+			//connection.close();
 		}
 	}
 
