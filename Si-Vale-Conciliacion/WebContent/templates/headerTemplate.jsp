@@ -163,6 +163,7 @@ body .modal-sm {
 				<div class="collapse navbar-collapse navbar-right">
 					<ul class="nav navbar-nav">
 						<p class="navbar-text" id="date"></p>
+						<%-- <li><a>${sessionScope.logged}</a></li> --%>
 					</ul>
 					<ul class="nav navbar-nav">
 						<li><a>${sessionScope.userName}</a></li>

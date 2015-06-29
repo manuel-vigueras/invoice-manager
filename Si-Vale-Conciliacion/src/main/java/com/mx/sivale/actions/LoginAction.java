@@ -49,18 +49,18 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			@Result(name = SUCCESS, location = "/secured/resumen.jsp"),
 			@Result(name = ERROR, location = "/error.jsp") })
 	public String login() throws Exception {
-
-		System.out.println("user: "+getUser());
-		System.out.println("password:  "+getPassword());
 		
 		 if ((getUser().equals("kevin")) && (getPassword().equals("a"))) {
-		
-		 session.put("logged", new Date());
-		 session.put("userName", getUser());
-		
+			 session.put("logged", new Date());
+			 session.put("userName", getUser());
+			 
+			 System.out.println(
+			 "logged: "+session.get("logged")
+			 ); 
+			 
 		 return SUCCESS;
 		 } else
-		 return ERROR;
+			 return ERROR;
 
 		//
 //		session.put("logged", new Date());
