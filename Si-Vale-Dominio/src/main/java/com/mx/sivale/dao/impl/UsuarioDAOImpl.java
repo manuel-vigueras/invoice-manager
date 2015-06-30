@@ -15,6 +15,13 @@ import com.mx.sivale.to.UsuarioTO;
 public class UsuarioDAOImpl extends GenericDAOImpl<UsuarioTO, Long> implements
 		UsuarioDAO {
 
+	public String exists(String user, String passw) {
+		if(user.equals("usuario") && passw.equals("pass"))			
+			return "Pedro Ramirez López";
+		return null; 
+	}
+		
+	
 	public UsuarioDAOImpl() {
 		super(UsuarioTO.class);
 	}
@@ -38,4 +45,5 @@ public class UsuarioDAOImpl extends GenericDAOImpl<UsuarioTO, Long> implements
 		// TODO Auto-generated method stub
 		return buscar();
 	}
+
 }

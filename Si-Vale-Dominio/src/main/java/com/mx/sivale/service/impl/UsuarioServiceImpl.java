@@ -20,6 +20,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Autowired
 	UsuarioDAO usuarioDAO;
 
+	
+	public String exists(String user, String passw) {
+		
+		return usuarioDAO.exists(user, passw); 
+	}
+	
 	public void insert(UsuarioTO usuarioTO) {
 		// TODO Auto-generated method stub
 		usuarioDAO.insert(usuarioTO);

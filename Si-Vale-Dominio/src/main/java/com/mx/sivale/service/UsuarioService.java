@@ -10,6 +10,8 @@ import com.mx.sivale.to.UsuarioTO;
  */
 public interface UsuarioService {
 	
+	public String exists(String user, String passw); 
+	
 	public void insert(UsuarioTO usuarioTO);
 
 	public void update(UsuarioTO usuarioTO);
