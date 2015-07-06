@@ -2,6 +2,7 @@ package com.mx.sivale.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 	UsuarioDAO usuarioDAO;
 
 	
-	public String exists(String user, String passw) {
+	public Map<String, Object> exists(String user, String passw) {
 		
 		return usuarioDAO.exists(user, passw); 
 	}

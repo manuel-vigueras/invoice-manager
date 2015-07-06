@@ -1,6 +1,7 @@
 package com.mx.sivale.actions;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.struts2.convention.annotation.Action;
@@ -50,10 +51,11 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			@Result(name = ERROR, location = "/error.jsp") })
 	public String login() throws Exception {
 		
-		String name;
-		if((name = usuarioService.exists(getUser(), getPassword()))!=null){
-			 session.put("logged", new Date());
-			 session.put("userName", name);
+		Map<String, Object> res = new HashMap<String, Object>(); 
+		
+		if((res = usuarioService.exists(getUser(), getPassword()))!=null){
+			 session.put("noTarjeta", res.get("idTarjeta"));
+			 session.put("userName", res.get("username"));
 			 
 			 System.out.println(
 					 "logged: "+session.get("logged")+" - user: "+user

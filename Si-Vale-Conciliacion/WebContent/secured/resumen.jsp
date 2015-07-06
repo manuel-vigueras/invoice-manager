@@ -154,7 +154,7 @@ body .modal-sm {
 
 	<!-- Wrap all page content here -->
 	<div id="wrap">
-
+		
 		<jsp:include page="../templates/headerTemplate.jsp" />
 
 		<!-- MAIN CONTAINER

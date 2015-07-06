@@ -1,6 +1,8 @@
 package com.mx.sivale.dao.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -15,9 +17,13 @@ import com.mx.sivale.to.UsuarioTO;
 public class UsuarioDAOImpl extends GenericDAOImpl<UsuarioTO, Long> implements
 		UsuarioDAO {
 
-	public String exists(String user, String passw) {
-		if(user.equals("usuario") && passw.equals("pass"))			
-			return "Pedro Ramirez López";
+	public Map<String, Object> exists(String user, String passw) {
+		Map<String, Object> res = new HashMap<String, Object>(); 
+		if(user.equals("usuario") && passw.equals("pass")){			
+			res.put("username", "Pedro Ramirez");
+			res.put("idTarjeta", "174-9382738"); 
+			return res; 
+		}
 		return null; 
 	}
 		

@@ -1,6 +1,7 @@
 package com.mx.sivale.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.mx.sivale.to.UsuarioTO;
 
@@ -10,7 +11,7 @@ import com.mx.sivale.to.UsuarioTO;
  */
 public interface UsuarioDAO {
 
-	public String exists(String user, String passw); 
+	public Map<String, Object> exists(String user, String passw); 
 	
 	public void insert(UsuarioTO usuarioTO);
 
