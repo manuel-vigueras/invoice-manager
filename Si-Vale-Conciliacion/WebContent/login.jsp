@@ -33,26 +33,23 @@
 					</h1>
 				</div>
 				<div class="modal-body">
-					<s:form action="login" theme="bootstrap"
-						cssClass="form col-md-12 center-block">
+					<form method="post" action="j_security_check" 
+					 class="form col-md-12 center-block">
 						<div class="form-group">
+							<input name="j_username" class="form-control input-lg" placeholder="Usuario">							
 
-							<s:textfield name="user" cssClass="form-control input-lg"
-								placeholder="Usuario"></s:textfield>
-
+						</div>
+						<div class="form-group">							
+							<input name="j_password" class="form-control input-lg" 
+								type="password" placeholder="Contraseña">
 						</div>
 						<div class="form-group">
 
-							<s:textfield name="password" cssClass="form-control input-lg"
-								type="password" placeholder="Contrasena"></s:textfield>
-						</div>
-						<div class="form-group">
-
-							<s:submit value="Ingresar"
-								cssClass="btn btn-primary btn-lg btn-block"></s:submit>
+							<input type="submit" value="Ingresar" 
+								class="btn btn-primary btn-lg btn-block">
 
 						</div>
-					</s:form>
+					</form>
 				</div>
 				<div class="modal-footer">
 					<div class="col-md-12"></div>

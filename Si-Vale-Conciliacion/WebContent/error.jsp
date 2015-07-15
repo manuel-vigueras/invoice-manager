@@ -10,6 +10,6 @@
 </head>
 <body>
 <h4>User Name or Password is wrong</h4>
-<s:include value="login.jsp"></s:include>
+<%-- <s:include value="login.jsp"></s:include> --%>
 </body>
 </html>

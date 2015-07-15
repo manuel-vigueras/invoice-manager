@@ -4,11 +4,14 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.security.auth.login.LoginContext;
+
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.jsf.FacesContextUtils;
 
 import com.mx.sivale.service.UsuarioService;
 import com.opensymphony.xwork2.ActionSupport;
@@ -50,7 +53,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			@Result(name = SUCCESS, location = "/secured/resumen.jsp"),
 			@Result(name = ERROR, location = "/error.jsp") })
 	public String login() throws Exception {
-		
+			
 		Map<String, Object> res = new HashMap<String, Object>(); 
 		
 		if((res = usuarioService.exists(getUser(), getPassword()))!=null){

@@ -1,38 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>Si-Vale-Conciliacion</display-name>
-  <welcome-file-list>
-    <welcome-file>login.jsp</welcome-file>
-  </welcome-file-list>
-  
-
-	 <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/config/application-context.xml</param-value>
-  </context-param>
-  
-   <filter>
-    <filter-name>struts2</filter-name>
-    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
-    <init-param>
-      <param-name>actionPackages</param-name>
-      <param-value>com.mx.sivale.actions</param-value>
-    </init-param>
-  </filter>
-  <filter-mapping>
-    <filter-name>struts2</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
- 
-  <listener>
-    <listener-class>  
-         org.springframework.web.context.ContextLoaderListener  
-      </listener-class>
-  </listener>
-
-	
-  <!-- How long the sessions will stick around for -->
-  <session-config>
-    <session-timeout>5</session-timeout> <!-- 600seconds = 10 mins -->
-  </session-config>
+<web-app id="WebApp_ID" version="3.0"
+ xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+ <display-name>Si-Vale-Conciliacion</display-name>
+ <context-param>
+  <param-name>contextConfigLocation</param-name>
+  <param-value>/WEB-INF/config/application-context.xml</param-value>
+ </context-param>
+ <filter>
+  <filter-name>struts2</filter-name>
+  <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+  <init-param>
+   <param-name>actionPackages</param-name>
+   <param-value>com.mx.sivale.actions</param-value>
+  </init-param>
+ </filter>
+ <filter-mapping>
+  <filter-name>struts2</filter-name>
+  <url-pattern>/*</url-pattern>
+ </filter-mapping>
+ <listener>
+  <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+ </listener>
+ <!-- How long the sessions will stick around for -->
+ <session-config>
+  <session-timeout>5</session-timeout>
+  <!-- 600seconds = 10 mins -->
+ </session-config>
+ <welcome-file-list>
+  <welcome-file>/secured/resumen.jsp</welcome-file>
+ </welcome-file-list>
+ <security-constraint>
+  <display-name>userConstraint</display-name>
+  <web-resource-collection>
+   <web-resource-name>UserRes</web-resource-name>
+   <url-pattern>/secured/*</url-pattern>
+  </web-resource-collection>
+  <auth-constraint>
+   <role-name>userRole</role-name>
+  </auth-constraint>
+ </security-constraint>
+ <login-config>
+  <auth-method>FORM</auth-method>
+  <realm-name>jdbc-auth-realm</realm-name>
+  <form-login-config>
+   <form-login-page>/login.jsp</form-login-page>
+   <form-error-page>/error.jsp</form-error-page>
+  </form-login-config>
+ </login-config>
+ <security-role>
+  <role-name>userRole</role-name>
+ </security-role>
 </web-app>

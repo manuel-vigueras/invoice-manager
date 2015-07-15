@@ -24,4 +24,5 @@ import com.opensymphony.xwork2.ActionSupport;
 @Result(location="/login.jsp")
 @Actions(value={@Action(""),@Action("home")})
 public class HomeAction extends ActionSupport {
+	
 }
