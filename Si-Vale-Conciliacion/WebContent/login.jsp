@@ -33,7 +33,7 @@
 					</h1>
 				</div>
 				<div class="modal-body">
-					<form method="post" action="j_security_check" 
+					<form method="post" action="login" 
 					 class="form col-md-12 center-block">
 						<div class="form-group">
 							<input name="j_username" class="form-control input-lg" placeholder="Usuario">							

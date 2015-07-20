@@ -1,6 +1,6 @@
 <%@ page session="true"%>
 
-'<%=request.getRemoteUser()%>' Ha terminado la sesion. 
+'<%=request.getSession().getAttribute("userr") %>' Ha terminado la sesion. 
 
 <% session.invalidate(); %>
 

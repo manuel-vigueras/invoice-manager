@@ -87,7 +87,8 @@
 					
 					<ul class="nav navbar-nav">
 						<li>
-							<a class="dropdown-toggle" ><i class="fa fa-user"></i> ${sessionScope.userName} </a>	
+							<a class="dropdown-toggle" ><i class="fa fa-user"></i> <%=request.getSession().getAttribute("userr") %> </a>
+								
 						</li>					
 					</ul>
 										

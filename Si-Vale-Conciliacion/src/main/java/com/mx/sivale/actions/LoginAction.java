@@ -1,10 +1,9 @@
 package com.mx.sivale.actions;
 
-
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
@@ -53,26 +52,34 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	 * @return
 	 * @throws Exception
 	 */
-	@Action(value = "login", results = {
-			@Result(name = SUCCESS, location = "/secured/resumen.jsp"),
-			@Result(name = ERROR, location = "/error.jsp") })
-	public String login() throws Exception {
-			
-		Map<String, Object> res = new HashMap<String, Object>(); 
+	@Action(value = "login")
+	public void login() throws Exception {
 		
-		if((res = usuarioService.exists(getUser(), getPassword()))!=null){
+		HttpServletRequest req = ServletActionContext.getRequest();	
+		HttpServletResponse resp = ServletActionContext.getResponse(); 
+		String user = req.getParameter("j_username");
+	    String pass = req.getParameter("j_password");	    	   	    	   
+	    	    
+	    try{   
+	    String url = "j_security_check?j_username=" + user + "&j_password=" + pass;
+		String redirectUrl = resp.encodeRedirectURL(url);
+		resp.sendRedirect(redirectUrl);
+		System.out.println("redirect..........");
+	    }catch(Exception e){
+	    	System.out.println("Error al loguear "+e);
+	    }
+		
+	    Map<String, Object> res; 
+		if((res = usuarioService.exists(user, pass))!=null){
 			 session.put("noTarjeta", res.get("idTarjeta"));
 			 session.put("userName", res.get("username"));
+			 req.getSession().setAttribute("userr", user);
 			 
 			 System.out.println(
 					 "logged: "+session.get("logged")+" - user: "+user
-			 );
-			 return SUCCESS; 
+			 );		
 		}
-				
-		else
-			return ERROR;
-
+	    
 	}
 
 	@Action(value = "logout", results = {
