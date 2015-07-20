@@ -41,7 +41,7 @@
 						</div>
 						<div class="form-group">							
 							<input name="j_password" class="form-control input-lg" 
-								type="password" placeholder="Contraseña">
+								type="password" placeholder="Contrasena">
 						</div>
 						<div class="form-group">
 

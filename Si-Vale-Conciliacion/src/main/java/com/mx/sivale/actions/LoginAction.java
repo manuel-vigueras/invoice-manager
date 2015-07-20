@@ -1,20 +1,21 @@
 package com.mx.sivale.actions;
 
-import java.util.Date;
+
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.security.auth.login.LoginContext;
+import javax.servlet.http.HttpServletRequest;
 
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.jsf.FacesContextUtils;
 
 import com.mx.sivale.service.UsuarioService;
 import com.opensymphony.xwork2.ActionSupport;
+
 
 /**
  * Clase Action para el manejo del login. JSP que utiliza al action: login.jsp.
@@ -33,16 +34,19 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 	@Autowired
 	public UsuarioService usuarioService;
-
+	
 	private String user;
 	private String password;
+	
+	
+	
 	public Map<String, Object> session;
-
+			
 	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
+	
 	/**
 	 * Metodo que se ejecuta con el llamado del form en login.jsp.
 	 * 
@@ -69,22 +73,20 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		else
 			return ERROR;
 
-		//
-//		session.put("logged", new Date());
-//		session.put("userName", getUser());
-//
-//		return SUCCESS;
-
 	}
 
 	@Action(value = "logout", results = {
 			@Result(name = SUCCESS, location = "/login.jsp"),
 			@Result(name = ERROR, location = "/error.jsp") })
 	public String logout() throws Exception {
-
+		 		
 		session.remove("logged");
 		session.remove("userName");
-		return SUCCESS;
+		HttpServletRequest request = ServletActionContext.getRequest();		
+		System.out.println("User Logout... "+request.getUserPrincipal().getName());
+		request.getSession().invalidate(); 
+					
+		return SUCCESS;	
 	}
 
 	public String getUser() {

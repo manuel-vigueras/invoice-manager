@@ -28,7 +28,7 @@
   <!-- 600seconds = 10 mins -->
  </session-config>
  <welcome-file-list>
-  <welcome-file>/secured/resumen.jsp</welcome-file>
+  <welcome-file>secured/resumen.jsp</welcome-file>
  </welcome-file-list>
  <security-constraint>
   <display-name>userConstraint</display-name>
