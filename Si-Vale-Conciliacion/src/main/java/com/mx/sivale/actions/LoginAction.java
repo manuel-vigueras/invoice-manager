@@ -2,6 +2,7 @@ package com.mx.sivale.actions;
 
 import java.util.Map;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,9 +12,11 @@ import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 
 import com.mx.sivale.service.UsuarioService;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.validator.annotations.Validations;
 
 
 /**
@@ -25,7 +28,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 @Namespace("/")
 public class LoginAction extends ActionSupport implements SessionAware {
-
+	
 	/**
 	 * 
 	 */
@@ -33,11 +36,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 	@Autowired
 	public UsuarioService usuarioService;
-	
-	private String user;
-	private String password;
-	
-	
 	
 	public Map<String, Object> session;
 			
@@ -52,33 +50,47 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	 * @return
 	 * @throws Exception
 	 */
-	@Action(value = "login")
-	public void login() throws Exception {
-		
-		HttpServletRequest req = ServletActionContext.getRequest();	
+	
+	@Action(value="login",results = {
+			@Result(name = SUCCESS, location = "/welcome.jsp"),
+			@Result(name = ERROR, location = "/error.jsp") })
+	public String login(){
+		HttpServletRequest req = ServletActionContext.getRequest();
 		HttpServletResponse resp = ServletActionContext.getResponse(); 
 		String user = req.getParameter("j_username");
-	    String pass = req.getParameter("j_password");	    	   	    	   
-	    	    
-	    try{   
-	    String url = "j_security_check?j_username=" + user + "&j_password=" + pass;
-		String redirectUrl = resp.encodeRedirectURL(url);
-		resp.sendRedirect(redirectUrl);
-		System.out.println("redirect..........");
-	    }catch(Exception e){
-	    	System.out.println("Error al loguear "+e);
-	    }
-		
-	    Map<String, Object> res; 
-		if((res = usuarioService.exists(user, pass))!=null){
-			 session.put("noTarjeta", res.get("idTarjeta"));
-			 session.put("userName", res.get("username"));
-			 req.getSession().setAttribute("userr", user);
-			 
-			 System.out.println(
-					 "logged: "+session.get("logged")+" - user: "+user
-			 );		
+	    String passwd = req.getParameter("j_password");
+			    
+	    try{
+	    	req.login(user, passwd);
+						
+			session.put("user", user);
+			session.put("password", passwd);
+			
+		}catch(ServletException e){
+			System.out.println("Error al loguear.....");
+			return ERROR; 
 		}
+	    return SUCCESS; 
+	}
+	
+	@Action(value = "userLogin", results = {
+			@Result(name = SUCCESS, location = "/secured/resumen.jsp"),
+			@Result(name = ERROR, location = "/login.jsp") })
+	public String loginUser() throws Exception {
+		
+		HttpServletRequest req = ServletActionContext.getRequest();	    
+		String user = session.get("user").toString();
+		String passwd = session.get("password").toString();
+		
+		if(req.isUserInRole("userRole")){			
+		    Map<String, Object> res; 
+			if((res = usuarioService.exists(user, passwd ))!=null){
+				 session.put("noTarjeta", res.get("idTarjeta"));
+				 session.put("userName", res.get("userName"));
+				 return SUCCESS; 
+	}		
+		}
+		return ERROR;
 	    
 	}
 
@@ -94,21 +106,5 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		request.getSession().invalidate(); 
 					
 		return SUCCESS;	
-	}
-
-	public String getUser() {
-		return user;
-	}
-
-	public void setUser(String user) {
-		this.user = user;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 }

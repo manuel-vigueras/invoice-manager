@@ -7,4 +7,8 @@
     	<role-name>userRole</role-name>
     	<group-name>user</group-name>
     </security-role-mapping>
+    <security-role-mapping>
+    	<role-name>adminRole</role-name>
+    	<group-name>admin</group-name>
+    </security-role-mapping>
 </glassfish-web-app>

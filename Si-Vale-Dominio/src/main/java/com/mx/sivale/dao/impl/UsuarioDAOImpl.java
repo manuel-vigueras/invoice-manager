@@ -19,8 +19,8 @@ public class UsuarioDAOImpl extends GenericDAOImpl<UsuarioTO, Long> implements
 
 	public Map<String, Object> exists(String user, String passw) {
 		Map<String, Object> res = new HashMap<String, Object>(); 
-		if(user.equals("user3") && passw.equals("user3")){			
-			res.put("username", "Pedro Ramirez");
+		if(user.equals("user2") && passw.equals("user2")){			
+			res.put("userName", "Pedro Ramirez");
 			res.put("idTarjeta", "174-9382738"); 
 			return res; 
 		}
