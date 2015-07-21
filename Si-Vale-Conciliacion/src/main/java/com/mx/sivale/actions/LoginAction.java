@@ -74,7 +74,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	}
 	
 	@Action(value = "userLogin", results = {
-			@Result(name = SUCCESS, location = "/secured/resumen.jsp"),
+			@Result(name = SUCCESS, location = "/user/index.jsp"),
 			@Result(name = ERROR, location = "/login.jsp") })
 	public String loginUser() throws Exception {
 		

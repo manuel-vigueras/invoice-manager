@@ -1,0 +1,28 @@
+PARAMETROS DE CONFIGURACION DE GLASSIFISH SERVER
+-----------------------------------------------------
+- Crear pool de conexiones (Resources/JDBC/JDBC_Connection_Pools)
+	- Pool Name = 'AuthPool'
+	- Resource = 'javax.sql.ConnectionPoolDataSource'
+	- Database Driver Vendor = 'Mysql'
+
+- Seccion propiedades (limpiar y usar solo estas 3 propiedades)
+	- url = jdbc:mysql://localhost/<nombre_de_Base_Datos>
+	- user = <usuario para acceder a las bases dee datos en mysql>
+	- password = <password correspondiente al usuario>
+
+- Crear un recurso JDBC
+	- JDNI Name = jdbc/auth
+	- PoolName = <creado anteriormente 'AuthPool'>
+
+- Crear nueva configuracion de Seguridad (Configurations/Server-config/Security/Realm)
+	- Name = <cualquier-nombre(jdbc-auth-realm)>
+	- ClassName = com.sun.enterprise.security.auth.realm.jdbc.JDBCRealm
+	- JAAS Context = jdbcRealm
+	- JDNI = jdbc/auth(recurso creado anteriormente)
+	- User Table = user_
+	- User Name Column = userId
+	- Password Column = password
+	- Group Table = group_ 
+	- Group Name Column = groupId
+	- Digest Algorithm = SHA-256
+	- Encoding = Hex
