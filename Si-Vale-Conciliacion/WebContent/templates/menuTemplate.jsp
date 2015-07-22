@@ -153,8 +153,8 @@ body .modal-sm {
 				<div class="navbar">
 					<ul class="nav navbar-nav navbar-default">
 
-						<li class="active"><a href="<s:url action="resumenAction"/>">Resumen<span
-								class="sr-only">(current)</span></a></li>
+						<li><a href="<s:url action="resumenAction"/>"
+							class="btn-sm">Inicio</a></li>
 						<li><a href="<s:url action="transaccionesAction"/>"
 							class="btn-sm">Movimientos</a></li>
 						<li><a href="<s:url action="justificantesAction"/>"

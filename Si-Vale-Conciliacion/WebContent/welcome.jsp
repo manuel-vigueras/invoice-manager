@@ -7,13 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Role Filter</h1>
-<% out.println("Buscando Role...."); 
+<h1>
+<% 
 if (request.isUserInRole("adminRole"))
-	out.println("Role Admin"); 	
+	out.println("Admin Role"); 	
 else if(request.isUserInRole("userRole"))
 	response.sendRedirect("userLogin");  
 %>
+</h1>
 <a href="logout">Logout...</a>
 </body>
 </html>
