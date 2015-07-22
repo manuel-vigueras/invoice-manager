@@ -55,8 +55,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 			@Result(name = SUCCESS, location = "/welcome.jsp"),
 			@Result(name = ERROR, location = "/error.jsp") })
 	public String login(){
-		HttpServletRequest req = ServletActionContext.getRequest();
-		HttpServletResponse resp = ServletActionContext.getResponse(); 
+		HttpServletRequest req = ServletActionContext.getRequest();		
 		String user = req.getParameter("j_username");
 	    String passwd = req.getParameter("j_password");
 			    
@@ -74,7 +73,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	}
 	
 	@Action(value = "userLogin", results = {
-			@Result(name = SUCCESS, location = "/user/index.jsp"),
+			@Result(name = SUCCESS, location = "/user/inicio.jsp"),
 			@Result(name = ERROR, location = "/login.jsp") })
 	public String loginUser() throws Exception {
 		
@@ -97,14 +96,11 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	@Action(value = "logout", results = {
 			@Result(name = SUCCESS, location = "/login.jsp"),
 			@Result(name = ERROR, location = "/error.jsp") })
-	public String logout() throws Exception {
-		 		
-		session.remove("logged");
-		session.remove("userName");
-		HttpServletRequest request = ServletActionContext.getRequest();		
-		System.out.println("User Logout... "+request.getUserPrincipal().getName());
+	public String logout() throws Exception {		 		
+		session.clear();
+		HttpServletRequest request = ServletActionContext.getRequest();				
 		request.getSession().invalidate(); 
-					
+		System.out.println("User Logout... "+request.getUserPrincipal().getName());
 		return SUCCESS;	
 	}
 }
