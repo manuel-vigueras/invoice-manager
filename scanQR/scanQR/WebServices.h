@@ -10,6 +10,7 @@
 
 @interface WebServices : NSObject
 
+-(NSString*) logingWithCard:(NSString*)cardNo andPass:(NSString*)pass;
 -(NSString*) sendQRCode:(NSString*)stringCode;
 -(NSString*) sendFileURl:(NSURL*)fileurl name:(NSString*)filename;
 -(NSString*) reqTransactionsWithNo:(NSString*)cardNo;

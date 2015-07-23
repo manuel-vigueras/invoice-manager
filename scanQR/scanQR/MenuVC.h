@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnMenu;
 
 
+
 - (IBAction)showAlert:(id)sender;
+- (IBAction) showTrxs;
 
 @end

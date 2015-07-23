@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		36072D701AD3010700CC944F /* MenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36072D6F1AD3010700CC944F /* MenuVC.m */; };
 		36072D731AD343F400CC944F /* TrxVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 36072D721AD343F400CC944F /* TrxVC.m */; };
+		362A88391B5D6F6F009B8F77 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 362A88381B5D6F6F009B8F77 /* LoginVC.m */; };
 		3680CB991AA8D39D00CA2D1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3680CB981AA8D39D00CA2D1F /* main.m */; };
 		3680CB9C1AA8D39D00CA2D1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3680CB9B1AA8D39D00CA2D1F /* AppDelegate.m */; };
 		3680CB9F1AA8D39D00CA2D1F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3680CB9E1AA8D39D00CA2D1F /* ViewController.m */; };
@@ -53,6 +54,8 @@
 		36072D6F1AD3010700CC944F /* MenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuVC.m; sourceTree = "<group>"; };
 		36072D711AD343F400CC944F /* TrxVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrxVC.h; sourceTree = "<group>"; };
 		36072D721AD343F400CC944F /* TrxVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrxVC.m; sourceTree = "<group>"; };
+		362A88371B5D6F6F009B8F77 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		362A88381B5D6F6F009B8F77 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		3680CB931AA8D39D00CA2D1F /* scanQR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scanQR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3680CB971AA8D39D00CA2D1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3680CB981AA8D39D00CA2D1F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				3680CBC71AA9211100CA2D1F /* beep.mp3 */,
 				3680CB9A1AA8D39D00CA2D1F /* AppDelegate.h */,
 				3680CB9B1AA8D39D00CA2D1F /* AppDelegate.m */,
+				362A88371B5D6F6F009B8F77 /* LoginVC.h */,
+				362A88381B5D6F6F009B8F77 /* LoginVC.m */,
 				36072D6E1AD3010700CC944F /* MenuVC.h */,
 				36072D6F1AD3010700CC944F /* MenuVC.m */,
 				3680CB9D1AA8D39D00CA2D1F /* ViewController.h */,
@@ -341,6 +346,7 @@
 			files = (
 				36BE962A1AD47AEC0073B2B6 /* TrxViewCell.m in Sources */,
 				3680CB9F1AA8D39D00CA2D1F /* ViewController.m in Sources */,
+				362A88391B5D6F6F009B8F77 /* LoginVC.m in Sources */,
 				3680CB9C1AA8D39D00CA2D1F /* AppDelegate.m in Sources */,
 				36072D701AD3010700CC944F /* MenuVC.m in Sources */,
 				36BB3E6B1AE82D2A003B6ACD /* InvoiceVC.m in Sources */,

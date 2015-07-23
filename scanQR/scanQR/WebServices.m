@@ -15,6 +15,67 @@ static NSString *URLaccess = @"SiValeDemoServices/services";
 
 @implementation WebServices
 
+-(NSString*) logingWithCard:(NSString*)cardNo andPass:(NSString*)pass{
+    @try{
+        NSUserDefaults *usr = [NSUserDefaults standardUserDefaults];
+        NSString *ip = [usr stringForKey:@"ip_preference"];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/%@/login",ip,URLaccess]];
+        //        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/billParameters",URLaccess]];
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+        
+        [request setHTTPMethod: @"POST"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        
+        /*Test sending QRCode*/
+        NSString *stringtest = [NSString stringWithFormat:@"{\"card\":\"%@\",\"pass\":\"%@\"}",cardNo,pass];
+        NSData *requestData = [NSData dataWithBytes:[stringtest UTF8String] length:[stringtest length]];
+        
+        
+        [request setHTTPBody: requestData];
+        // Creating the response and the error objects
+        NSHTTPURLResponse* urlResponse = nil;
+        NSError *error = [[NSError alloc] init];
+        
+        // Making the call to the REST service
+        NSData *serviceData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
+        
+        NSLog(@"Error Description: %@",[error userInfo]);
+        
+        
+        // Verifying if communicaction was successful
+        if ([urlResponse statusCode] >= 200 && [urlResponse statusCode] < 300){
+            
+            
+            //            NSDictionary* dictionary = [NSJSONSerialization JSONObjectWithData:serviceData
+            //                                                                       options:kNilOptions
+            //                                                                         error:&errorS];
+            
+            NSString *response = [[NSString alloc] initWithData:serviceData encoding:NSUTF8StringEncoding];
+            
+            NSLog(@"response = %@", response);
+            if (![response isEqual:[NSNull null]]){
+                
+                [usr setValue:cardNo forKey:@"card_preference"];
+                [usr setValue:pass forKey:@"pass_preference"];
+                return response;
+            }
+            else{
+//                return nil;
+                // Hardcode to test
+                return @"CORRECTO";
+            }
+        } else
+            // Hardcode to test
+            return @"CORRECTO";
+    }
+    @catch (id theException) {
+        NSLog(@"%@",theException);
+        return @"Error";
+    }
+    return nil;
+    
+}
 
 -(NSString*) sendQRCode:(NSString*)stringCode{
     @try{
@@ -61,9 +122,9 @@ static NSString *URLaccess = @"SiValeDemoServices/services";
             if (![response isEqual:[NSNull null]])
                 return response;
             else
-                return nil;
+                return [[error userInfo] objectForKey:@"NSLocalizedDescription"];
         } else
-            return nil;
+            return [[error userInfo] objectForKey:@"NSLocalizedDescription"];
         
     }@catch (id theException) {
         NSLog(@"%@",theException);
@@ -173,9 +234,9 @@ static NSString *URLaccess = @"SiValeDemoServices/services";
             if (![response isEqual:[NSNull null]])
                 return response;
             else
-                return nil;
+                return [NSString stringWithFormat:@"ERROR"];
         } else
-            return nil;
+            return [NSString stringWithFormat:@"ERROR"];
         
     }@catch (id theException) {
         NSLog(@"%@",theException);

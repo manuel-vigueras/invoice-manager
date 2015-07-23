@@ -27,6 +27,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction) showTrxs{
+    TrxVC *trxVC = [[TrxVC alloc] init];
+    [self performSegueWithIdentifier:@"trxVC" sender:trxVC];
+    
+}
+
 - (IBAction)showAlert:(id)sender
 {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Menú Transacciones"
@@ -61,6 +67,28 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
+- (IBAction)showMenu:(id)sender
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Menú Transacciones"
+                                                                             message:@""
+                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *closeSessionAction = [UIAlertAction actionWithTitle:@"Cerrar Sesión"
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+//                                                          [self.navigationController popViewControllerAnimated:YES];
+                                                          [self dismissViewControllerAnimated:YES completion:nil];
+                                                      }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:nil];
+    
+    [alertController addAction:closeSessionAction];
+    [alertController addAction:cancelAction];
+    alertController.view.tintColor = [UIColor colorWithRed:240.0/255.0 green:125.0/255.0 blue:6.0/255.0 alpha:1.0];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
 
 #pragma mark - Navigation
 
@@ -70,36 +98,65 @@
     // Pass the selected object to the new view controller.
 }
 
--(BOOL)shouldAutorotate
+//-(BOOL)shouldAutorotate
+//{
+//    if (self.navigationController.viewControllers.count > 1) {
+//        return [[self.navigationController.viewControllers lastObject] shouldAutorotate];
+//    }
+//    else{
+//        return YES;
+//    }
+//    
+//}
+//
+//-(NSUInteger)supportedInterfaceOrientations
+//{
+//    if (self.navigationController.viewControllers.count > 1) {
+//    return [[self.navigationController.viewControllers lastObject] supportedInterfaceOrientations];
+//    }
+//    else{
+//        return UIInterfaceOrientationMaskPortrait;
+//    }
+//        
+//}
+//
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+//{
+//    if (self.navigationController.viewControllers.count > 1) {
+//    return [[self.navigationController.viewControllers lastObject] preferredInterfaceOrientationForPresentation];
+//    }
+//    else{
+//        return UIInterfaceOrientationPortrait;
+//    }
+//}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    if (self.navigationController.viewControllers.count > 1) {
-        return [[self.navigationController.viewControllers lastObject] shouldAutorotate];
-    }
-    else{
-        return YES;
-    }
-    
+    //    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+    return UIInterfaceOrientationMaskPortrait;
 }
 
--(NSUInteger)supportedInterfaceOrientations
+- (BOOL)shouldAutorotate
 {
-    if (self.navigationController.viewControllers.count > 1) {
-    return [[self.navigationController.viewControllers lastObject] supportedInterfaceOrientations];
-    }
-    else{
-        return UIInterfaceOrientationMaskPortrait;
-    }
-        
+    return YES;
 }
+
+/*Return the Number of Oreintation going to supported in device*/
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    //    return UIInterfaceOrientationMaskLandscape;
+    
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+// Returns interface orientation masks.
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
 {
-    if (self.navigationController.viewControllers.count > 1) {
-    return [[self.navigationController.viewControllers lastObject] preferredInterfaceOrientationForPresentation];
-    }
-    else{
-        return UIInterfaceOrientationPortrait;
-    }
+    //    return UIInterfaceOrientationLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
+    return UIInterfaceOrientationPortrait;
+    
 }
 
 

@@ -12,10 +12,11 @@
 
 @interface ViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *loadingV;
 @property (weak, nonatomic) IBOutlet UIView *viewPreview;
 @property (weak, nonatomic) IBOutlet UILabel *lblStatus;
-@property (weak, nonatomic) IBOutlet UILabel *lblPromp;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *bbitemCamera;
+//@property (weak, nonatomic) IBOutlet UILabel *lblPromp;
+//@property (weak, nonatomic) IBOutlet UIBarButtonItem *bbitemCamera;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *bbitemPhotoStream;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *bbitemFile;
 

@@ -49,13 +49,13 @@
 - (IBAction)startStopReading:(id)sender {
     if (!_isReading) {
         if ([self startReading]) {
-            [_bbitemCamera setTitle:@"Stop"];
-            [_lblStatus setText:@"Buscando Código"];
+//            [_bbitemCamera setTitle:@"Stop"];
+            [_lblStatus setText:@"Buscando"];
         }
     }
     else{
         [self stopReading];
-        [_bbitemCamera setTitle:@"Start!"];
+//        [_bbitemCamera setTitle:@"Start!"];
     }
     
     _isReading = !_isReading;
@@ -163,9 +163,9 @@
             [_lblStatus performSelectorOnMainThread:@selector(setText:) withObject:@"Código capturado" waitUntilDone:NO];
             
             [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
-            [_bbitemCamera performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start!" waitUntilDone:NO];
-            _isReading = NO;
             
+//            [_bbitemCamera performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start!" waitUntilDone:NO];
+            _isReading = NO;
             
             [self performSelector:@selector(requestService:) withObject:[metadataObj stringValue]];
             
@@ -180,20 +180,31 @@
 
 
 - (void) requestService:(NSString*)metadataString{
-    @autoreleasepool {
+//    @autoreleasepool {
         //NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    UIAlertView *alert = [UIAlertView alloc];
+    WebServices *notesService = [[WebServices alloc] init];
         
-        WebServices *notesService = [[WebServices alloc] init];
-        
-        /*Consulta de servicio Historia Académica*/
-        NSString *resultD = [[NSString alloc] initWithString:[notesService sendQRCode:metadataString]];
-        if ([resultD isEqualToString:@"success"]) {
-            [_lblStatus performSelectorOnMainThread:@selector(setText:) withObject:@"Código enviado" waitUntilDone:NO];
-        }
-        
-        
-        //    [loadingView removeFromSuperview];
+    /*Consulta de servicio Historia Académica*/
+    NSString *resultD = [[NSString alloc] initWithString:[notesService sendQRCode:metadataString]];
+    
+    [self.view sendSubviewToBack:_loadingV];
+    _loadingV.hidden = true;
+    
+    if ([resultD isEqualToString:@"success"]) {
+        [_lblStatus performSelectorOnMainThread:@selector(setText:) withObject:@"Código enviado" waitUntilDone:NO];
+        [alert initWithTitle:@"Código enviado" message:@"El código ha sido enviado exitosamente" delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles: nil];
+        [alert show];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
+    else{
+        [alert initWithTitle:@"Error" message:[NSString stringWithFormat:@"Error al enviar información:\n%@", resultD] delegate:self cancelButtonTitle:@"Aceptar" otherButtonTitles: nil];
+        [alert show];
+        [self startStopReading:nil];
+    }
+    
+    //    [loadingView removeFromSuperview];
+//    }
     
 }
 
@@ -204,6 +215,8 @@
     _captureSession = nil;
     
     [_videoPreviewLayer removeFromSuperlayer];
+    _loadingV.hidden = false;
+    [self.view bringSubviewToFront:_loadingV];
 }
 
 -(void)loadBeepSound{

@@ -11,7 +11,9 @@
 #import "WebServices.h"
 #import "InvoiceVC.h"
 
-@interface TrxVC ()
+@interface TrxVC (){
+    Boolean *haveTrxs;
+}
 
 @end
 
@@ -21,18 +23,16 @@
     [super viewDidLoad];
     [self.navigationController.navigationBar setHidden:NO];
     // Do any additional setup after loading the view.
+    _loadingV.hidden = false;
+    [self.view bringSubviewToFront:_loadingV];
+    [self performSelector:@selector(requestService) withObject:nil afterDelay:0.01];
+//    [self preloadTrxs];
     
-//    _trxs = [[NSMutableArray alloc] initWithObjects:
-//                            [[NSDictionary alloc] initWithObjectsAndKeys:@"4468104",@"id",@"CAPITAL JEANS SA CV",@"concept",[[NSNumber alloc] initWithDouble:756],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"Conciliada",@"status", nil],
-//                            [[NSDictionary alloc] initWithObjectsAndKeys:@"4367124",@"id",@"POLMAL SA CV",@"concept",[[NSNumber alloc] initWithDouble:1345],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"Conciliada",@"status", nil],
-//                            [[NSDictionary alloc] initWithObjectsAndKeys:@"7647903",@"id",@"7 ELEVEN MÉXICO SA CD",@"concept",[[NSNumber alloc] initWithDouble:158],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"Conciliada",@"status", nil],
-//                            [[NSDictionary alloc] initWithObjectsAndKeys:@"5846902",@"id",@"CORPORATIVO NUHAIR SC",@"concept",[[NSNumber alloc] initWithDouble:533],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"No conciliada",@"status", nil],
-//                            [[NSDictionary alloc] initWithObjectsAndKeys:@"8649501",@"id",@"GENDRY FRANK MICHEL",@"concept",[[NSNumber alloc] initWithDouble:189],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"Conciliada",@"status", nil],
-//                            [[NSDictionary alloc] initWithObjectsAndKeys:@"7549445",@"id",@"ARANZAZU SA CV",@"concept",[[NSNumber alloc] initWithDouble:2560],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"No conciliada",@"status", nil],
-//                            nil];
-//    
-    [self performSelector:@selector(requestService) withObject:nil];
-//    [self requestService];
+}
+
+- (void) viewDidAppear:(BOOL)animated{
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,14 +48,39 @@
         
         /*Consulta de servicio Historia Académica*/
         NSString *resultD = [[NSString alloc] initWithString:[notesService reqTransactionsWithNo:@"9876"]];
-        NSJSONSerialization *json = [NSJSONSerialization JSONObjectWithData:[resultD dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
-        _trxs = [[NSMutableArray alloc] initWithArray:(NSArray*)json];
-        [_tblMain reloadInputViews];
-        //    [loadingView removeFromSuperview];
+        if(![resultD isEqualToString:@"ERROR"]){
+            NSJSONSerialization *json = [NSJSONSerialization JSONObjectWithData:[resultD dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+        
+            _trxs = [[NSMutableArray alloc] initWithArray:(NSArray*)json];
+            [_tblMain reloadInputViews];
+            [self.view sendSubviewToBack:_loadingV];
+            _loadingV.hidden = true;
+        }
+        else{
+            haveTrxs = false;
+            [self.view sendSubviewToBack:_loadingV];
+            _loadingV.hidden = true;
+            UIAlertView *alertError = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Ha ocurrido un error al cargar transacciones" delegate:[self.navigationController.viewControllers lastObject] cancelButtonTitle:@"Aceptar" otherButtonTitles: nil];
+            [alertError show];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
     }
     
 }
 
+-(void)preloadTrxs{
+    _trxs = [[NSMutableArray alloc] initWithObjects:
+             [[NSDictionary alloc] initWithObjectsAndKeys:@"4468104",@"id",@"CAPITAL JEANS SA CV",@"concept",[[NSNumber alloc] initWithDouble:756],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"Conciliada",@"status", nil],
+             [[NSDictionary alloc] initWithObjectsAndKeys:@"4367124",@"id",@"POLMAL SA CV",@"concept",[[NSNumber alloc] initWithDouble:1345],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"Conciliada",@"status", nil],
+             [[NSDictionary alloc] initWithObjectsAndKeys:@"7647903",@"id",@"7 ELEVEN MÉXICO SA CD",@"concept",[[NSNumber alloc] initWithDouble:158],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"Conciliada",@"status", nil],
+             [[NSDictionary alloc] initWithObjectsAndKeys:@"5846902",@"id",@"CORPORATIVO NUHAIR SC",@"concept",[[NSNumber alloc] initWithDouble:533],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"No conciliada",@"status", nil],
+             [[NSDictionary alloc] initWithObjectsAndKeys:@"8649501",@"id",@"GENDRY FRANK MICHEL",@"concept",[[NSNumber alloc] initWithDouble:189],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"Conciliada",@"status", nil],
+             [[NSDictionary alloc] initWithObjectsAndKeys:@"7549445",@"id",@"ARANZAZU SA CV",@"concept",[[NSNumber alloc] initWithDouble:2560],@"amount",[[NSNumber alloc] initWithDouble:1446357600000],@"date",@"No conciliada",@"status", nil],
+             nil];
+    [_tblMain reloadInputViews];
+    [self.view sendSubviewToBack:_loadingV];
+    _loadingV.hidden = true;
+}
 
 #pragma mark - Navigation
 

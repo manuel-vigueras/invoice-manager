@@ -12,5 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tblMain;
 @property (strong, nonatomic) NSMutableArray *trxs;
+@property (weak, nonatomic) IBOutlet UIView *loadingV;
+
+- (void) preloadTrxs;
 
 @end
