@@ -18,6 +18,7 @@
     <![endif]-->
 <!--<link href="css/styles.css" rel="stylesheet">-->
 
+<link rel="stylesheet" href="ccs/template_header.css">
 </head>
 
 
@@ -31,7 +32,7 @@
 			<div class="row">
 				<jsp:include page="../templates/menuTemplate.jsp"/>
 				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-					<h2 class="page-header">Resumen de cuenta</h2>
+					<h2 class="page-header">Resumen Operativo</h2>
 				</div>
 			</div>
 		</div>
