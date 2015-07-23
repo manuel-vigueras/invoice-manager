@@ -23,8 +23,11 @@
 				href="<s:url action="justificantesAction"/>"> <i class="fa fa-file-text-o"></i> Comprobacion</a></li>
 			<li><a
 				href="<s:url action="reportesAction"/>"><i class="fa fa-bar-chart"></i> Reportes</a></li>
+			
+			<%if(request.isUserInRole("adminRole")) { %>
 			<li><a
-				href="<s:url action="configuracionAction"/>"><i class="fa fa-cog"></i> Configuración</a></li>				
+				href="<s:url action="configuracionAction"/>"><i class="fa fa-cog"></i> Configuración</a></li>
+			<%} %>				
 		</ul>
 	</div>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>

@@ -9,10 +9,10 @@
 <body>
 <h1>
 <% 
-if (request.isUserInRole("adminRole"))
-	out.println("Admin Role"); 	
-else if(request.isUserInRole("userRole"))
-	response.sendRedirect("userLogin");  
+if (request.isUserInRole("userRole"))
+	response.sendRedirect("userLogin"); 	
+else if(request.isUserInRole("adminRole"))
+	out.println("Admin Role"); 	 
 %>
 </h1>
 <a href="logout">Logout...</a>
